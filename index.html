@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sangmin Kim — Embedded Linux와 ROS2 기반 차량 플랫폼 통합을 수행하는 Platform Engineer 포트폴리오." />
+  <title>Sangmin Kim · Platform Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="brand-dot"></span>SANGMIN KIM / 김상민</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#about"      data-num="01">About</a>
+        <a href="#ability"    data-num="02">Ability</a>
+        <a href="#career"     data-num="03">Career</a>
+        <a href="#projects"   data-num="04">Projects</a>
+        <a href="#patents"    data-num="05">Patents</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-meta">
+            <span>Platform Engineer</span>
+            <span>Embedded Linux</span>
+            <span>ROS2</span>
+          </div>
+          <h1>Sangmin Kim,<br/><span class="ital">Platform</span> Engineer.</h1>
+          <p class="hero-summary">
+              Embedded Linux와 ROS2 기반 차량 · 로봇 플랫폼을 실제 장비 위에서 동작시키는 일을 합니다.
+            Middleware, Device Lifecycle, Vehicle Integration까지 — 시스템이 현장에서 안정적으로
+            운영되도록 만드는 데 강점이 있습니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Selected Projects <span class="arr">→</span></a>
+            <a class="button" href="https://github.com/sm-kim1" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/sangmin-kim-a3257a160" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button" href="mailto:sm.kim1748@gmail.com">Email</a>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Profile">
+          <div class="hero-photo has-img">
+            <img class="photo-img" src="assets/profile.jpeg" alt="Sangmin Kim portrait" />
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+          </div>
+          <div class="hero-card">
+            <div class="card-label"><span>// PROFILE</span><span>v.2026.05</span></div>
+            <dl>
+              <div><dt>Name</dt><dd>김상민 · Sangmin Kim</dd></div>
+              <div><dt>Education</dt><dd>Soongsil Univ. — Computer Science &amp; Engineering</dd></div>
+              <div><dt>Email</dt><dd><a href="mailto:sm.kim1748@gmail.com">sm.kim1748@gmail.com</a></dd></div>
+              <div><dt>Based</dt><dd>Seoul, Republic of Korea</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ====================== ABOUT ====================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">/ 01 — About</div>
+          <h2 class="section-title">시스템이 실제 장비 위에서<br/>안정적으로 동작하도록 만듭니다.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="label">// Summary</div>
+          <div class="about-body">
+            <p>
+              자율주행 차량과 소형 무인 지상 차량(SUGV) 플랫폼에서 Embedded Linux, ROS1/2, CAN/Ethernet
+              기반 Middleware와 Device Integration 구조를 개발해 왔습니다. 단순 기능 구현보다는
+              이기종 장치의 연결·해제, 상태 추적, 인터페이스 표준화, 장애 복구, 실제 현장 적용까지를
+              고려한 Runtime Platform 설계에 강점이 있습니다.
+            </p>
+            <p>
+              ※ 본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
+              회사 · 고객사의 세부 설계와 비공개 정보는 제외했습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CORE ABILITY ====================== -->
+    <section id="ability" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">/ 02 — Core Ability</div>
+          <h2 class="section-title">기술 스택과 도구.</h2>
+        </div>
+
+        <div class="spec">
+          <div class="spec-meta">// Spec Sheet</div>
+          <dl class="spec-table">
+            <div class="spec-row">
+              <dt>Language</dt>
+              <dd>
+                <span class="item">C / C++</span>
+                <span class="item">Python</span>
+                <span class="item">Shell</span>
+              </dd>
+            </div>
+            <div class="spec-row">
+              <dt>System</dt>
+              <dd>
+                <span class="item">Ubuntu</span>
+                <span class="item">Embedded Linux</span>
+                <span class="item">Yocto</span>
+              </dd>
+            </div>
+            <div class="spec-row">
+              <dt>Middleware</dt>
+              <dd>
+                <span class="item">ROS1</span>
+                <span class="item">ROS2</span>
+              </dd>
+            </div>
+            <div class="spec-row">
+              <dt>Platform</dt>
+              <dd>
+                <span class="item">NVIDIA Jetson series</span>
+                <span class="item">Qualcomm SoC</span>
+              </dd>
+            </div>
+            <div class="spec-row">
+              <dt>Protocol</dt>
+              <dd>
+                <span class="item">CAN</span>
+                <span class="item">Ethernet</span>
+              </dd>
+            </div>
+            <div class="spec-row">
+              <dt>Tool</dt>
+              <dd>
+                <span class="item">vim</span>
+                <span class="item">gdb</span>
+                <span class="item">docker</span>
+                <span class="item">CMake</span>
+                <span class="item">Visual Studio</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CAREER ====================== -->
+    <section id="career" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">/ 03 — Career</div>
+          <h2 class="section-title">경력.</h2>
+        </div>
+
+        <div class="career-grid">
+          <article class="career">
+            <div class="career-period">
+              2023.11 — Present
+              <div class="now">Current</div>
+            </div>
+            <div class="career-body">
+              <h3>ACEWORKS Korea</h3>
+              <p class="career-team">SW Platform Development Team · SDV Architecture Part</p>
+              <p class="career-role">Senior Research Engineer · Architecture Part Leader</p>
+              <ul class="career-list">
+                <li>ROS2 자율주행 플랫폼 아키텍처 설계 및 공통 개발 환경 구축</li>
+                <li>NVIDIA · Qualcomm SoC 기반 Embedded Linux 플랫폼 개발</li>
+                <li>Yocto 기반 이미지 빌드 환경 및 개발 환경 구성</li>
+                <li>플랫폼용 ROS2 Middleware 및 Device Integration 구조 개발</li>
+                <li>자율주행 차량 플랫폼 통합 및 현장 deployment 수행</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="career">
+            <div class="career-period">2021.07 — 2023.10</div>
+            <div class="career-body">
+              <h3>ACELAB</h3>
+              <p class="career-team">Platform Development Team</p>
+              <p class="career-role">Research Engineer</p>
+              <ul class="career-list">
+                <li>ROS1 / 2 개발 템플릿 개발 및 실행 환경 구축</li>
+                <li>ROS node와 CAN 제어 계층을 잇는 Vehicle Control Interface 구성</li>
+                <li>Arm64 target 기반 개발 · 빌드 · 배포 환경 구축</li>
+                <li>차량 제어 ECU 설치 및 검증</li>
+                <li>자율주행 차량 개조 및 플랫폼 통합</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROJECTS ====================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">/ 04 — Selected Projects</div>
+          <h2 class="section-title">대표 프로젝트.</h2>
+        </div>
+
+        <div class="projects">
+
+          <!-- 01 -->
+          <article class="project" id="p-01">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 01</div>
+              <div class="project-period">2024.02 — 2025.12</div>
+              <div class="project-role">
+                <span class="role-tag">Middleware Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="SUGV Component Manager architecture diagram">
+                <img class="diagram-img" src="assets/diagram-01-component-manager.svg" alt="Component Manager architecture: devices, manager core with registration/lifecycle/cache/recovery, upper system" />
+              </div>
+              <h3>소형 무인 지상 차량(SUGV) Component Manager 개발</h3>
+              <p class="project-desc">ROS2 기반 SUGV 플랫폼의 런타임 환경에서 센서 · 디바이스의 동적 연결 및 해제를 지원하기 위한 SW 개발.</p>
+              <ul class="project-list">
+                <li>센서 및 디바이스의 hot-plug 상황을 처리하기 위한 런타임 컴포넌트 매니저 개발</li>
+                <li class="highlight">Dynamic Device Pool 구조를 설계하여 런타임 중 연결 · 해제되는 디바이스를 Pool 단위로 관리</li>
+                <li>디바이스 연결 · 해제 이벤트 기반 자동 등록 / 해제 기능 구현</li>
+                <li>Device lifecycle 추상화를 통해 이기종 디바이스 초기화 및 종료 절차 표준화</li>
+                <li class="highlight">Generic Template 기반 서비스 인터페이스 구조 설계를 통해 디바이스별 중복 코드 <strong>23% 감소</strong></li>
+                <li>Periodic polling에서 first-connection cache 방식으로 변경하여 안정 상태의 반복 호출 제거</li>
+                <li>장애 발생 시 timeout 기반 recovery / reconnect 로직 구현으로 시스템 안정성 향상</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS2 Humble</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>x86_64 · Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="project" id="p-02">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 02</div>
+              <div class="project-period">2024.01 — 2024.04</div>
+              <div class="project-role">
+                <span class="role-tag">Architecture Research</span>
+                <span class="role-tag">Middleware Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="SUGV Common SW Architecture diagram">
+                <img class="diagram-img" src="assets/diagram-02-common-architecture.svg" alt="Common SW architecture: standards to common message layer to ROS2 package to modules" />
+              </div>
+              <h3>소형 무인 지상 차량(SUGV) 공통 SW 아키텍처 개발</h3>
+              <p class="project-desc">SUGV 공통 SW 아키텍처와 소프트웨어 메시지 정의를 위한 기술 조사 및 프로토타입 개발.</p>
+              <ul class="project-list">
+                <li>STANAG 및 JAUS 기반 command-message 구조를 분석하여 공통 메시지 인터페이스 설계</li>
+                <li>이기종 모듈 간 상호 운용을 위한 플랫폼 독립형 메시지 구조 정의</li>
+                <li>ROS2 기반 공통 메시지 프로토타입 구현 및 pub / sub 구조 검증</li>
+                <li>데이터 인터페이스 표준화를 위한 추상화 레이어 개발</li>
+                <li>공통 메시지 규격 기반 통신 구조 검증 및 모듈 연동 테스트 수행</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS2 Humble</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>x86_64 · Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="project" id="p-03">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 03</div>
+              <div class="project-period">2023.11 — 2024.05</div>
+              <div class="project-role">
+                <span class="role-tag">Platform Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="ROS2 Multi-domain Template diagram">
+                <img class="diagram-img" src="assets/diagram-03-multi-domain.svg" alt="Multi-domain template: vehicle platform feeds into ROS2 template containing isolated domains 01, 02, 03, N" />
+              </div>
+              <h3>ROS2 Multi-domain Template 개발</h3>
+              <p class="project-desc">ROS2 개발 환경을 재사용 가능하게 구성하기 위한 Multi-domain template 개발.</p>
+              <ul class="project-list">
+                <li>기존 ROS1 시스템의 ROS2 마이그레이션 진행</li>
+                <li>기능별 도메인 사용을 위해 Multi-domain 시스템 개발</li>
+                <li>ROS2 기반 환경에서 domain 단위 범위와 실행 환경을 분리할 수 있는 템플릿 구성</li>
+                <li>차량 플랫폼 내 ROS 개발 환경을 표준화하여 Module Integration 편의성 개선</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS2 Humble</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>x86_64 · Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="project" id="p-04">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 04</div>
+              <div class="project-period">2023.09 — 2025.12</div>
+              <div class="project-role">
+                <span class="role-tag lead">Project Lead</span>
+                <span class="role-tag">Embedded Platform Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="Autonomous Computing Platform hardware photo">
+                <img class="diagram-img" src="assets/project-04-a1-driver.png" alt="A1 Driver — NVIDIA Jetson based autonomous computing platform, custom enclosure with cooling fans" />
+              </div>
+              <h3>Autonomous Computing Platform based on NVIDIA Jetson</h3>
+              <p class="project-desc">NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.</p>
+              <ul class="project-list">
+                <li>Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행</li>
+                <li>JetPack version migration 과정에서 device tree 및 peripheral 호환성 이슈 해결</li>
+                <li class="highlight">CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용</li>
+                <li>Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화</li>
+                <li>AGX / NX target 별 boot image 및 peripheral 초기화 검증 수행</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Noetic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Platform</dt><dd>NVIDIA Jetson</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++ · Shell · Device Tree</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="project" id="p-05">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 05</div>
+              <div class="project-period">2023.04 — 2027.12</div>
+              <div class="project-role">
+                <span class="role-tag lead">Project Lead</span>
+                <span class="role-tag">Vehicle Platform Integration</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="Emergency vehicle autonomous platform (Lv.4/4+)">
+                <img class="diagram-img" src="assets/project-05-ambulance.jpg" alt="Emergency vehicle autonomous platform (Lv.4/4+)" />
+              </div>
+              <h3>자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발</h3>
+              <p class="project-desc">국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 긴급차량 중심 공공서비스 과제 수행.</p>
+              <ul class="project-list">
+                <li>공동기관 참여연구원으로 사내 PL을 맡아 기관 간 협업 주도</li>
+                <li>기관 간 플랫폼 요구사항 조율 및 시스템 통합 주도</li>
+                <li>긴급차량 서비스 시나리오 기반 차량 제어 인터페이스 검증</li>
+                <li>Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행</li>
+                <li>CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증</li>
+                <li>자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Noetic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="project" id="p-06">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 06</div>
+              <div class="project-period">2023.04 — 2027.12</div>
+              <div class="project-role">
+                <span class="role-tag">Vehicle Platform Integration</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="Urban environment management autonomous vehicle (Lv.4/4+)">
+                <img class="diagram-img" src="assets/project-06-clean.jpg" alt="Urban environment management autonomous vehicle (Lv.4/4+)" />
+              </div>
+              <h3>자율주행 Lv.4 / 4+ 기반 도시환경관리 서비스 기술 개발</h3>
+              <p class="project-desc">국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 도시환경관리 중심 공공서비스 과제 수행.</p>
+              <ul class="project-list">
+                <li>공동기관 참여연구원으로 플랫폼 구축 진행</li>
+                <li>Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행</li>
+                <li>CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증</li>
+                <li>자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성</li>
+                <li>현장 deployment 및 플랫폼 유지보수 지원</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Noetic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="project" id="p-07">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 07</div>
+              <div class="project-period">2023.06 — 2023.12</div>
+              <div class="project-role">
+                <span class="role-tag">Vehicle Platform Integration</span>
+                <span class="role-tag">Middleware Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="KERI Pro-VPP V2G autonomous platform">
+                <img class="diagram-img" src="assets/project-07-keri.png" alt="KERI Pro-VPP V2G autonomous platform" />
+              </div>
+              <h3>E-Mobility 기반 Pro-VPP 실증용 AME 운용 인프라 구축</h3>
+              <p class="project-desc">한국전기연구원(KERI) 주관, 전기차 배터리 충 · 방전을 위한 V2G 기술 개발 플랫폼 개발.</p>
+              <ul class="project-list">
+                <li>관제에서 오는 목적지 · 경유지 메시지를 Platform 내 공통 message 형태로 변환하는 SW 개발</li>
+                <li>자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성</li>
+                <li>자율주행 테스트 플랫폼 구축</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Melodic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 08 -->
+          <article class="project" id="p-08">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 08</div>
+              <div class="project-period">2022.07 — 2022.12</div>
+              <div class="project-role">
+                <span class="role-tag lead">Project Lead</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="AICA ADAS mobility shuttle">
+                <img class="diagram-img" src="assets/project-08-aica.avif" alt="AICA ADAS mobility shuttle" />
+              </div>
+              <h3>시뮬레이터 동기화를 위한 이동형 모빌리티 셔틀</h3>
+              <p class="project-desc">인공지능산업융합사업단 주관 ADAS 기술 검증을 위한 차량 플랫폼 제작.</p>
+              <ul class="project-list">
+                <li>ADAS 시뮬레이터 연동을 위한 실차 기반 모빌리티 셔틀 플랫폼 구축</li>
+                <li>차량 제어 ECU와 연동되는 CAN 제어 소프트웨어 개발</li>
+                <li>자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성</li>
+                <li>자율주행 runtime 환경 검증을 위한 테스트 플랫폼 운영</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Melodic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 09 -->
+          <article class="project" id="p-09">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 09</div>
+              <div class="project-period">2022.04 — 2025.12</div>
+              <div class="project-role">
+                <span class="role-tag">Vehicle Platform Integration</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="Automated valet parking system">
+                <img class="diagram-img" src="assets/project-09-avps.png" alt="Automated valet parking system" />
+              </div>
+              <h3>수요응답형 자동발렛주차 및 서비스 기술 개발</h3>
+              <p class="project-desc">산업통상자원부 주관, ISO 23374 표준을 만족하는 자동발렛주차 시스템 설계 및 개발.</p>
+              <ul class="project-list">
+                <li>자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성</li>
+                <li>CAN 기반 타겟 자동 주차 차량의 위치 정보 변환 소프트웨어 개발 및 차량 연동 검증</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Melodic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="project" id="p-10">
+            <aside class="project-aside">
+              <div class="project-index">PROJECT / 10</div>
+              <div class="project-period">2022.07 — 2022.12</div>
+              <div class="project-role">
+                <span class="role-tag">Middleware Development</span>
+              </div>
+            </aside>
+            <div class="project-body">
+              <div class="project-visual has-diagram" aria-label="Data collection logging modes: snapshot and recording duration">
+                <img class="diagram-img" src="assets/diagram-10-data-collection.svg" alt="Two logging modes — snapshot (event-triggered window) and recording duration (user-defined start to end)" />
+              </div>
+              <h3>자율주행 자동차 데이터 수집 장치 개발</h3>
+              <p class="project-desc">자율주행 차량에서 개발 · 검증에 필요한 데이터를 수집하기 위한 SW 개발.</p>
+              <ul class="project-list">
+                <li>자율주행 개발 · 검증용 데이터 로깅 파이프라인 구성</li>
+                <li>차량 플랫폼과 컴퓨팅 환경 간 데이터 수집 흐름 설계</li>
+                <li>Snapshot 기반 데이터 저장 구조 구현을 통해 특정 이벤트 구간 데이터 확보 지원</li>
+                <li>사용자 정의 recording duration 기반 logging 기능 구현</li>
+                <li>차량 환경 내 안정적인 데이터 수집을 위한 storage · network resource 관리</li>
+              </ul>
+              <dl class="stack">
+                <div class="stack-item"><dt>Environment</dt><dd>Ubuntu · ROS1 Melodic</dd></div>
+                <div class="stack-item"><dt>Architecture</dt><dd>x86_64 · Arm64</dd></div>
+                <div class="stack-item"><dt>Language</dt><dd>C / C++</dd></div>
+                <div class="stack-item"><dt>Protocol</dt><dd>CAN · Ethernet</dd></div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PATENTS ====================== -->
+    <section id="patents" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">/ 05 — Patents</div>
+          <h2 class="section-title">특허 출원.</h2>
+        </div>
+
+        <div class="patent-list">
+          <div class="patent-row">
+            <div class="patent-status">// Filed · 2023</div>
+            <div class="patent-num">10-2023-0184273</div>
+            <div class="patent-title">끊김없는 네트워크 연결을 위한 이더넷 기반 차량용 네트워크 제어 장치 및 방법</div>
+          </div>
+          <div class="patent-row">
+            <div class="patent-status">// Filed · 2024</div>
+            <div class="patent-num">10-2024-0169568</div>
+            <div class="patent-title">자율주행 시스템의 검증을 위한 시뮬레이션 시스템 및 방법</div>
+          </div>
+          <div class="patent-row">
+            <div class="patent-status">// Filed · 2025</div>
+            <div class="patent-num">10-2025-0170094</div>
+            <div class="patent-title">운전자의 자세 모니터링을 통한 디지털 미러 조정 장치</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© 2026 Sangmin Kim — Platform Engineer</div>
+      <div style="display:flex;gap:24px;">
+        <a href="mailto:sm.kim1748@gmail.com">Email</a>
+        <a href="https://github.com/sm-kim1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sangmin-kim-a3257a160" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#top">↑ Top</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
