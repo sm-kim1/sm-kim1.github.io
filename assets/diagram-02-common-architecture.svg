@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Common SW Architecture" font-family="IBM Plex Sans, system-ui, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4D7C7D"></path>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FAFAF7"></rect>
+
+  
+  <text x="220" y="110" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="22" letter-spacing="4" text-anchor="middle" font-weight="600">STANDARDS</text>
+  <text x="800" y="110" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="22" letter-spacing="4" text-anchor="middle" font-weight="600">COMMON INTERFACE</text>
+  <text x="1380" y="110" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="22" letter-spacing="4" text-anchor="middle" font-weight="600">MODULES</text>
+
+  
+  <rect x="80" y="220" width="280" height="120" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="220" y="295" fill="#1A1A1A" font-size="36" text-anchor="middle" font-weight="500">STANAG</text>
+
+  <rect x="80" y="380" width="280" height="120" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="220" y="455" fill="#1A1A1A" font-size="36" text-anchor="middle" font-weight="500">JAUS</text>
+
+  
+  <path d="M 364 280 L 596 440" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <path d="M 364 440 L 596 460" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+
+  
+  <rect x="600" y="220" width="400" height="460" rx="5" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="3"></rect>
+  <text x="800" y="430" fill="#1A1A1A" font-size="40" text-anchor="middle" font-weight="500" letter-spacing="-0.5">Common</text>
+  <text x="800" y="478" fill="#1A1A1A" font-size="40" text-anchor="middle" font-weight="500" letter-spacing="-0.5">Message</text>
+  <text x="800" y="526" fill="#1A1A1A" font-size="40" text-anchor="middle" font-weight="500" letter-spacing="-0.5">Interface</text>
+
+  
+  <path d="M 1004 320 L 1236 240" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <path d="M 1004 400 L 1236 380" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <path d="M 1004 480 L 1236 520" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <path d="M 1004 560 L 1236 660" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+
+  
+  <rect x="1240" y="200" width="280" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="1380" y="255" fill="#1A1A1A" font-size="30" text-anchor="middle" font-weight="500">Module A</text>
+
+  <rect x="1240" y="340" width="280" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="1380" y="395" fill="#1A1A1A" font-size="30" text-anchor="middle" font-weight="500">Module B</text>
+
+  <rect x="1240" y="480" width="280" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="1380" y="535" fill="#1A1A1A" font-size="30" text-anchor="middle" font-weight="500">Module C</text>
+
+  <rect x="1240" y="620" width="280" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
+  <text x="1380" y="675" fill="#1A1A1A" font-size="30" text-anchor="middle" font-weight="500">Module N</text>
+</svg>
