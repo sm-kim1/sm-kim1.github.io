@@ -153,6 +153,7 @@ projects:
     - title: 시뮬레이터 동기화를 위한 이동형 모빌리티 셔틀
       period: 2022.07 — 2022.12
       role: Project Lead
+      image: assets/project-08-aica.avif
       tagline: 인공지능산업융합사업단 주관 ADAS 기술 검증을 위한 차량 플랫폼 제작.
       details: |
         - ADAS 시뮬레이터 연동을 위한 실차 기반 모빌리티 셔틀 플랫폼 구축
