@@ -9,3 +9,4 @@ _site/
 
 # Ruby deps
 vendor/
+.bundle/
