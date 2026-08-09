@@ -1,0 +1,6 @@
+{% assign d = site.data[page.data_file] %}
+<section class="section">
+  <div class="section-label">01 · ABOUT</div>
+  {% assign cp = d['career-profile'] %}
+  {{ cp.summary | markdownify }}
+</section>

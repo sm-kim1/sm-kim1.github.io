@@ -1,82 +1,108 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Autonomous vehicle data collection — snapshot and recording duration modes" font-family="IBM Plex Sans, system-ui, sans-serif">
   <defs>
-    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4D7C7D"></path>
+    <marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2F5959"/>
     </marker>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1A1A1A" flood-opacity="0.10"/>
+    </filter>
+    <filter id="soft-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A1A1A" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#E5E2D8"/>
+    </pattern>
+    <linearGradient id="hdr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4D7C7D"/>
+      <stop offset="1" stop-color="#3D6768"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1600" height="900" fill="#FAFAF7"></rect>
+  <rect width="1600" height="900" fill="#FAFAF7"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.55"/>
 
-  
+  <!-- title block -->
   <g>
-    <rect x="380" y="60" width="240" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
-    <text x="500" y="113" fill="#1A1A1A" font-size="26" text-anchor="middle" font-weight="500">Sensor</text>
-
-    <rect x="680" y="60" width="240" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
-    <text x="800" y="113" fill="#1A1A1A" font-size="26" text-anchor="middle" font-weight="500">CAN</text>
-
-    <rect x="980" y="60" width="240" height="90" rx="4" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"></rect>
-    <text x="1100" y="113" fill="#1A1A1A" font-size="26" text-anchor="middle" font-weight="500">ROS Topics</text>
+    <rect x="60" y="48" width="8" height="56" fill="#C97A5C"/>
+    <text x="92" y="76" fill="#9A988F" font-size="20" font-family="IBM Plex Mono, monospace" letter-spacing="4" font-weight="600">DIAGRAM 10</text>
+    <text x="92" y="106" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Data Collection — Snapshot &amp; Recording Duration</text>
   </g>
 
-  
-  <path d="M 800 165 L 800 235" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <!-- sources band -->
+  <g filter="url(#soft-sm)">
+    <rect x="330" y="150" width="940" height="120" rx="10" fill="#F1EFE7"/>
+  </g>
+  <text x="360" y="180" fill="#77756C" font-size="17" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">VEHICLE DATA SOURCES</text>
+  <g filter="url(#soft-sm)">
+    <rect x="360" y="194" width="270" height="58" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="665" y="194" width="270" height="58" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="970" y="194" width="270" height="58" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+  </g>
+  <g font-size="23" font-weight="500" fill="#1A1A1A" text-anchor="middle">
+    <text x="495" y="231">Sensor</text>
+    <text x="800" y="231">CAN</text>
+    <text x="1105" y="231">ROS Topics</text>
+  </g>
 
-  
-  <rect x="380" y="245" width="840" height="120" rx="5" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2.5"></rect>
-  <text x="800" y="320" fill="#1A1A1A" font-size="36" font-weight="500" letter-spacing="-0.5" text-anchor="middle">Data Collection Pipeline</text>
+  <!-- arrow to pipeline -->
+  <path d="M 800 275 L 800 320" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah3)"/>
+  <text x="880" y="305" fill="#2F5959" font-size="17" font-family="IBM Plex Mono, monospace" font-weight="600">ingest</text>
 
-  
-  <path d="M 540 380 L 420 470" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
-  <path d="M 1060 380 L 1180 470" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ah)"></path>
+  <!-- pipeline card -->
+  <g filter="url(#soft)">
+    <rect x="380" y="328" width="840" height="96" rx="12" fill="#FFFFFF"/>
+    <rect x="380" y="328" width="840" height="58" rx="12" fill="url(#hdr)"/>
+    <rect x="380" y="371" width="840" height="15" fill="#FFFFFF"/>
+  </g>
+  <text x="800" y="366" fill="#FFFFFF" font-size="25" font-weight="600" text-anchor="middle">Data Collection Pipeline</text>
+  <text x="800" y="410" fill="#77756C" font-size="16" font-family="IBM Plex Mono, monospace" letter-spacing="2" text-anchor="middle">storage · network resource managed</text>
 
-  
-  <rect x="80" y="480" width="680" height="360" rx="5" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-  <text x="110" y="540" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="22" letter-spacing="4" font-weight="600">MODE A</text>
-  <text x="110" y="600" fill="#1A1A1A" font-size="38" font-weight="500" letter-spacing="-0.5">Snapshot Logging</text>
-  <text x="110" y="640" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="18">event-triggered window</text>
+  <!-- arrows to modes -->
+  <path d="M 560 430 C 480 450, 450 470, 420 495" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah3)"/>
+  <path d="M 1040 430 C 1120 450, 1150 470, 1180 495" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah3)"/>
+  <text x="430" y="470" fill="#C97A5C" font-size="17" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">on event</text>
+  <text x="1180" y="470" fill="#2F5959" font-size="17" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">on demand</text>
 
-  
-  <line x1="110" y1="760" x2="730" y2="760" stroke="#9A988F" stroke-width="2"></line>
-  
+  <!-- MODE A card -->
+  <g filter="url(#soft)">
+    <rect x="80" y="505" width="690" height="340" rx="12" fill="#F8EEE9" stroke="#C97A5C" stroke-width="2"/>
+  </g>
+  <rect x="110" y="530" width="106" height="30" rx="15" fill="#C97A5C"/>
+  <text x="163" y="551" fill="#FFFFFF" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">MODE A</text>
+  <text x="110" y="605" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Snapshot Logging</text>
+  <text x="110" y="640" fill="#77756C" font-size="17" font-family="IBM Plex Mono, monospace">event-triggered window</text>
+
+  <line x1="110" y1="765" x2="740" y2="765" stroke="#9A988F" stroke-width="2"/>
   <g stroke="#9A988F" stroke-width="1.5">
-    <line x1="160" y1="755" x2="160" y2="765"></line>
-    <line x1="260" y1="755" x2="260" y2="765"></line>
-    <line x1="360" y1="755" x2="360" y2="765"></line>
-    <line x1="460" y1="755" x2="460" y2="765"></line>
-    <line x1="560" y1="755" x2="560" y2="765"></line>
-    <line x1="660" y1="755" x2="660" y2="765"></line>
+    <line x1="160" y1="760" x2="160" y2="770"/><line x1="260" y1="760" x2="260" y2="770"/>
+    <line x1="360" y1="760" x2="360" y2="770"/><line x1="460" y1="760" x2="460" y2="770"/>
+    <line x1="560" y1="760" x2="560" y2="770"/><line x1="660" y1="760" x2="660" y2="770"/>
   </g>
-  
-  <rect x="360" y="730" width="200" height="60" rx="3" fill="#4D7C7D" fill-opacity="0.18" stroke="#4D7C7D" stroke-width="2"></rect>
-  
-  <line x1="460" y1="700" x2="460" y2="800" stroke="#C97A5C" stroke-width="2.5"></line>
-  <circle cx="460" cy="700" r="8" fill="#C97A5C"></circle>
-  <text x="460" y="685" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#C97A5C" font-size="16" letter-spacing="2" text-anchor="middle" font-weight="600">EVENT</text>
-  <text x="460" y="820" fill="#2F5959" font-size="16" text-anchor="middle" font-weight="500">captured slice</text>
+  <rect x="360" y="735" width="200" height="60" rx="6" fill="#C97A5C" fill-opacity="0.22" stroke="#C97A5C" stroke-width="2"/>
+  <line x1="460" y1="705" x2="460" y2="805" stroke="#C97A5C" stroke-width="2.5"/>
+  <circle cx="460" cy="705" r="8" fill="#C97A5C"/>
+  <text x="460" y="690" fill="#C97A5C" font-size="16" font-family="IBM Plex Mono, monospace" letter-spacing="2" text-anchor="middle" font-weight="600">EVENT</text>
+  <text x="460" y="827" fill="#A65D41" font-size="16" text-anchor="middle" font-weight="500">captured slice — 이벤트 앞뒤 구간 확보</text>
 
-  
-  <rect x="840" y="480" width="680" height="360" rx="5" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-  <text x="870" y="540" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="22" letter-spacing="4" font-weight="600">MODE B</text>
-  <text x="870" y="600" fill="#1A1A1A" font-size="38" font-weight="500" letter-spacing="-0.5">Recording Duration</text>
-  <text x="870" y="640" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="18">user-defined time window</text>
+  <!-- MODE B card -->
+  <g filter="url(#soft)">
+    <rect x="830" y="505" width="690" height="340" rx="12" fill="#EAF1F1" stroke="#4D7C7D" stroke-width="2"/>
+  </g>
+  <rect x="860" y="530" width="106" height="30" rx="15" fill="#4D7C7D"/>
+  <text x="913" y="551" fill="#FFFFFF" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">MODE B</text>
+  <text x="860" y="605" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Recording Duration</text>
+  <text x="860" y="640" fill="#77756C" font-size="17" font-family="IBM Plex Mono, monospace">user-defined time window</text>
 
-  
-  <line x1="870" y1="760" x2="1490" y2="760" stroke="#9A988F" stroke-width="2"></line>
+  <line x1="860" y1="765" x2="1490" y2="765" stroke="#9A988F" stroke-width="2"/>
   <g stroke="#9A988F" stroke-width="1.5">
-    <line x1="920" y1="755" x2="920" y2="765"></line>
-    <line x1="1020" y1="755" x2="1020" y2="765"></line>
-    <line x1="1120" y1="755" x2="1120" y2="765"></line>
-    <line x1="1220" y1="755" x2="1220" y2="765"></line>
-    <line x1="1320" y1="755" x2="1320" y2="765"></line>
-    <line x1="1420" y1="755" x2="1420" y2="765"></line>
+    <line x1="910" y1="760" x2="910" y2="770"/><line x1="1010" y1="760" x2="1010" y2="770"/>
+    <line x1="1110" y1="760" x2="1110" y2="770"/><line x1="1210" y1="760" x2="1210" y2="770"/>
+    <line x1="1310" y1="760" x2="1310" y2="770"/><line x1="1410" y1="760" x2="1410" y2="770"/>
   </g>
-  
-  <rect x="970" y="730" width="400" height="60" rx="3" fill="#4D7C7D" fill-opacity="0.18" stroke="#4D7C7D" stroke-width="2"></rect>
-  
-  <line x1="970" y1="700" x2="970" y2="800" stroke="#4D7C7D" stroke-width="2.5"></line>
-  <line x1="1370" y1="700" x2="1370" y2="800" stroke="#4D7C7D" stroke-width="2.5"></line>
-  <text x="970" y="685" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="16" letter-spacing="2" text-anchor="middle" font-weight="600">START</text>
-  <text x="1370" y="685" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="16" letter-spacing="2" text-anchor="middle" font-weight="600">END</text>
-  <text x="1170" y="820" fill="#2F5959" font-size="16" text-anchor="middle" font-weight="500">continuous logging</text>
+  <rect x="960" y="735" width="400" height="60" rx="6" fill="#4D7C7D" fill-opacity="0.2" stroke="#4D7C7D" stroke-width="2"/>
+  <line x1="960" y1="705" x2="960" y2="805" stroke="#4D7C7D" stroke-width="2.5"/>
+  <line x1="1360" y1="705" x2="1360" y2="805" stroke="#4D7C7D" stroke-width="2.5"/>
+  <text x="960" y="690" fill="#2F5959" font-size="16" font-family="IBM Plex Mono, monospace" letter-spacing="2" text-anchor="middle" font-weight="600">START</text>
+  <text x="1360" y="690" fill="#2F5959" font-size="16" font-family="IBM Plex Mono, monospace" letter-spacing="2" text-anchor="middle" font-weight="600">END</text>
+  <text x="1160" y="827" fill="#2F5959" font-size="16" text-anchor="middle" font-weight="500">continuous logging — 사용자 지정 구간 연속 기록</text>
 </svg>

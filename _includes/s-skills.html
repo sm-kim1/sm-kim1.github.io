@@ -1,0 +1,12 @@
+{% assign d = site.data[page.data_file] %}
+<section class="section">
+  <div class="section-label">02 · SKILLS</div>
+  {% for group in d.skills.toolset %}
+  <div class="skill-group">
+    <span class="skill-name">{{ group.name }}</span>
+    <span class="chips">
+      {% for item in group.items %}<span class="chip">{{ item }}</span>{% endfor %}
+    </span>
+  </div>
+  {% endfor %}
+</section>

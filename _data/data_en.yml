@@ -1,0 +1,215 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
+sidebar:
+  position: left
+  about: false          # about goes to career-profile
+  education: false      # education goes to the main section
+
+  name: Sangmin Kim
+  tagline: Platform Engineer
+  avatar: profile.jpeg
+
+  email: sm.kim1748@gmail.com
+  github: sm-kim1
+  linkedin: sangmin-kim-a3257a160
+
+career-profile:
+  title: About
+  summary: |
+    I have developed Embedded Linux, ROS1/2, and CAN/Ethernet-based Middleware and Device
+    Integration architectures for autonomous vehicle and Small Unmanned Ground Vehicle (SUGV)
+    platforms. Rather than simple feature implementation, my strength lies in designing Runtime
+    Platforms that account for heterogeneous device connection/disconnection, state tracking,
+    interface standardization, fault recovery, and real-world field deployment.
+
+    ※ This portfolio summarizes project structures and contributions within what can be
+    publicly disclosed, and excludes detailed designs and confidential information belonging
+    to companies and clients.
+
+education:
+  title: Education
+  info:
+    - degree: Computer Science & Engineering
+      university: Soongsil University
+
+experiences:
+  title: Experience
+  info:
+    - role: Senior Research Engineer
+      time: 2023.11 — Present
+      company: ACEWORKS Korea
+      details: |
+        - Designed ROS2 autonomous driving platform architecture and built a common development environment
+        - Developed Embedded Linux platforms based on NVIDIA and Qualcomm SoCs
+        - Configured Yocto-based image build and development environments
+        - Developed ROS2 Middleware and Device Integration architecture for the platform
+        - Performed autonomous vehicle platform integration and on-site deployment
+    - role: Research Engineer
+      time: 2021.07 — 2023.10
+      company: ACELAB
+      details: |
+        - Developed ROS1/2 development templates and built the execution environment
+        - Built a Vehicle Control Interface connecting ROS nodes to the CAN control layer
+        - Built development, build, and deployment environments based on Arm64 targets
+        - Installed and validated vehicle control ECUs
+        - Performed autonomous vehicle retrofitting and platform integration
+
+projects:
+  title: Projects
+  assignments:
+    - title: Component Manager Development for a Small Unmanned Ground Vehicle (SUGV)
+      period: 2024.02 — 2025.12
+      role: Middleware Development
+      image: assets/diagram-01-component-manager.svg
+      tagline: Software development to support dynamic connection and disconnection of sensors/devices in the runtime environment of a ROS2-based SUGV platform.
+      details: |
+        - Developed a runtime component manager to handle hot-plug scenarios for sensors and devices
+        - Designed a Dynamic Device Pool architecture to manage devices connected/disconnected at runtime on a per-pool basis
+        - Implemented automatic registration/deregistration based on device connection/disconnection events
+        - Standardized initialization and shutdown procedures for heterogeneous devices through Device lifecycle abstraction
+        - Reduced per-device duplicate code by **23%** through a Generic Template-based service interface architecture
+        - Eliminated redundant repeated calls in steady state by switching from periodic polling to a first-connection cache approach
+        - Improved system stability by implementing timeout-based recovery/reconnect logic for failure scenarios
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: Common Software Architecture Development for a Small Unmanned Ground Vehicle (SUGV)
+      period: 2024.01 — 2024.04
+      role: Architecture Research · Middleware Development
+      image: assets/diagram-02-common-architecture.svg
+      tagline: Technical research and prototype development for a common SUGV software architecture and software message definitions.
+      details: |
+        - Designed a common message interface by analyzing STANAG and JAUS-based command-message structures
+        - Defined a platform-independent message structure for interoperability between heterogeneous modules
+        - Implemented a ROS2-based common message prototype and validated the pub/sub structure
+        - Developed an abstraction layer for data interface standardization
+        - Verified the communication structure based on the common message specification and performed module integration testing
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: ROS2 Multi-domain Template Development
+      period: 2023.11 — 2024.05
+      role: Platform Development
+      image: assets/diagram-03-multi-domain.svg
+      tagline: Development of a Multi-domain template to make the ROS2 development environment reusable.
+      details: |
+        - Migrated an existing ROS1 system to ROS2
+        - Developed a Multi-domain system to enable domain usage by function
+        - Built a template to separate domain-level scope and execution environments within a ROS2-based environment
+        - Improved Module Integration convenience by standardizing the ROS development environment across the vehicle platform
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: Autonomous Computing Platform based on NVIDIA Jetson
+      period: 2023.09 — 2025.12
+      role: Project Lead · Embedded Platform Development
+      image: assets/project-04-a1-driver.png
+      tagline: Planning of an NVIDIA Jetson-based distributed computing module and Kernel driver development.
+      details: |
+        - Performed BSP customization and boot/runtime stabilization on a Jetson Orin-based custom board environment
+        - Resolved device tree and peripheral compatibility issues during JetPack version migration
+        - Analyzed the mcp25xxfd driver and applied kernel patches to ensure CAN communication stability
+        - Stabilized packet loss and communication latency through Ethernet switch bottleneck analysis and driver-level tuning
+        - Performed boot image and peripheral initialization validation for AGX/NX targets
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
+
+    - title: Technology Development for an Emergency Vehicle Passage Support Service Based on Autonomous Driving Lv.4/4+
+      period: 2023.04 — 2027.12
+      role: Project Lead · Vehicle Platform Integration
+      image: assets/project-05-ambulance.png
+      tagline: Performed the Lv.4/4+ emergency-vehicle-focused public service task under the Ministry of Land, Infrastructure and Transport's Autonomous Driving Technology Development Innovation Project.
+      details: |
+        - Led inter-institutional collaboration as the in-house PL for a participating co-institution
+        - Coordinated platform requirements and led system integration across institutions
+        - Validated vehicle control interfaces based on emergency vehicle service scenarios
+        - Built the computing platform and performed vehicle retrofitting for Lv.4/4+ autonomous driving service vehicles
+        - Developed CAN-based vehicle control software and validated vehicle integration
+        - Developed and installed a computing module for executing autonomous driving algorithms and configured its runtime environment
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: Technology Development for an Urban Environment Management Service Based on Autonomous Driving Lv.4/4+
+      period: 2023.04 — 2027.12
+      role: Vehicle Platform Integration
+      image: assets/project-06-clean.jpg
+      tagline: Performed the Lv.4/4+ urban-environment-management-focused public service task under the Ministry of Land, Infrastructure and Transport's Autonomous Driving Technology Development Innovation Project.
+      details: |
+        - Built the platform as a participating researcher at a co-institution
+        - Built the computing platform and performed vehicle retrofitting for Lv.4/4+ autonomous driving service vehicles
+        - Developed CAN-based vehicle control software and validated vehicle integration
+        - Developed and installed a computing module for executing autonomous driving algorithms and configured its runtime environment
+        - Supported on-site deployment and platform maintenance
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: Building AME Operation Infrastructure for an E-Mobility-based Pro-VPP Demonstration
+      period: 2023.06 — 2023.12
+      role: Vehicle Platform Integration · Middleware Development
+      image: assets/project-07-keri.png
+      tagline: Development of a V2G technology platform for EV battery charging/discharging, led by the Korea Electrotechnology Research Institute (KERI).
+      details: |
+        - Developed software to convert destination/waypoint messages from the control center into a common message format within the platform
+        - Built and installed the autonomous vehicle's computing platform, and configured power, communication, and operating environments
+        - Built an autonomous driving test platform
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
+
+    - title: Mobile Mobility Shuttle for Simulator Synchronization
+      period: 2022.07 — 2022.12
+      role: Project Lead
+      image: assets/project-08-aica.avif
+      tagline: Built a real-vehicle platform to validate ADAS technology, led by the AI Industry Convergence Agency.
+      details: |
+        - Built a real-vehicle-based mobility shuttle platform for ADAS simulator integration
+        - Developed CAN control software integrated with the vehicle control ECU
+        - Built and installed the autonomous vehicle's computing platform, and configured power, communication, and operating environments
+        - Operated a test platform to validate the autonomous driving runtime environment
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: Development of Demand-Responsive Automated Valet Parking and Service Technology
+      period: 2022.04 — 2025.12
+      role: Vehicle Platform Integration
+      image: assets/project-09-avps.png
+      tagline: Design and development of an automated valet parking system satisfying the ISO 23374 standard, led by the Ministry of Trade, Industry and Energy.
+      details: |
+        - Built and installed the autonomous vehicle's computing platform, and configured power, communication, and operating environments
+        - Developed CAN-based position data conversion software for the target automated parking vehicle and validated vehicle integration
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: Development of a Data Collection Device for Autonomous Vehicles
+      period: 2022.07 — 2022.12
+      role: Middleware Development
+      image: assets/diagram-10-data-collection.svg
+      tagline: Software development to collect data required for development and validation on autonomous vehicles.
+      details: |
+        - Built a data logging pipeline for autonomous driving development and validation
+        - Designed the data collection flow between the vehicle platform and the computing environment
+        - Implemented a snapshot-based data storage structure to support data capture for specific event windows
+        - Implemented logging functionality based on user-defined recording duration
+        - Managed storage and network resources for stable data collection within the vehicle environment
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: x86_64 · Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
+
+publications:
+  title: Patents
+  papers:
+    - title: Ethernet-based Vehicle Network Control Device and Method for Seamless Network Connectivity
+      conference: Application No. 10-2023-0184273 (filed 2023)
+    - title: Simulation System and Method for Validating Autonomous Driving Systems
+      conference: Application No. 10-2024-0169568 (filed 2024)
+    - title: Digital Mirror Adjustment Device Based on Driver Posture Monitoring
+      conference: Application No. 10-2025-0170094 (filed 2025)
+
+skills:
+  title: Skills
+  toolset:
+    - name: Language
+      items: [C, C++, Python, Shell]
+    - name: System
+      items: [Ubuntu, Embedded Linux, Yocto]
+    - name: Middleware
+      items: [ROS1, ROS2]
+    - name: Platform
+      items: [NVIDIA Jetson series, Qualcomm SoC]
+    - name: Protocol
+      items: [CAN, Ethernet]
+    - name: Tool
+      items: [vim, gdb, docker, CMake, Visual Studio]
+
+footer: >
+  © 2026 Sangmin Kim. Powered by <a href="https://github.com/sharu725/online-cv" target="_blank" rel="nofollow">online-cv</a> theme.

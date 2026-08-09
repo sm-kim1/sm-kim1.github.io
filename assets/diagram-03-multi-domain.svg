@@ -1,101 +1,107 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="ROS2 Multi-domain Template — isolated communication domains" font-family="IBM Plex Sans, system-ui, sans-serif">
   <defs>
-    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4D7C7D"></path>
+    <marker id="ahg2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4D7C7D"/>
     </marker>
-    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9A988F"></path>
-    </marker>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1A1A1A" flood-opacity="0.10"/>
+    </filter>
+    <filter id="soft-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A1A1A" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#E5E2D8"/>
+    </pattern>
   </defs>
 
-  <rect width="1600" height="900" fill="#FAFAF7"></rect>
+  <rect width="1600" height="900" fill="#FAFAF7"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.55"/>
 
-  
-  <text x="800" y="100" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="22" letter-spacing="4" text-anchor="middle" font-weight="600">ROS2 SYSTEM · MULTI-DOMAIN TEMPLATE</text>
-
-  
-  <rect x="80" y="140" width="1440" height="640" rx="6" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2.5"></rect>
-
-  
+  <!-- title block -->
   <g>
-    <rect x="130" y="200" width="640" height="260" rx="5" fill="#FAFAF7" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="160" y="245" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#1A1A1A" font-size="22" letter-spacing="3" font-weight="600">DOMAIN 01</text>
-    <text x="730" y="245" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="18" letter-spacing="2" text-anchor="end" font-weight="500">DOMAIN_ID = 10</text>
-    <line x1="160" y1="265" x2="740" y2="265" stroke="#E5E2D8"></line>
-
-    
-    <rect x="180" y="320" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="260" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /a</text>
-
-    <rect x="395" y="320" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="475" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /b</text>
-
-    <rect x="610" y="320" width="130" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="675" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /c</text>
-
-    
-    <path d="M 340 360 L 395 360" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-    <path d="M 555 360 L 610 360" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-
-    <text x="160" y="430" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="16">/topic_perception</text>
+    <rect x="60" y="48" width="8" height="56" fill="#C97A5C"/>
+    <text x="92" y="76" fill="#9A988F" font-size="20" font-family="IBM Plex Mono, monospace" letter-spacing="4" font-weight="600">DIAGRAM 03</text>
+    <text x="92" y="106" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">ROS2 Multi-domain Template — Isolated Communication Scopes</text>
   </g>
 
-  
-  <g>
-    <rect x="830" y="200" width="640" height="260" rx="5" fill="#FAFAF7" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="860" y="245" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#1A1A1A" font-size="22" letter-spacing="3" font-weight="600">DOMAIN 02</text>
-    <text x="1430" y="245" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="18" letter-spacing="2" text-anchor="end" font-weight="500">DOMAIN_ID = 20</text>
-    <line x1="860" y1="265" x2="1440" y2="265" stroke="#E5E2D8"></line>
-
-    <rect x="880" y="320" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="960" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /a</text>
-
-    <rect x="1095" y="320" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="1175" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /b</text>
-
-    <rect x="1310" y="320" width="130" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="1375" y="370" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /c</text>
-
-    <path d="M 1040 360 L 1095 360" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-    <path d="M 1255 360 L 1310 360" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-
-    <text x="860" y="430" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="16">/topic_control</text>
+  <!-- system frame -->
+  <g filter="url(#soft-sm)">
+    <rect x="80" y="150" width="1440" height="620" rx="12" fill="#F1EFE7"/>
   </g>
+  <text x="110" y="190" fill="#77756C" font-size="17" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">ROS2 SYSTEM · ONE VEHICLE PLATFORM</text>
 
-  
-  <g>
-    <rect x="130" y="490" width="640" height="260" rx="5" fill="#FAFAF7" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="160" y="535" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#1A1A1A" font-size="22" letter-spacing="3" font-weight="600">DOMAIN 03</text>
-    <text x="730" y="535" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#2F5959" font-size="18" letter-spacing="2" text-anchor="end" font-weight="500">DOMAIN_ID = 30</text>
-    <line x1="160" y1="555" x2="740" y2="555" stroke="#E5E2D8"></line>
-
-    <rect x="180" y="610" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="260" y="660" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /a</text>
-
-    <rect x="395" y="610" width="160" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="475" y="660" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /b</text>
-
-    <rect x="610" y="610" width="130" height="80" rx="4" fill="#FFFFFF" stroke="#4D7C7D" stroke-width="2"></rect>
-    <text x="675" y="660" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">node /c</text>
-
-    <path d="M 340 650 L 395 650" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-    <path d="M 555 650 L 610 650" stroke="#9A988F" stroke-width="2" fill="none" marker-end="url(#ahg)"></path>
-
-    <text x="160" y="720" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#6B6960" font-size="16">/topic_mission</text>
+  <!-- domain 01 -->
+  <g filter="url(#soft)">
+    <rect x="115" y="215" width="660" height="255" rx="10" fill="#EAF1F1" stroke="#4D7C7D" stroke-width="2"/>
   </g>
-
-  
-  <g>
-    <rect x="830" y="490" width="640" height="260" rx="5" fill="#FAFAF7" stroke="#C5C2B8" stroke-width="2" stroke-dasharray="6 5"></rect>
-    <text x="860" y="535" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#9A988F" font-size="22" letter-spacing="3" font-weight="600">DOMAIN N</text>
-    <text x="1430" y="535" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#9A988F" font-size="18" letter-spacing="2" text-anchor="end" font-weight="500">DOMAIN_ID = …</text>
-    <line x1="860" y1="555" x2="1440" y2="555" stroke="#E5E2D8"></line>
-    <text x="1150" y="660" fill="#9A988F" font-size="24" text-anchor="middle">— scalable per template —</text>
+  <text x="145" y="257" fill="#1A1A1A" font-size="21" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">DOMAIN 01 · PERCEPTION</text>
+  <rect x="612" y="234" width="140" height="30" rx="15" fill="#4D7C7D"/>
+  <text x="682" y="255" fill="#FFFFFF" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">ID = 10</text>
+  <g filter="url(#soft-sm)">
+    <rect x="145" y="290" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="375" y="290" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="605" y="290" width="145" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
   </g>
+  <g font-size="22" font-weight="500" fill="#1A1A1A" text-anchor="middle">
+    <text x="230" y="338">node /a</text>
+    <text x="460" y="338">node /b</text>
+    <text x="677" y="338">node /c</text>
+  </g>
+  <path d="M 320 330 L 368 330" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ahg2)"/>
+  <path d="M 550 330 L 598 330" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ahg2)"/>
+  <text x="145" y="435" fill="#2F5959" font-size="16" font-family="IBM Plex Mono, monospace">/topic_perception</text>
 
-  
-  <text x="800" y="478" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" fill="#C97A5C" font-size="14" letter-spacing="3" text-anchor="middle" font-weight="600">ISOLATED · NO CROSS-DOMAIN TRAFFIC</text>
+  <!-- domain 02 -->
+  <g filter="url(#soft)">
+    <rect x="825" y="215" width="660" height="255" rx="10" fill="#EAF1F1" stroke="#4D7C7D" stroke-width="2"/>
+  </g>
+  <text x="855" y="257" fill="#1A1A1A" font-size="21" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">DOMAIN 02 · CONTROL</text>
+  <rect x="1322" y="234" width="140" height="30" rx="15" fill="#4D7C7D"/>
+  <text x="1392" y="255" fill="#FFFFFF" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">ID = 20</text>
+  <g filter="url(#soft-sm)">
+    <rect x="855" y="290" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="1085" y="290" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="1315" y="290" width="145" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+  </g>
+  <g font-size="22" font-weight="500" fill="#1A1A1A" text-anchor="middle">
+    <text x="940" y="338">node /a</text>
+    <text x="1170" y="338">node /b</text>
+    <text x="1387" y="338">node /c</text>
+  </g>
+  <path d="M 1030 330 L 1078 330" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ahg2)"/>
+  <path d="M 1260 330 L 1308 330" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ahg2)"/>
+  <text x="855" y="435" fill="#2F5959" font-size="16" font-family="IBM Plex Mono, monospace">/topic_control</text>
 
-  
-  <text x="800" y="840" fill="#1A1A1A" font-size="22" text-anchor="middle" font-weight="500">Each domain operates in an isolated communication scope · standardized template per domain.</text>
+  <!-- isolation divider -->
+  <line x1="130" y1="497" x2="1470" y2="497" stroke="#C97A5C" stroke-width="1.5" stroke-dasharray="10 8"/>
+  <rect x="590" y="482" width="420" height="30" rx="15" fill="#FAFAF7" stroke="#C97A5C" stroke-width="1.5"/>
+  <text x="800" y="503" fill="#C97A5C" font-size="15" font-family="IBM Plex Mono, monospace" letter-spacing="3" text-anchor="middle" font-weight="600">ISOLATED · NO CROSS-DOMAIN TRAFFIC</text>
+
+  <!-- domain 03 -->
+  <g filter="url(#soft)">
+    <rect x="115" y="525" width="660" height="220" rx="10" fill="#EAF1F1" stroke="#4D7C7D" stroke-width="2"/>
+  </g>
+  <text x="145" y="567" fill="#1A1A1A" font-size="21" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">DOMAIN 03 · MISSION</text>
+  <rect x="612" y="544" width="140" height="30" rx="15" fill="#4D7C7D"/>
+  <text x="682" y="565" fill="#FFFFFF" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">ID = 30</text>
+  <g filter="url(#soft-sm)">
+    <rect x="145" y="595" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="375" y="595" width="170" height="80" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+  </g>
+  <g font-size="22" font-weight="500" fill="#1A1A1A" text-anchor="middle">
+    <text x="230" y="643">node /a</text>
+    <text x="460" y="643">node /b</text>
+  </g>
+  <path d="M 320 635 L 368 635" stroke="#4D7C7D" stroke-width="2.5" fill="none" marker-end="url(#ahg2)"/>
+  <text x="145" y="715" fill="#2F5959" font-size="16" font-family="IBM Plex Mono, monospace">/topic_mission</text>
+
+  <!-- domain N -->
+  <rect x="825" y="525" width="660" height="220" rx="10" fill="#FAFAF7" stroke="#C5C2B8" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="855" y="567" fill="#9A988F" font-size="21" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">DOMAIN N</text>
+  <rect x="1322" y="544" width="140" height="30" rx="15" fill="#E5E2D8"/>
+  <text x="1392" y="565" fill="#77756C" font-size="16" font-family="IBM Plex Mono, monospace" font-weight="600" text-anchor="middle">ID = …</text>
+  <text x="1155" y="650" fill="#9A988F" font-size="22" text-anchor="middle">— 템플릿으로 도메인 추가 확장 —</text>
+
+  <!-- bottom note -->
+  <text x="800" y="836" fill="#77756C" font-size="19" text-anchor="middle">기능 도메인마다 통신 범위와 실행 환경 분리 — 템플릿 하나로 도메인 표준화 · Module Integration 단순화</text>
 </svg>

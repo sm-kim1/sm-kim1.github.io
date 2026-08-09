@@ -6,3 +6,6 @@ _site/
 
 # Brainstorm sessions
 .superpowers/
+
+# Ruby deps
+vendor/

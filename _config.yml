@@ -1,1 +1,24 @@
-title: Sangmin's portfolio
+# Site Settings
+title: Sangmin Kim — Platform Engineer
+url: 'https://sm-kim1.github.io'
+description: 자율주행 차량과 SUGV 플랫폼의 Embedded Linux · ROS2 Middleware · Device Integration을 다루는 Platform Engineer 김상민의 포트폴리오.
+
+encoding: "utf-8"
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Development Settings
+port: 4000
+host: 0.0.0.0
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docker-compose.yml
+  - docs/
+  - vendor/
+  - README.md
+  - THEME-LICENSE.md

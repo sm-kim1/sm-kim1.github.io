@@ -1,0 +1,27 @@
+---
+layout: print
+permalink: /print
+data_file: data_ko
+lang: ko
+---
+
+
+{% include career-profile.html %}
+
+{% unless site.data[page.data_file].sidebar.education %}
+  {% include education.html %}
+{% endunless %}
+
+{% include experiences.html %}
+
+{% include certifications.html %}
+
+{% include projects.html %}
+
+{% include oss-contributions.html %}
+
+{% include publications.html %}
+
+{% include recommendations.html %}
+
+{% include skills.html %}

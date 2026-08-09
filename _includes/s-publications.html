@@ -1,0 +1,10 @@
+{% assign d = site.data[page.data_file] %}
+<section class="section">
+  <div class="section-label">05 · PATENTS</div>
+  {% for p in d.publications.papers %}
+  <div class="plain-item">
+    <h3>{{ p.title }}</h3>
+    <p class="meta">{{ p.conference }}</p>
+  </div>
+  {% endfor %}
+</section>

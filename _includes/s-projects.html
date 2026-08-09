@@ -1,0 +1,16 @@
+{% assign d = site.data[page.data_file] %}
+<section class="section">
+  <div class="section-label">04 · PROJECTS</div>
+  {% for a in d.projects.assignments %}
+  <div class="project">
+    <h3>{{ a.title }}</h3>
+    <p class="meta">{{ a.period }}{% if a.role %} · {{ a.role }}{% endif %}</p>
+    {% if a.tagline %}<p class="tagline">{{ a.tagline }}</p>{% endif %}
+    {{ a.details | markdownify }}
+    {% if a.image %}
+    {% assign imgpath = a.image | relative_url %}
+    <figure class="figure"><img src="{{ imgpath }}" alt="{{ a.title }} 다이어그램" loading="lazy"></figure>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>
