@@ -1,0 +1,215 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
+sidebar:
+  position: left
+  about: false          # about은 career-profile로 감
+  education: false      # education은 본문 섹션으로
+
+  name: Sangmin Kim
+  tagline: Platform Engineer
+  avatar: profile.jpeg
+
+  email: sm.kim1748@gmail.com
+  github: sm-kim1
+  linkedin: sangmin-kim-a3257a160
+
+career-profile:
+  title: About
+  summary: |
+    자율주행 차량과 소형 무인 지상 차량(SUGV) 플랫폼에서 Embedded Linux, ROS1/2, CAN/Ethernet
+    기반 Middleware와 Device Integration 구조를 개발해 왔습니다. 단순 기능 구현보다는
+    이기종 장치의 연결·해제, 상태 추적, 인터페이스 표준화, 장애 복구, 실제 현장 적용까지를
+    고려한 Runtime Platform 설계에 강점이 있습니다.
+
+    ※ 본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
+    회사 · 고객사의 세부 설계와 비공개 정보는 제외했습니다.
+
+education:
+  title: 학력
+  info:
+    - degree: Computer Science & Engineering
+      university: 숭실대학교
+
+experiences:
+  title: 경력
+  info:
+    - company: ACEWORKS Korea
+      time: 2021.07 — 현재
+      note: 2023.11 인수합병에 따라 ACELAB에서 사명 변경
+      roles:
+        - role: Senior Research Engineer
+          time: 2023.11 — 현재
+          details: |
+            - ROS2 자율주행 플랫폼 아키텍처 설계 및 공통 개발 환경 구축
+            - NVIDIA · Qualcomm SoC 기반 Embedded Linux 플랫폼 개발
+            - Yocto 기반 이미지 빌드 환경 및 개발 환경 구성
+            - 플랫폼용 ROS2 Middleware 및 Device Integration 구조 개발
+            - 자율주행 차량 플랫폼 통합 및 현장 deployment 수행
+        - role: Research Engineer
+          time: 2021.07 — 2023.10
+          details: |
+            - ROS1 / 2 개발 템플릿 개발 및 실행 환경 구축
+            - ROS node와 CAN 제어 계층을 잇는 Vehicle Control Interface 구성
+            - Arm64 target 기반 개발 · 빌드 · 배포 환경 구축
+            - 차량 제어 ECU 설치 및 검증
+            - 자율주행 차량 개조 및 플랫폼 통합
+
+projects:
+  title: 대표 프로젝트
+  assignments:
+    - title: 소형 무인 지상 차량(SUGV) Component Manager 개발
+      period: 2024.02 — 2025.12
+      role: Middleware Development
+      image: assets/diagram-01-component-manager.svg
+      tagline: ROS2 기반 SUGV 플랫폼의 런타임 환경에서 센서 · 디바이스의 동적 연결 및 해제를 지원하기 위한 SW 개발.
+      details: |
+        - 센서 및 디바이스의 hot-plug 상황을 처리하기 위한 런타임 컴포넌트 매니저 개발
+        - Dynamic Device Pool 구조를 설계하여 런타임 중 연결 · 해제되는 디바이스를 Pool 단위로 관리
+        - 디바이스 연결 · 해제 이벤트 기반 자동 등록 / 해제 기능 구현
+        - Device lifecycle 추상화를 통해 이기종 디바이스 초기화 및 종료 절차 표준화
+        - Generic Template 기반 서비스 인터페이스 구조 설계를 통해 디바이스별 중복 코드 **23% 감소**
+        - Periodic polling에서 first-connection cache 방식으로 변경하여 안정 상태의 반복 호출 제거
+        - 장애 발생 시 timeout 기반 recovery / reconnect 로직 구현으로 시스템 안정성 향상
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: 소형 무인 지상 차량(SUGV) 공통 SW 아키텍처 개발
+      period: 2024.01 — 2024.04
+      role: Architecture Research · Middleware Development
+      image: assets/diagram-02-common-architecture.svg
+      tagline: SUGV 공통 SW 아키텍처와 소프트웨어 메시지 정의를 위한 기술 조사 및 프로토타입 개발.
+      details: |
+        - STANAG 및 JAUS 기반 command-message 구조를 분석하여 공통 메시지 인터페이스 설계
+        - 이기종 모듈 간 상호 운용을 위한 플랫폼 독립형 메시지 구조 정의
+        - ROS2 기반 공통 메시지 프로토타입 구현 및 pub / sub 구조 검증
+        - 데이터 인터페이스 표준화를 위한 추상화 레이어 개발
+        - 공통 메시지 규격 기반 통신 구조 검증 및 모듈 연동 테스트 수행
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: ROS2 Multi-domain Template 개발
+      period: 2023.11 — 2024.05
+      role: Platform Development
+      image: assets/diagram-03-multi-domain.svg
+      tagline: ROS2 개발 환경을 재사용 가능하게 구성하기 위한 Multi-domain template 개발.
+      details: |
+        - 기존 ROS1 시스템의 ROS2 마이그레이션 진행
+        - 기능별 도메인 사용을 위해 Multi-domain 시스템 개발
+        - ROS2 기반 환경에서 domain 단위 범위와 실행 환경을 분리할 수 있는 템플릿 구성
+        - 차량 플랫폼 내 ROS 개발 환경을 표준화하여 Module Integration 편의성 개선
+        - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
+
+    - title: Autonomous Computing Platform based on NVIDIA Jetson
+      period: 2023.09 — 2025.12
+      role: Project Lead · Embedded Platform Development
+      image: assets/project-04-a1-driver.png
+      tagline: NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.
+      details: |
+        - Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행
+        - JetPack version migration 과정에서 device tree 및 peripheral 호환성 이슈 해결
+        - CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용
+        - Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화
+        - AGX / NX target 별 boot image 및 peripheral 초기화 검증 수행
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
+
+    - title: 자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발
+      period: 2023.04 — 2027.12
+      role: Project Lead · Vehicle Platform Integration
+      image: assets/project-05-ambulance.png
+      tagline: 국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 긴급차량 중심 공공서비스 과제 수행.
+      details: |
+        - 공동기관 참여연구원으로 사내 PL을 맡아 기관 간 협업 주도
+        - 기관 간 플랫폼 요구사항 조율 및 시스템 통합 주도
+        - 긴급차량 서비스 시나리오 기반 차량 제어 인터페이스 검증
+        - Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행
+        - CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증
+        - 자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: 자율주행 Lv.4 / 4+ 기반 도시환경관리 서비스 기술 개발
+      period: 2023.04 — 2027.12
+      role: Vehicle Platform Integration
+      image: assets/project-06-clean.jpg
+      tagline: 국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 도시환경관리 중심 공공서비스 과제 수행.
+      details: |
+        - 공동기관 참여연구원으로 플랫폼 구축 진행
+        - Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행
+        - CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증
+        - 자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성
+        - 현장 deployment 및 플랫폼 유지보수 지원
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: E-Mobility 기반 Pro-VPP 실증용 AME 운용 인프라 구축
+      period: 2023.06 — 2023.12
+      role: Vehicle Platform Integration · Middleware Development
+      image: assets/project-07-keri.png
+      tagline: 한국전기연구원(KERI) 주관, 전기차 배터리 충 · 방전을 위한 V2G 기술 개발 플랫폼 개발.
+      details: |
+        - 관제에서 오는 목적지 · 경유지 메시지를 Platform 내 공통 message 형태로 변환하는 SW 개발
+        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
+        - 자율주행 테스트 플랫폼 구축
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
+
+    - title: 시뮬레이터 동기화를 위한 이동형 모빌리티 셔틀
+      period: 2022.07 — 2022.12
+      role: Project Lead
+      image: assets/project-08-aica.avif
+      tagline: 인공지능산업융합사업단 주관 ADAS 기술 검증을 위한 차량 플랫폼 제작.
+      details: |
+        - ADAS 시뮬레이터 연동을 위한 실차 기반 모빌리티 셔틀 플랫폼 구축
+        - 차량 제어 ECU와 연동되는 CAN 제어 소프트웨어 개발
+        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
+        - 자율주행 runtime 환경 검증을 위한 테스트 플랫폼 운영
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: 수요응답형 자동발렛주차 및 서비스 기술 개발
+      period: 2022.04 — 2025.12
+      role: Vehicle Platform Integration
+      image: assets/project-09-avps.png
+      tagline: 산업통상자원부 주관, ISO 23374 표준을 만족하는 자동발렛주차 시스템 설계 및 개발.
+      details: |
+        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
+        - CAN 기반 타겟 자동 주차 차량의 위치 정보 변환 소프트웨어 개발 및 차량 연동 검증
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
+
+    - title: 자율주행 자동차 데이터 수집 장치 개발
+      period: 2022.07 — 2022.12
+      role: Middleware Development
+      image: assets/diagram-10-data-collection.svg
+      tagline: 자율주행 차량에서 개발 · 검증에 필요한 데이터를 수집하기 위한 SW 개발.
+      details: |
+        - 자율주행 개발 · 검증용 데이터 로깅 파이프라인 구성
+        - 차량 플랫폼과 컴퓨팅 환경 간 데이터 수집 흐름 설계
+        - Snapshot 기반 데이터 저장 구조 구현을 통해 특정 이벤트 구간 데이터 확보 지원
+        - 사용자 정의 recording duration 기반 logging 기능 구현
+        - 차량 환경 내 안정적인 데이터 수집을 위한 storage · network resource 관리
+        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: x86_64 · Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
+
+publications:
+  title: 특허
+  papers:
+    - title: 끊김없는 네트워크 연결을 위한 이더넷 기반 차량용 네트워크 제어 장치 및 방법
+      conference: 출원번호 10-2023-0184273 (2023년 출원)
+    - title: 자율주행 시스템의 검증을 위한 시뮬레이션 시스템 및 방법
+      conference: 출원번호 10-2024-0169568 (2024년 출원)
+    - title: 운전자의 자세 모니터링을 통한 디지털 미러 조정 장치
+      conference: 출원번호 10-2025-0170094 (2025년 출원)
+
+skills:
+  title: 기술 스택
+  toolset:
+    - name: Language
+      items: [C, C++, Python, Shell]
+    - name: System
+      items: [Ubuntu, Embedded Linux, Yocto]
+    - name: Middleware
+      items: [ROS1, ROS2]
+    - name: Platform
+      items: [NVIDIA Jetson series, Qualcomm SoC]
+    - name: Protocol
+      items: [CAN, Ethernet]
+    - name: Tool
+      items: [vim, gdb, docker, CMake, Visual Studio]
+
+footer: >
+  © 2026 Sangmin Kim. Powered by <a href="https://github.com/sharu725/online-cv" target="_blank" rel="nofollow">online-cv</a> theme.
