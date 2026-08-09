@@ -1,0 +1,8 @@
+# Cache
+_site/
+.sass-cache/
+.jekyll-metadata
+.jekyll-cache
+
+# Brainstorm sessions
+.superpowers/
