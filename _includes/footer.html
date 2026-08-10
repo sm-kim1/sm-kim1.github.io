@@ -1,3 +1,5 @@
+{% assign d = site.data[page.data_file] %}
 <footer class="site-footer">
+  <p class="disclaimer">※ {{ d.disclaimer }}</p>
   © {{ 'now' | date: "%Y" }} Sangmin Kim
 </footer>

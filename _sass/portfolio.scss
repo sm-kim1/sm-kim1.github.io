@@ -162,8 +162,10 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   img { width: 100%; display: block; }
 }
 
-// ── simple lists (patents, education) ───────────────────
-.plain-item { margin-bottom: 12px; }
+// ── simple lists (patents, gov projects) ────────────────
+.plain-item { margin-bottom: 16px; }
+
+.gov-summary { font-size: .9rem; color: #4a4a44; }
 
 // ── footer ──────────────────────────────────────────────
 .site-footer {
@@ -173,6 +175,13 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   font-family: $mono;
   font-size: .75rem;
   color: $muted;
+
+  .disclaimer {
+    font-family: $sans;
+    font-size: .78rem;
+    color: #9A988F;
+    margin-bottom: 10px;
+  }
 }
 
 // ── responsive ──────────────────────────────────────────

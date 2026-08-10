@@ -8,7 +8,7 @@ sidebar:
   education: false      # education은 본문 섹션으로
 
   name: Sangmin Kim
-  tagline: Platform Engineer
+  tagline: Platform Engineer · 5+ years
   avatar: profile.jpeg
 
   email: sm.kim1748@gmail.com
@@ -23,8 +23,9 @@ career-profile:
     이기종 장치의 연결·해제, 상태 추적, 인터페이스 표준화, 장애 복구, 실제 현장 적용까지를
     고려한 Runtime Platform 설계에 강점이 있습니다.
 
-    ※ 본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
-    회사 · 고객사의 세부 설계와 비공개 정보는 제외했습니다.
+disclaimer: >
+  본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
+  회사 · 고객사의 세부 설계와 비공개 정보는 제외했습니다.
 
 education:
   title: 학력
@@ -112,66 +113,6 @@ projects:
         - AGX / NX target 별 boot image 및 peripheral 초기화 검증 수행
         - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
 
-    - title: 자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발
-      period: 2023.04 — 2027.12
-      role: Project Lead · Vehicle Platform Integration
-      image: assets/project-05-ambulance.png
-      tagline: 국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 긴급차량 중심 공공서비스 과제 수행.
-      details: |
-        - 공동기관 참여연구원으로 사내 PL을 맡아 기관 간 협업 주도
-        - 기관 간 플랫폼 요구사항 조율 및 시스템 통합 주도
-        - 긴급차량 서비스 시나리오 기반 차량 제어 인터페이스 검증
-        - Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행
-        - CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증
-        - 자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성
-        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
-
-    - title: 자율주행 Lv.4 / 4+ 기반 도시환경관리 서비스 기술 개발
-      period: 2023.04 — 2027.12
-      role: Vehicle Platform Integration
-      image: assets/project-06-clean.jpg
-      tagline: 국토부 자율주행기술개발혁신사업의 Lv.4 / 4+ 도시환경관리 중심 공공서비스 과제 수행.
-      details: |
-        - 공동기관 참여연구원으로 플랫폼 구축 진행
-        - Lv.4 / 4+ 자율주행 서비스 차량의 컴퓨팅 플랫폼 구축 및 차량 개조 진행
-        - CAN 기반 차량 제어 소프트웨어 개발 및 차량 연동 검증
-        - 자율주행 알고리즘 수행을 위한 컴퓨팅 모듈 개발, 설치 및 runtime 환경 구성
-        - 현장 deployment 및 플랫폼 유지보수 지원
-        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
-
-    - title: E-Mobility 기반 Pro-VPP 실증용 AME 운용 인프라 구축
-      period: 2023.06 — 2023.12
-      role: Vehicle Platform Integration · Middleware Development
-      image: assets/project-07-keri.png
-      tagline: 한국전기연구원(KERI) 주관, 전기차 배터리 충 · 방전을 위한 V2G 기술 개발 플랫폼 개발.
-      details: |
-        - 관제에서 오는 목적지 · 경유지 메시지를 Platform 내 공통 message 형태로 변환하는 SW 개발
-        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
-        - 자율주행 테스트 플랫폼 구축
-        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
-
-    - title: 시뮬레이터 동기화를 위한 이동형 모빌리티 셔틀
-      period: 2022.07 — 2022.12
-      role: Project Lead
-      image: assets/project-08-aica.avif
-      tagline: 인공지능산업융합사업단 주관 ADAS 기술 검증을 위한 차량 플랫폼 제작.
-      details: |
-        - ADAS 시뮬레이터 연동을 위한 실차 기반 모빌리티 셔틀 플랫폼 구축
-        - 차량 제어 ECU와 연동되는 CAN 제어 소프트웨어 개발
-        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
-        - 자율주행 runtime 환경 검증을 위한 테스트 플랫폼 운영
-        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
-
-    - title: 수요응답형 자동발렛주차 및 서비스 기술 개발
-      period: 2022.04 — 2025.12
-      role: Vehicle Platform Integration
-      image: assets/project-09-avps.png
-      tagline: 산업통상자원부 주관, ISO 23374 표준을 만족하는 자동발렛주차 시스템 설계 및 개발.
-      details: |
-        - 자율주행 차량의 컴퓨팅 플랫폼 구축 및 탑재, 전원 · 통신 · 운영 환경 구성
-        - CAN 기반 타겟 자동 주차 차량의 위치 정보 변환 소프트웨어 개발 및 차량 연동 검증
-        - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: Arm64 / Language: C / C++ / Protocol: CAN
-
     - title: 자율주행 자동차 데이터 수집 장치 개발
       period: 2022.07 — 2022.12
       role: Middleware Development
@@ -184,6 +125,30 @@ projects:
         - 사용자 정의 recording duration 기반 logging 기능 구현
         - 차량 환경 내 안정적인 데이터 수집을 위한 storage · network resource 관리
         - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: x86_64 · Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
+
+gov_projects:
+  title: 정부과제 수행
+  items:
+    - title: 자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발
+      period: 2023.04 — 2027.12
+      role: Project Lead · Vehicle Platform Integration
+      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 사내 PL로 기관 간 협업 · 시스템 통합 주도, Lv.4/4+ 서비스 차량 플랫폼 구축 및 CAN 제어 SW 개발.
+    - title: 자율주행 Lv.4 / 4+ 기반 도시환경관리 서비스 기술 개발
+      period: 2023.04 — 2027.12
+      role: Vehicle Platform Integration
+      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 서비스 차량 컴퓨팅 플랫폼 구축 · 차량 개조, 현장 deployment 및 유지보수.
+    - title: E-Mobility 기반 Pro-VPP 실증용 AME 운용 인프라 구축
+      period: 2023.06 — 2023.12
+      role: Vehicle Platform Integration · Middleware Development
+      summary: 한국전기연구원(KERI) 주관 V2G 기술 개발. 관제 메시지를 플랫폼 공통 message로 변환하는 SW 개발, 테스트 플랫폼 구축.
+    - title: 시뮬레이터 동기화를 위한 이동형 모빌리티 셔틀
+      period: 2022.07 — 2022.12
+      role: Project Lead
+      summary: 인공지능산업융합사업단 주관 ADAS 검증용 실차 셔틀 플랫폼 구축. CAN 제어 SW 개발 및 runtime 검증 환경 운영.
+    - title: 수요응답형 자동발렛주차 및 서비스 기술 개발
+      period: 2022.04 — 2025.12
+      role: Vehicle Platform Integration
+      summary: 산업통상자원부 주관, ISO 23374 자동발렛주차 시스템. 차량 컴퓨팅 플랫폼 구축, 위치 정보 변환 SW 개발 · 연동 검증.
 
 publications:
   title: 특허
