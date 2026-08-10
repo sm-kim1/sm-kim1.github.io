@@ -120,7 +120,7 @@ projects:
         - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson (AGX Orin · Orin NX) / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
 
     - title: Jetson BSP의 Yocto 포팅 및 최소화 이미지 빌드
-      period: 2026 — 현재
+      period: 2025.03 — 현재
       role: Embedded Platform Development
       tagline: Ubuntu 기반 JetPack BSP를 Yocto 빌드 시스템으로 포팅하여 재현 가능한 최소화 이미지 구축.
       details: |
