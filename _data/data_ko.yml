@@ -21,10 +21,10 @@ career-profile:
     센서가 꽂히고 빠져도, 커널이 업데이트돼도, 차는 계속 달려야 합니다.
     저는 그걸 가능하게 하는 Runtime Platform을 만듭니다.
 
-    자율주행 차량과 소형 무인 지상 차량(SUGV) 플랫폼에서 5년 넘게 ROS1/2 Middleware와
-    Device Integration 구조를 설계했고, 최근에는 NVIDIA Jetson 커스텀 보드의
-    BSP · 커널 드라이버 · Yocto 이미지까지 내려가 보드 레벨부터 미들웨어까지
-    전체 스택을 다룹니다.
+    본업은 보드 레벨입니다. NVIDIA Jetson 커스텀 보드의 BSP customization,
+    커널 드라이버 디버깅, Device Tree, Yocto 최소화 이미지 빌드가 주 영역이고,
+    그 위에 올라가는 ROS1/2 Middleware와 Device Integration 설계까지 이어서 다룹니다.
+    5년 넘게 자율주행 차량 플랫폼을 이 스택 위에서 구축 · 통합해 왔습니다.
 
     - 정부 R&D 과제 5건에서 자율주행 차량 플랫폼 구축, 특허 등록 1건 · 출원 2건
     - Generic Template 기반 인터페이스 설계로 디바이스별 중복 코드 **23% 감소**
@@ -51,9 +51,9 @@ experiences:
         - role: Senior Research Engineer
           time: 2023.11 — 현재
           details: |
-            - ROS2 자율주행 플랫폼 아키텍처 설계 및 공통 개발 환경 구축
             - NVIDIA · Qualcomm SoC 기반 Embedded Linux 플랫폼 개발
             - Yocto 기반 이미지 빌드 환경 및 개발 환경 구성
+            - ROS2 자율주행 플랫폼 아키텍처 설계 및 공통 개발 환경 구축
             - 플랫폼용 ROS2 Middleware 및 Device Integration 구조 개발
             - 자율주행 차량 플랫폼 통합 및 현장 deployment 수행
         - role: Research Engineer
@@ -68,6 +68,33 @@ experiences:
 projects:
   title: 대표 프로젝트
   assignments:
+    - title: Autonomous Computing Platform based on NVIDIA Jetson
+      period: 2023.09 — 2025.12
+      role: Project Lead · Embedded Platform Development
+      image: assets/project-04-a1-driver.png
+      tagline: NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.
+      details: |
+        - Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행
+        - JetPack version migration 과정에서 device tree 및 peripheral 호환성 이슈 해결
+        - GMSL 카메라 드라이버 및 vi5 capture 경로 디버깅 — busy-loop · DMA leak 수정으로 반복 캡처 안정화
+        - apt kernel 업데이트가 custom kernel · DTB를 덮어쓰는 문제의 근본 원인 분석 및 방지 처리
+        - CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용
+        - Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화
+        - AGX / NX target 별 boot image 및 peripheral 초기화 검증, 현장 배포용 self-contained field patch 도구 제작
+        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson (AGX Orin · Orin NX) / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
+
+    - title: Jetson BSP의 Yocto 포팅 및 최소화 이미지 빌드
+      period: 2025.03 — 현재
+      role: Embedded Platform Development
+      tagline: Ubuntu 기반 JetPack BSP를 Yocto 빌드 시스템으로 포팅하여 재현 가능한 최소화 이미지 구축.
+      details: |
+        - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 4.0 LTS) 빌드로 포팅
+        - 단일 custom layer로 Orin NX · AGX Orin 두 machine 정의 — override 구문으로 보드별 분기, 레이어 수정 한 번으로 양쪽 반영
+        - JetPack 대비 디스크 사용량 · 패키지 수 **91% 감소**한 최소화 이미지 구성
+        - shared sstate-cache · downloads 구조로 두 machine 간 빌드 산출물 재사용
+        - Yocto 미경험 엔지니어용 온보딩 가이드 · BSP 구조 문서 작성
+        - **Stack**: Build: Yocto scarthgap · BitBake / Base: L4T R35.6.4 · JetPack 5.1.6 · kernel 5.10 / Architecture: Arm64
+
     - title: 소형 무인 지상 차량(SUGV) Component Manager 개발
       period: 2024.02 — 2025.12
       role: Middleware Development
@@ -107,33 +134,6 @@ projects:
         - ROS2 기반 환경에서 domain 단위 범위와 실행 환경을 분리할 수 있는 템플릿 구성
         - 차량 플랫폼 내 ROS 개발 환경을 표준화하여 Module Integration 편의성 개선
         - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
-
-    - title: Autonomous Computing Platform based on NVIDIA Jetson
-      period: 2023.09 — 2025.12
-      role: Project Lead · Embedded Platform Development
-      image: assets/project-04-a1-driver.png
-      tagline: NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.
-      details: |
-        - Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행
-        - JetPack version migration 과정에서 device tree 및 peripheral 호환성 이슈 해결
-        - GMSL 카메라 드라이버 및 vi5 capture 경로 디버깅 — busy-loop · DMA leak 수정으로 반복 캡처 안정화
-        - apt kernel 업데이트가 custom kernel · DTB를 덮어쓰는 문제의 근본 원인 분석 및 방지 처리
-        - CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용
-        - Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화
-        - AGX / NX target 별 boot image 및 peripheral 초기화 검증, 현장 배포용 self-contained field patch 도구 제작
-        - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson (AGX Orin · Orin NX) / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
-
-    - title: Jetson BSP의 Yocto 포팅 및 최소화 이미지 빌드
-      period: 2025.03 — 현재
-      role: Embedded Platform Development
-      tagline: Ubuntu 기반 JetPack BSP를 Yocto 빌드 시스템으로 포팅하여 재현 가능한 최소화 이미지 구축.
-      details: |
-        - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 4.0 LTS) 빌드로 포팅
-        - 단일 custom layer로 Orin NX · AGX Orin 두 machine 정의 — override 구문으로 보드별 분기, 레이어 수정 한 번으로 양쪽 반영
-        - JetPack 대비 디스크 사용량 · 패키지 수 **91% 감소**한 최소화 이미지 구성
-        - shared sstate-cache · downloads 구조로 두 machine 간 빌드 산출물 재사용
-        - Yocto 미경험 엔지니어용 온보딩 가이드 · BSP 구조 문서 작성
-        - **Stack**: Build: Yocto scarthgap · BitBake / Base: L4T R35.6.4 · JetPack 5.1.6 · kernel 5.10 / Architecture: Arm64
 
     - title: 자율주행 자동차 데이터 수집 장치 개발
       period: 2022.07 — 2022.12
