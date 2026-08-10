@@ -187,12 +187,14 @@ skills:
   toolset:
     - name: Language
       items: [C, C++, Python, Shell]
+    - name: Kernel · BSP
+      items: [Linux Kernel Driver, Device Tree, JetPack · L4T, Yocto · BitBake]
     - name: System
-      items: [Ubuntu, Embedded Linux, Yocto]
+      items: [Ubuntu, Embedded Linux]
     - name: Middleware
       items: [ROS1, ROS2]
     - name: Platform
-      items: [NVIDIA Jetson series, Qualcomm SoC]
+      items: [NVIDIA Jetson (AGX Orin · Orin NX), Qualcomm SoC]
     - name: Protocol
       items: [CAN, Ethernet]
     - name: Tool
