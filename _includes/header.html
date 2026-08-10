@@ -9,4 +9,8 @@
     <span class="sep">·</span>
     <a href="https://www.linkedin.com/in/{{ sb.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
   </p>
+  {% assign d = site.data[page.data_file] %}
+  {% for e in d.education.info %}
+  <p class="edu">{{ e.university }} · {{ e.degree }}</p>
+  {% endfor %}
 </header>

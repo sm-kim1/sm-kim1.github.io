@@ -55,6 +55,13 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
 
     .sep { margin: 0 .5em; color: $hairline; }
   }
+
+  .edu {
+    margin-top: 4px;
+    font-family: $mono;
+    font-size: .78rem;
+    color: #9A988F;
+  }
 }
 
 // ── sections ────────────────────────────────────────────
