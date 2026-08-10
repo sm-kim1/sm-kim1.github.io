@@ -18,5 +18,22 @@
     </main>
     {% include footer.html %}
   </div>
+  <script>
+    document.addEventListener('click', function (e) {
+      var img = e.target.closest('.figure img');
+      if (!img) return;
+      var box = document.createElement('div');
+      box.className = 'lightbox';
+      var big = document.createElement('img');
+      big.src = img.src;
+      big.alt = img.alt;
+      box.appendChild(big);
+      box.addEventListener('click', function () { box.remove(); });
+      document.addEventListener('keydown', function esc(ev) {
+        if (ev.key === 'Escape') { box.remove(); document.removeEventListener('keydown', esc); }
+      });
+      document.body.appendChild(box);
+    });
+  </script>
 </body>
 </html>

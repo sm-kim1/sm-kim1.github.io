@@ -13,7 +13,7 @@ $mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 // ── base ────────────────────────────────────────────────
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { font-size: 16px; }
+html { font-size: 17px; }
 
 body {
   background: $paper;
@@ -85,6 +85,14 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   font-weight: 600;
   letter-spacing: -.01em;
   line-height: 1.45;
+}
+
+// CJK 가독성: 텍스트만 한 줄 ~40자로 제한, 그림은 전폭 유지
+.section p,
+.section ul,
+.section h3,
+.section h4 {
+  max-width: 40rem;
 }
 
 .meta {
@@ -166,7 +174,27 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   overflow: hidden;
   background: #fff;
 
-  img { width: 100%; display: block; }
+  img { width: 100%; display: block; cursor: zoom-in; }
+}
+
+// ── lightbox ────────────────────────────────────────────
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, .82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+  cursor: zoom-out;
+  z-index: 10;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    background: #fff;
+    border-radius: 6px;
+  }
 }
 
 // ── simple lists (patents, gov projects) ────────────────
