@@ -68,7 +68,7 @@ projects:
     - title: Autonomous Computing Platform based on NVIDIA Jetson
       period: 2023.09 — 2025.12
       role: Project Lead · Embedded Platform Development
-      image: assets/project-04-a1-driver.png
+      image: assets/diagram-04-computing-platform.svg
       tagline: NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.
       details: |
         - Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행
@@ -146,7 +146,7 @@ projects:
         - **Stack**: Environment: Ubuntu · ROS1 Melodic / Architecture: x86_64 · Arm64 / Language: C / C++ / Protocol: CAN · Ethernet
 
 gov_projects:
-  title: 정부과제 수행
+  title: 과제 수행 이력
   items:
     - title: 자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발
       period: 2023.04 — 2027.12

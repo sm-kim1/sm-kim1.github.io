@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Autonomous computing platform BSP and kernel stack" font-family="IBM Plex Sans, system-ui, sans-serif">
+  <defs>
+    <marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2F5959"/>
+    </marker>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1A1A1A" flood-opacity="0.10"/>
+    </filter>
+    <filter id="soft-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A1A1A" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#E5E2D8"/>
+    </pattern>
+    <linearGradient id="hdr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4D7C7D"/>
+      <stop offset="1" stop-color="#3D6768"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FAFAF7"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.55"/>
+
+  <!-- title block -->
+  <g>
+    <rect x="60" y="48" width="8" height="56" fill="#C97A5C"/>
+    <text x="92" y="76" fill="#9A988F" font-size="20" font-family="IBM Plex Mono, monospace" letter-spacing="4" font-weight="600">DIAGRAM 04</text>
+    <text x="92" y="106" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Autonomous Computing Platform — BSP &amp; Kernel Stack</text>
+  </g>
+
+  <!-- application layer -->
+  <g filter="url(#soft-sm)">
+    <rect x="200" y="160" width="1200" height="92" rx="10" fill="#F1EFE7"/>
+  </g>
+  <text x="230" y="198" fill="#77756C" font-size="17" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">APPLICATION</text>
+  <text x="800" y="222" fill="#1A1A1A" font-size="26" font-weight="500" text-anchor="middle">ROS1 · Autonomous Driving Stack</text>
+
+  <path d="M 800 258 L 800 292" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah4)"/>
+
+  <!-- os layer -->
+  <g filter="url(#soft)">
+    <rect x="200" y="300" width="1200" height="150" rx="12" fill="#FFFFFF"/>
+    <rect x="200" y="300" width="1200" height="54" rx="12" fill="url(#hdr)"/>
+    <rect x="200" y="340" width="1200" height="14" fill="#FFFFFF"/>
+  </g>
+  <text x="230" y="336" fill="#FFFFFF" font-size="22" font-weight="600">EMBEDDED LINUX</text>
+  <g font-size="22" font-weight="500" fill="#1A1A1A" text-anchor="middle">
+    <text x="500" y="410">Ubuntu · L4T R35 (JetPack)</text>
+    <text x="1100" y="410">Yocto minimal image — <tspan font-weight="600">-91%</tspan> footprint</text>
+  </g>
+  <line x1="800" y1="370" x2="800" y2="435" stroke="#E5E2D8" stroke-width="1.5"/>
+
+  <path d="M 800 456 L 800 490" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah4)"/>
+
+  <!-- kernel layer -->
+  <g filter="url(#soft)">
+    <rect x="200" y="498" width="1200" height="212" rx="12" fill="#EAF1F1" stroke="#4D7C7D" stroke-width="2"/>
+  </g>
+  <text x="230" y="536" fill="#2F5959" font-size="17" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">KERNEL 5.10 · CUSTOM DRIVERS · DEVICE TREE</text>
+  <g filter="url(#soft-sm)">
+    <rect x="230" y="560" width="270" height="110" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="524" y="560" width="270" height="110" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="818" y="560" width="270" height="110" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+    <rect x="1112" y="560" width="258" height="110" rx="8" fill="#FFFFFF" stroke="#D8D5C9" stroke-width="1.5"/>
+  </g>
+  <g font-size="22" font-weight="600" fill="#1A1A1A">
+    <text x="255" y="600">GMSL Camera</text>
+    <text x="549" y="600">CAN</text>
+    <text x="843" y="600">Ethernet</text>
+    <text x="1137" y="600">Device Tree</text>
+  </g>
+  <g font-size="15" fill="#77756C" font-family="IBM Plex Mono, monospace">
+    <text x="255" y="628">vi5 capture path</text>
+    <text x="549" y="628">mcp25xxfd patch</text>
+    <text x="843" y="628">switch tuning</text>
+    <text x="1137" y="628">pinmux · overlay</text>
+  </g>
+  <g font-size="14" font-family="IBM Plex Mono, monospace" font-weight="600">
+    <rect x="255" y="640" width="150" height="24" rx="12" fill="#C97A5C"/>
+    <text x="330" y="657" fill="#FFFFFF" text-anchor="middle">DMA LEAK FIX</text>
+    <rect x="549" y="640" width="130" height="24" rx="12" fill="#4D7C7D"/>
+    <text x="614" y="657" fill="#FFFFFF" text-anchor="middle">STABILIZED</text>
+    <rect x="843" y="640" width="150" height="24" rx="12" fill="#4D7C7D"/>
+    <text x="918" y="657" fill="#FFFFFF" text-anchor="middle">NO PKT LOSS</text>
+    <rect x="1137" y="640" width="130" height="24" rx="12" fill="#C97A5C"/>
+    <text x="1202" y="657" fill="#FFFFFF" text-anchor="middle">DTB GUARD</text>
+  </g>
+
+  <path d="M 800 716 L 800 750" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah4)"/>
+
+  <!-- hardware layer -->
+  <g filter="url(#soft-sm)">
+    <rect x="200" y="758" width="1200" height="92" rx="10" fill="#2F3B3B"/>
+  </g>
+  <text x="230" y="796" fill="#9FB8B8" font-size="17" font-family="IBM Plex Mono, monospace" letter-spacing="3" font-weight="600">HARDWARE</text>
+  <text x="800" y="818" fill="#FFFFFF" font-size="26" font-weight="500" text-anchor="middle">NVIDIA Jetson AGX Orin · Orin NX + Custom Carrier Board</text>
+
+  <!-- side annotation -->
+  <text x="1400" y="486" fill="#C97A5C" font-size="16" font-family="IBM Plex Mono, monospace" letter-spacing="2" text-anchor="end" font-weight="600">self-contained field patch</text>
+</svg>
