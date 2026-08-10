@@ -18,14 +18,18 @@ sidebar:
 career-profile:
   title: About
   summary: |
-    자율주행 차량과 소형 무인 지상 차량(SUGV) 플랫폼에서 Embedded Linux, ROS1/2, CAN/Ethernet
-    기반 Middleware와 Device Integration 구조를 개발해 왔습니다. 단순 기능 구현보다는
-    이기종 장치의 연결·해제, 상태 추적, 인터페이스 표준화, 장애 복구, 실제 현장 적용까지를
-    고려한 Runtime Platform 설계에 강점이 있습니다.
+    센서가 꽂히고 빠져도, 커널이 업데이트돼도, 차는 계속 달려야 합니다.
+    저는 그걸 가능하게 하는 Runtime Platform을 만듭니다.
 
-    최근에는 NVIDIA Jetson 커스텀 보드에서 BSP customization, 커널 드라이버 디버깅
-    (카메라 capture 경로, CAN, Ethernet), Device Tree 수정, Yocto 기반 최소화 이미지
-    빌드까지 — 보드 레벨부터 미들웨어까지 플랫폼 전체 스택을 직접 다루고 있습니다.
+    자율주행 차량과 소형 무인 지상 차량(SUGV) 플랫폼에서 5년 넘게 ROS1/2 Middleware와
+    Device Integration 구조를 설계했고, 최근에는 NVIDIA Jetson 커스텀 보드의
+    BSP · 커널 드라이버 · Yocto 이미지까지 내려가 보드 레벨부터 미들웨어까지
+    전체 스택을 다룹니다.
+
+    - 정부 R&D 과제 5건에서 자율주행 차량 플랫폼 구축, 특허 3건 출원
+    - Generic Template 기반 인터페이스 설계로 디바이스별 중복 코드 **23% 감소**
+    - Yocto 최소화 이미지로 JetPack 대비 디스크 · 패키지 **91% 축소**
+    - 커널 드라이버(카메라 capture · CAN) 근본 원인 수정으로 현장 안정성 확보
 
 disclaimer: >
   본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
