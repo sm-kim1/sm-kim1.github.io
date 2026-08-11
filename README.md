@@ -1,21 +1,28 @@
 # sm-kim1.github.io
 
-포트폴리오 · [sharu725/online-cv](https://github.com/sharu725/online-cv) 테마 기반.
+포트폴리오. 자체 제작 미니멀 단일 컬럼 Jekyll 테마 (IBM Plex, 종이색 + 청록 팔레트).
 
-## 내용 수정
+## 구조
 
-- 한국어: `_data/data_ko.yml`
-- English: `_data/data_en.yml`
-
-두 파일은 키 구조가 같아야 한다. 프로젝트 추가 = `projects.assignments`에 항목 하나 추가.
+- 내용: `_data/data_ko.yml` — 모든 섹션 텍스트가 여기 있음. 프로젝트 추가 = `projects.assignments`에 항목 추가 (`image` 키는 선택)
+- 레이아웃: `_layouts/default.html` + `_includes/s-*.html` (섹션별)
+- 스타일: `_sass/portfolio.scss` 단일 파일
+- 다이어그램: `assets/diagram-*.svg` — 공통 스타일(제목 블록 · 점 패턴 배경 · 그림자 카드 · 상태 알약), viewBox 1600×900
 
 ## 로컬 미리보기
 
 ```bash
-docker compose up
-# http://localhost:4000 (한국어), /en/ (영문)
+bundle install          # 최초 1회 (vendor/bundle에 설치됨)
+bundle exec jekyll serve
+# http://localhost:4000
 ```
+
+GitHub Pages와 동일한 `github-pages` gem을 쓰므로 로컬 결과 = 배포 결과.
 
 ## 배포
 
 `main`에 push하면 GitHub Pages가 자동 빌드한다.
+
+## 인쇄
+
+별도 인쇄 페이지 없음 — 브라우저 인쇄로 충분 (`@media print` 스타일 포함).
