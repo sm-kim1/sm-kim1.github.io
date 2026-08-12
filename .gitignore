@@ -10,3 +10,4 @@ _site/
 # Ruby deps
 vendor/
 .bundle/
+HANDOFF.md

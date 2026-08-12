@@ -74,6 +74,7 @@ projects:
         - Jetson Orin 기반 Custom board 환경에서 BSP Customization 및 boot · runtime 안정화 수행
         - JetPack version migration 과정에서 device tree 및 peripheral 호환성 이슈 해결
         - GMSL 카메라 드라이버 및 vi5 capture 경로 디버깅 — busy-loop · DMA leak 수정으로 반복 캡처 안정화
+        - 플랫폼 시각 동기화 체계 구축 — ZED-F9R GNSS 모듈의 GPS 시각 기준 chrony 시스템 시간 동기화, PTP 지원 센서 대상 PTP 시각 동기화 적용
         - apt kernel 업데이트가 custom kernel · DTB를 덮어쓰는 문제의 근본 원인 분석 및 방지 처리
         - CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용
         - Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화
@@ -193,7 +194,7 @@ skills:
     - name: Platform
       items: [NVIDIA Jetson (AGX Orin · Orin NX), Qualcomm SoC]
     - name: Protocol
-      items: [CAN, Ethernet]
+      items: [CAN, Ethernet, PTP]
     - name: Tool
       items: [vim, gdb, docker, CMake, Visual Studio]
 
