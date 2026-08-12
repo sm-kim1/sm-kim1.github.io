@@ -1,0 +1,155 @@
+---
+layout: null
+data_file: data_ko
+lang: ko
+permalink: /print/
+---
+{% assign d = site.data[page.data_file] %}
+{% assign sb = d.sidebar %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>포트폴리오 — 김상민</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 11mm 15mm; }
+    html { font-size: 10pt; }
+    body {
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      color: #1A1A1A;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    header { border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 14px; }
+    header h1 { font-size: 21pt; font-weight: 700; letter-spacing: -.02em; }
+    header h1 .en { font-size: 10pt; font-weight: 400; color: #77756C; margin-left: .4em; }
+    header .title { color: #2F5959; font-weight: 600; font-size: 12pt; }
+    header .line { font-size: 8.5pt; color: #77756C; margin-top: 3px; }
+    header .line .sep { margin: 0 .45em; color: #C5C2B8; }
+
+    section { margin-bottom: 10px; }
+    .label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8pt; font-weight: 600; letter-spacing: 2.5px;
+      color: #2F5959; border-top: 1.5pt solid #4D7C7D;
+      padding-top: 5px; margin-bottom: 7px;
+      break-after: avoid-page;
+    }
+
+    .about-box {
+      background: #F6F5EF; border-left: 3px solid #4D7C7D;
+      padding: 6px 10px; margin-top: 6px;
+    }
+    ul { padding-left: 1.15em; }
+    li { margin-bottom: 1px; }
+    li::marker { color: #4D7C7D; }
+
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
+    .skills .row { display: flex; gap: 10px; font-size: 9pt; }
+    .skills .k { font-family: 'IBM Plex Mono', monospace; font-size: 8pt; font-weight: 600; color: #77756C; min-width: 72px; padding-top: 1px; }
+
+    .head-line { display: flex; justify-content: space-between; align-items: baseline; }
+    .head-line h3 { font-size: 11pt; font-weight: 600; }
+    .meta { font-family: 'IBM Plex Mono', monospace; font-size: 8pt; color: #77756C; }
+    .note { font-size: 8.5pt; color: #77756C; font-style: italic; }
+    .role { margin: 5px 0 7px 10px; padding-left: 9px; border-left: 1.5pt solid #E5E2D8; }
+    .role h4 { font-size: 10pt; font-weight: 600; display: inline; }
+
+    .item { break-inside: avoid; margin-bottom: 10px; }
+    .item .roleline { color: #A65D41; font-size: 8.5pt; font-weight: 600; }
+    .item .tagline { font-size: 9pt; color: #4a4a44; margin: 1px 0 2px; }
+    .stack {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; color: #77756C;
+      background: #F1EFE7; border-radius: 3px; padding: 2px 7px; margin-top: 3px;
+    }
+    .gov { break-inside: avoid; margin-bottom: 7px; }
+    .gov p { font-size: 9pt; color: #4a4a44; }
+    .pat { break-inside: avoid; margin-bottom: 6px; }
+    .pat h3 { font-size: 10pt; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>김상민 <span class="en">{{ sb.name }}</span></h1>
+    <div class="title">{{ sb.tagline }}</div>
+    <div class="line">{{ sb.affiliation }}<span class="sep">·</span>숭실대학교 Computer Science &amp; Engineering</div>
+    <div class="line mono">{{ sb.email }}<span class="sep">·</span>Portfolio: https://sm-kim1.github.io</div>
+  </header>
+
+  <section>
+    <div class="label">01 · ABOUT</div>
+    {% assign cp = d['career-profile'] %}
+    {% assign parts = cp.summary | split: "- " %}
+    <p style="font-size:10pt">{{ parts[0] | strip }}</p>
+    <div class="about-box"><ul>
+      {% for b in parts offset:1 %}<li style="font-size:9.5pt">{{ b | strip | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="label">02 · SKILLS</div>
+    <div class="skills">
+      {% for g in d.skills.toolset %}
+      <div class="row"><span class="k">{{ g.name }}</span><span>{{ g.items | join: ' · ' }}</span></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <div class="label">03 · EXPERIENCE</div>
+    {% for xp in d.experiences.info %}
+    <div class="head-line"><h3>{{ xp.company }}</h3><span class="meta">{{ xp.time }}</span></div>
+    {% if xp.note %}<div class="note">{{ xp.note }}</div>{% endif %}
+    {% for r in xp.roles %}
+    <div class="role">
+      <h4>{{ r.role }}</h4> <span class="meta">· {{ r.time }}</span>
+      {{ r.details | markdownify }}
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </section>
+
+  <section style="break-before: page">
+    <div class="label">04 · PROJECTS</div>
+    {% for a in d.projects.assignments %}
+    <div class="item">
+      <div class="head-line"><h3>{{ a.title }}</h3><span class="meta">{{ a.period }}</span></div>
+      <div class="roleline">{{ a.role }}</div>
+      {% if a.tagline %}<div class="tagline">{{ a.tagline }}</div>{% endif %}
+      {% assign body = a.details | split: '- **Stack**:' %}
+      {{ body[0] | markdownify }}
+      {% if body[1] %}<div class="stack">{{ body[1] | strip | markdownify | remove: '<p>' | remove: '</p>' }}</div>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <div class="label">05 · R&amp;D PROGRAMS</div>
+    {% for g in d.gov_projects.items %}
+    <div class="gov">
+      <div class="head-line"><h3 style="font-size:10pt">{{ g.title }}</h3><span class="meta">{{ g.period }}</span></div>
+      <div class="roleline" style="font-size:8pt">{{ g.role }}</div>
+      <p>{{ g.summary }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <div class="label">06 · PATENTS</div>
+    {% for p in d.publications.papers %}
+    <div class="pat">
+      <h3>{{ p.title }}</h3>
+      <div class="meta">{{ p.conference }}</div>
+    </div>
+    {% endfor %}
+  </section>
+</body>
+</html>
