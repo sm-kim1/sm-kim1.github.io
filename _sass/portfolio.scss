@@ -87,11 +87,9 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   line-height: 1.45;
 }
 
-// CJK 가독성: 텍스트만 한 줄 ~40자로 제한, 그림은 전폭 유지
+// CJK 가독성: 본문 텍스트만 한 줄 ~40자로 제한 — 제목·그림은 전폭
 .section p,
-.section ul,
-.section h3,
-.section h4 {
+.section ul {
   max-width: 40rem;
 }
 
