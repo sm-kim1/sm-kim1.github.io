@@ -21,6 +21,8 @@ body {
   font-family: $sans;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;        // 한글 단어 중간 개행 방지
+  overflow-wrap: break-word;
 }
 
 a { color: $teal-deep; text-decoration: none; border-bottom: 1px solid rgba($teal, .35); }
@@ -87,9 +89,8 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   line-height: 1.45;
 }
 
-// CJK 가독성: 본문 텍스트만 한 줄 ~40자로 제한 — 제목·그림은 전폭
-.section p,
-.section ul {
+// CJK 가독성: 서술형 문단만 한 줄 ~40자로 제한 — 제목·불릿·그림은 전폭
+.section p {
   max-width: 40rem;
 }
 
