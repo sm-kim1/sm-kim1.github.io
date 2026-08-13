@@ -29,7 +29,7 @@ a { color: $teal-deep; text-decoration: none; border-bottom: 1px solid rgba($tea
 a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
 
 .wrap {
-  max-width: 820px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 64px 28px 40px;
 }
@@ -89,10 +89,6 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   line-height: 1.45;
 }
 
-// CJK 가독성: 서술형 문단만 한 줄 ~40자로 제한 — 제목·불릿·그림은 전폭
-.section p {
-  max-width: 40rem;
-}
 
 .meta {
   font-family: $mono;
