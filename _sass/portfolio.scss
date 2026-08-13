@@ -68,8 +68,6 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
 
 // ── sections ────────────────────────────────────────────
 .section {
-  border-top: 2px solid $teal;
-  padding-top: 18px;
   margin-bottom: 52px;
 }
 
@@ -79,6 +77,8 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   font-weight: 600;
   letter-spacing: 3px;
   color: $teal-deep;
+  border-bottom: 2px solid $teal;
+  padding-bottom: 8px;
   margin-bottom: 18px;
 }
 
