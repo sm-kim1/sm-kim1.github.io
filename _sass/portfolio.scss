@@ -162,6 +162,14 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
   .tagline { color: $muted; font-size: .92rem; margin-bottom: 4px; }
 }
 
+.case-link {
+  font-family: $mono;
+  font-size: .84rem;
+  margin-top: 8px;
+
+  a { font-weight: 600; }
+}
+
 .figure {
   margin-top: 14px;
   border: 1px solid $hairline;
@@ -196,6 +204,60 @@ a:hover { color: $terra; border-bottom-color: rgba($terra, .5); }
 .plain-item { margin-bottom: 16px; }
 
 .gov-summary { font-size: .9rem; color: #4a4a44; }
+
+// ── case study pages ────────────────────────────────────
+.case {
+  .case-back { margin-bottom: 40px; font-family: $mono; font-size: .82rem; }
+  .case-kicker { font-family: $mono; font-size: .78rem; font-weight: 600; letter-spacing: 3px; color: $terra; }
+  .case-header { margin-bottom: 40px; h1 { font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.35; } }
+
+  main h2 {
+    font-family: $mono;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: $teal-deep;
+    border-bottom: 2px solid $teal;
+    padding-bottom: 8px;
+    margin: 44px 0 16px;
+  }
+  main h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+  main p { margin-bottom: 10px; }
+  main ul { padding-left: 1.2em; margin: 6px 0 12px; li { margin-bottom: 3px; } li::marker { color: $teal; } }
+
+  main table {
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: .9rem;
+    th, td { border: 1px solid $hairline; padding: 6px 12px; text-align: left; }
+    th { background: #F1EFE7; font-weight: 600; }
+  }
+
+  main code {
+    font-family: $mono;
+    font-size: .84em;
+    background: #F1EFE7;
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+  main pre {
+    background: #2F3B3B;
+    border-radius: 8px;
+    padding: 14px 18px;
+    overflow-x: auto;
+    margin: 12px 0;
+    code { background: none; color: #E8EDED; padding: 0; font-size: .82rem; line-height: 1.6; }
+  }
+
+  main blockquote {
+    border-left: 3px solid $terra;
+    background: #F8EEE9;
+    padding: 8px 14px;
+    margin: 12px 0;
+    color: #4a4a44;
+    font-size: .92rem;
+  }
+}
 
 // ── footer ──────────────────────────────────────────────
 .site-footer {

@@ -69,6 +69,7 @@ projects:
     - title: Autonomous Computing Platform based on NVIDIA Jetson
       period: 2023.09 — 2025.12
       role: Project Lead · Embedded Platform Development
+      case: /case/jetson-vi5/
       image: assets/diagram-04-computing-platform.svg
       tagline: NVIDIA Jetson 기반 분산 컴퓨팅 모듈 기획 및 Kernel driver 개발.
       details: |
@@ -85,6 +86,7 @@ projects:
     - title: Jetson BSP의 Yocto 포팅 및 최소화 이미지 빌드
       period: 2025.03 — 현재
       role: Embedded Platform Development
+      case: /case/yocto/
       tagline: Ubuntu 기반 JetPack BSP를 Yocto 빌드 시스템으로 포팅하여 재현 가능한 최소화 이미지 구축.
       details: |
         - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 4.0 LTS) 빌드로 포팅
@@ -97,6 +99,7 @@ projects:
     - title: 소형 무인 지상 차량(SUGV) Component Manager 개발
       period: 2024.02 — 2025.12
       role: Middleware Development
+      case: /case/component-manager/
       image: assets/diagram-01-component-manager.svg
       tagline: ROS2 기반 SUGV 플랫폼의 런타임 환경에서 센서 · 디바이스의 동적 연결 및 해제를 지원하기 위한 SW 개발.
       details: |

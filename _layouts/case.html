@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — Sangmin Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <div class="wrap case">
+    <p class="case-back"><a href="{{ '/' | relative_url }}">← 포트폴리오로</a></p>
+    <header class="case-header">
+      <p class="case-kicker">CASE STUDY</p>
+      <h1>{{ page.title }}</h1>
+      <p class="meta">{{ page.period }}{% if page.role %} · {{ page.role }}{% endif %}</p>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+</body>
+</html>
