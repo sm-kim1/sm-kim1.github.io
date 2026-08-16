@@ -17,7 +17,7 @@ permalink: /print/
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    @page { size: A4; margin: 11mm 15mm; }
+    @page { size: A4; margin: 10mm 15mm; }
     html { font-size: 10pt; }
     body {
       font-family: 'IBM Plex Sans KR', sans-serif;
@@ -72,7 +72,7 @@ permalink: /print/
       font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; color: #77756C;
       background: #F1EFE7; border-radius: 3px; padding: 2px 7px; margin-top: 3px;
     }
-    .gov { break-inside: avoid; margin-bottom: 7px; }
+    .gov { break-inside: avoid; margin-bottom: 5px; }
     .gov p { font-size: 9pt; color: #4a4a44; }
     .pat { break-inside: avoid; margin-bottom: 6px; }
     .pat h3 { font-size: 10pt; font-weight: 600; }
@@ -144,7 +144,7 @@ permalink: /print/
     {% endfor %}
   </section>
 
-  <section>
+  <section style="break-before: page">
     <div class="label">06 · PATENTS</div>
     {% for p in d.publications.papers %}
     <div class="pat">
