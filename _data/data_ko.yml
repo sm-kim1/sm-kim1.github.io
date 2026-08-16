@@ -112,6 +112,17 @@ projects:
         - 장애 발생 시 timeout 기반 recovery / reconnect 로직 구현으로 시스템 안정성 향상
         - **Stack**: Environment: Ubuntu · ROS2 Humble / Architecture: x86_64 · Arm64 / Language: C++ / Protocol: CAN · Ethernet
 
+    - title: 사내 LLM 서빙 클러스터 구축
+      period: 2026.05 — 현재
+      role: Infrastructure Development
+      tagline: 외부 API로 보낼 수 없는 로깅 데이터를 분석하기 위한 자체 LLM 서빙 인프라 구축.
+      details: |
+        - DGX 3노드를 QSFP 링 토폴로지로 직결 — 노드 간 twin-rail 서브넷 설계 및 배선 검증
+        - vLLM pipeline parallel (PP=3)로 397B급 int4 모델을 3노드에 분산 서빙, OpenAI 호환 API 제공
+        - FastAPI 기반 관리자 대시보드 개발 — 모델 전환 · 다운로드 · 클러스터 시작/중지 · 노드 상태 모니터링
+        - 운영 런북 · 셋업 체크리스트 작성으로 재현 가능한 운영 체계 구축
+        - **Stack**: Serving: vLLM / Infra: NVIDIA DGX ×3 · QSFP direct / Language: Python · Shell / Monitoring: DCGM · node-exporter
+
     - title: 소형 무인 지상 차량(SUGV) 공통 SW 아키텍처 개발
       period: 2024.01 — 2024.04
       role: Architecture Research · Middleware Development
