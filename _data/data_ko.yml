@@ -3,14 +3,9 @@
 #
 
 sidebar:
-  position: left
-  about: false          # about은 career-profile로 감
-  education: false      # education은 본문 섹션으로
-
   name: Sangmin Kim
   tagline: Embedded Platform Engineer · 5+ years
   affiliation: 주식회사 에이스웍스코리아 · SDV본부 플랫폼개발팀 · 선임연구원 / 파트장
-  avatar: profile.jpeg
 
   email: sm.kim1748@gmail.com
   github: sm-kim1
@@ -212,6 +207,3 @@ skills:
       items: [CAN, Ethernet, PTP]
     - name: Tool
       items: [vim, gdb, docker, CMake, Visual Studio]
-
-footer: >
-  © 2026 Sangmin Kim. Powered by <a href="https://github.com/sharu725/online-cv" target="_blank" rel="nofollow">online-cv</a> theme.

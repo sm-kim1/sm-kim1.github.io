@@ -17,8 +17,6 @@ host: 0.0.0.0
 exclude:
   - Gemfile
   - Gemfile.lock
-  - docker-compose.yml
   - docs/
   - vendor/
   - README.md
-  - THEME-LICENSE.md
