@@ -12,68 +12,67 @@ permalink: /print/
   <meta charset="utf-8">
   <title>포트폴리오 — 김상민</title>
   <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     @page { size: A4; margin: 10mm 15mm; }
     html { font-size: 10pt; }
     body {
-      font-family: 'IBM Plex Sans KR', sans-serif;
-      color: #1A1A1A;
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
+      color: #1D1D1F;
       line-height: 1.5;
       word-break: keep-all;
       overflow-wrap: break-word;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
 
-    header { border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 14px; }
+    header { border-bottom: 2px solid #1D1D1F; padding-bottom: 10px; margin-bottom: 14px; }
     header h1 { font-size: 21pt; font-weight: 700; letter-spacing: -.02em; }
-    header h1 .en { font-size: 10pt; font-weight: 400; color: #77756C; margin-left: .4em; }
-    header .title { color: #2F5959; font-weight: 600; font-size: 12pt; }
-    header .line { font-size: 8.5pt; color: #77756C; margin-top: 3px; }
-    header .line .sep { margin: 0 .45em; color: #C5C2B8; }
+    header h1 .en { font-size: 10pt; font-weight: 400; color: #6E6E73; margin-left: .4em; }
+    header .title { color: #1D1D1F; font-weight: 600; font-size: 12pt; }
+    header .line { font-size: 8.5pt; color: #6E6E73; margin-top: 3px; }
+    header .line .sep { margin: 0 .45em; color: #D2D2D7; }
 
     section { margin-bottom: 10px; }
     .label {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
       font-size: 8pt; font-weight: 600; letter-spacing: 2.5px;
-      color: #2F5959; border-bottom: 1pt solid #4D7C7D;
+      color: #1D1D1F; border-bottom: 1pt solid #1D1D1F;
       padding-bottom: 4px; margin-bottom: 8px;
       break-after: avoid-page;
     }
 
     .about-box {
-      background: #F6F5EF; border-left: 3px solid #4D7C7D;
+      background: #F5F5F7; border-left: 3px solid #1D1D1F;
       padding: 6px 10px; margin-top: 6px;
     }
     ul { padding-left: 1.15em; }
     li { margin-bottom: 1px; }
-    li::marker { color: #4D7C7D; }
+    li::marker { color: #1D1D1F; }
 
     .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
     .skills .row { display: flex; gap: 10px; font-size: 9pt; }
-    .skills .k { font-family: 'IBM Plex Mono', monospace; font-size: 8pt; font-weight: 600; color: #77756C; min-width: 72px; padding-top: 1px; }
+    .skills .k { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 8pt; font-weight: 600; color: #6E6E73; min-width: 72px; padding-top: 1px; }
 
     .head-line { display: flex; justify-content: space-between; align-items: baseline; }
     .head-line h3 { font-size: 11pt; font-weight: 600; }
-    .meta { font-family: 'IBM Plex Mono', monospace; font-size: 8pt; color: #77756C; }
-    .note { font-size: 8.5pt; color: #77756C; font-style: italic; }
-    .role { margin: 5px 0 7px 10px; padding-left: 9px; border-left: 1.5pt solid #E5E2D8; }
+    .meta { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 8pt; color: #6E6E73; }
+    .note { font-size: 8.5pt; color: #6E6E73; font-style: italic; }
+    .role { margin: 5px 0 7px 10px; padding-left: 9px; border-left: 1.5pt solid #D2D2D7; }
     .role h4 { font-size: 10pt; font-weight: 600; display: inline; }
 
     .item { break-inside: avoid; margin-bottom: 10px; }
-    .item .roleline { color: #A65D41; font-size: 8.5pt; font-weight: 600; }
-    .item .tagline { font-size: 9pt; color: #4a4a44; margin: 1px 0 2px; }
+    .item .roleline { color: #1D1D1F; font-size: 8.5pt; font-weight: 600; }
+    .item .tagline { font-size: 9pt; color: #3A3A3C; margin: 1px 0 2px; }
     .stack {
-      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; color: #77756C;
-      background: #F1EFE7; border-radius: 3px; padding: 2px 7px; margin-top: 3px;
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 7.5pt; color: #6E6E73;
+      background: #F5F5F7; border-radius: 3px; padding: 2px 7px; margin-top: 3px;
     }
     .gov { break-inside: avoid; margin-bottom: 5px; }
-    .gov p { font-size: 9pt; color: #4a4a44; }
+    .gov p { font-size: 9pt; color: #3A3A3C; }
     .pat { break-inside: avoid; margin-bottom: 6px; }
     .pat h3 { font-size: 10pt; font-weight: 600; }
   </style>
