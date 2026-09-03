@@ -16,12 +16,12 @@ permalink: /print/
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    @page { size: A4; margin: 10mm 15mm; }
-    html { font-size: 10pt; }
+    @page { size: A4; margin: 8mm 12mm; }
+    html { font-size: 9.5pt; }
     body {
       font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
       color: #1D1D1F;
-      line-height: 1.5;
+      line-height: 1.4;
       word-break: keep-all;
       overflow-wrap: break-word;
       -webkit-print-color-adjust: exact;
@@ -36,7 +36,7 @@ permalink: /print/
     header .line { font-size: 8.5pt; color: #6E6E73; margin-top: 3px; }
     header .line .sep { margin: 0 .45em; color: #D2D2D7; }
 
-    section { margin-bottom: 10px; }
+    section { margin-bottom: 8px; }
     .label {
       font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
       font-size: 8pt; font-weight: 600; letter-spacing: 2.5px;
@@ -50,7 +50,7 @@ permalink: /print/
       padding: 6px 10px; margin-top: 6px;
     }
     ul { padding-left: 1.15em; }
-    li { margin-bottom: 1px; }
+    li { margin-bottom: 0; }
     li::marker { color: #1D1D1F; }
 
     .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
@@ -64,7 +64,7 @@ permalink: /print/
     .role { margin: 5px 0 7px 10px; padding-left: 9px; border-left: 1.5pt solid #D2D2D7; }
     .role h4 { font-size: 10pt; font-weight: 600; display: inline; }
 
-    .item { break-inside: avoid; margin-bottom: 10px; }
+    .item { break-inside: avoid; margin-bottom: 7px; }
     .item .roleline { color: #1D1D1F; font-size: 8.5pt; font-weight: 600; }
     .item .tagline { font-size: 9pt; color: #3A3A3C; margin: 1px 0 2px; }
     .stack {
@@ -118,7 +118,7 @@ permalink: /print/
     {% endfor %}
   </section>
 
-  <section style="break-before: page">
+  <section>
     <div class="label">04 · PROJECTS</div>
     {% for a in d.projects.assignments %}
     <div class="item">
@@ -143,7 +143,7 @@ permalink: /print/
     {% endfor %}
   </section>
 
-  <section style="break-before: page">
+  <section>
     <div class="label">06 · PATENTS</div>
     {% for p in d.publications.papers %}
     <div class="pat">
