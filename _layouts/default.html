@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — Sangmin Kim{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">Sangmin Kim</a>
+      <ul>
+        <li><a href="{{ '/#work' | relative_url }}">Work</a></li>
+        <li><a href="{{ '/#how' | relative_url }}">How I work</a></li>
+        <li><a href="{{ '/#resume' | relative_url }}">Resume</a></li>
+        <li class="print-link"><a href="{{ '/print/' | relative_url }}">인쇄용 ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var img = e.target.closest('.card figure img, .case main img');
+      if (!img) return;
+      e.preventDefault();
+      var box = document.createElement('div');
+      box.className = 'lightbox';
+      var big = document.createElement('img');
+      big.src = img.src;
+      big.alt = img.alt;
+      box.appendChild(big);
+      box.addEventListener('click', function () { box.remove(); });
+      document.addEventListener('keydown', function esc(ev) {
+        if (ev.key === 'Escape') { box.remove(); document.removeEventListener('keydown', esc); }
+      });
+      document.body.appendChild(box);
+    });
+  </script>
+</body>
+</html>
