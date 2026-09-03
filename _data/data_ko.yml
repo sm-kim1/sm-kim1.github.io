@@ -19,10 +19,11 @@ career-profile:
     Device Integration까지 이어서 다루며, 자율주행 차량 플랫폼을 5년 넘게
     구축해 왔습니다.
 
-    - 정부 R&D 과제 5건에서 자율주행 차량 플랫폼 구축, 특허 등록 1건 · 출원 2건
+    - 정부/기관 R&D 과제 5건에서 자율주행 차량 플랫폼 구축, 특허 등록 1건 · 출원 2건
     - Generic Template 기반 인터페이스 설계로 디바이스별 중복 코드 **23% 감소**
     - Yocto 최소화 이미지로 JetPack 대비 디스크 · 패키지 **91% 축소**
     - 커널 드라이버(카메라 capture · CAN) 근본 원인 수정으로 현장 안정성 확보
+    - 스크립트 · 문서화 작업을 통해 지속가능한 배포 형태 구축
 
 disclaimer: >
   본 포트폴리오는 공개 가능한 범위에서 프로젝트 구조와 기여 내용을 요약했으며,
@@ -112,9 +113,9 @@ projects:
       role: Infrastructure Development
       tagline: 외부 API로 보낼 수 없는 로깅 데이터를 분석하기 위한 자체 LLM 서빙 인프라 구축.
       details: |
-        - DGX 3노드를 QSFP 링 토폴로지로 직결 — 노드 간 twin-rail 서브넷 설계 및 배선 검증
+        - NVIDIA DGX 3노드를 QSFP 링 토폴로지로 직결하여 구성
         - vLLM pipeline parallel (PP=3)로 397B급 int4 모델을 3노드에 분산 서빙, OpenAI 호환 API 제공
-        - FastAPI 기반 관리자 대시보드 개발 — 모델 전환 · 다운로드 · 클러스터 시작/중지 · 노드 상태 모니터링
+        - 관리자 대시보드 개발 — 모델 전환 · 다운로드 · 클러스터 시작/중지 · 노드 상태 모니터링
         - 운영 런북 · 셋업 체크리스트 작성으로 재현 가능한 운영 체계 구축
         - **Stack**: Serving: vLLM / Infra: NVIDIA DGX ×3 · QSFP direct / Language: Python · Shell / Monitoring: DCGM · node-exporter
 
