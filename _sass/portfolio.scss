@@ -249,12 +249,12 @@ img { max-width: 100%; }
   padding-top: clamp(40px, 6vw, 64px);
 
   .case-back { font-size: 14px; color: var(--accent); font-weight: 500; }
-  .case-header { margin: 28px 0 40px; max-width: 760px; }
+  .case-header { margin: 28px 0 40px; }
   .case-header .label { display: block; margin-bottom: 10px; }
   h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -.025em; line-height: 1.2; text-wrap: balance; }
   .meta { margin-top: 12px; font-size: 15px; color: var(--muted); }
 
-  main { max-width: 680px; line-height: 1.7; }
+  main { line-height: 1.7; }
   main h2 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; margin: 48px 0 14px; }
   main h3 { font-size: 18px; font-weight: 600; margin: 26px 0 8px; }
   main p { margin-bottom: 12px; }
