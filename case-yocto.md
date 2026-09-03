@@ -34,8 +34,8 @@ Yocto **scarthgap**(4.0 LTS, ~2028 지원)을 맞췄다. 커널 버전이 같아
 ### 단일 레이어로 두 머신 관리
 
 ```
-layers/meta-a1driver/        ← 실제 산출물 (커스텀 레이어 하나)
-  machines: a1-driver-nx / a1-driver-agx
+layers/meta-<board>/          ← 실제 산출물 (커스텀 레이어 하나)
+  machines: <board>-nx / <board>-agx
 ```
 
 NX·AGX 두 빌드 트리가 같은 레이어를 공유(심링크)하고, 보드별 차이는
