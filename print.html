@@ -1,156 +1,137 @@
 ---
-layout: null
-data_file: data_ko
-lang: ko
+layout: default
+title: 기술경력서 (인쇄용)
 permalink: /print/
+noindex: true
 ---
-{% assign d = site.data[page.data_file] %}
+{% assign d = site.data.data_ko %}
 {% assign sb = d.sidebar %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <title>포트폴리오 — 김상민</title>
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    @page { size: A4; margin: 8mm 12mm; }
-    html { font-size: 9.5pt; }
-    body {
-      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
-      color: #1D1D1F;
-      line-height: 1.4;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+<div class="print-view">
 
-    header { border-bottom: 2px solid #1D1D1F; padding-bottom: 10px; margin-bottom: 14px; }
-    header h1 { font-size: 21pt; font-weight: 700; letter-spacing: -.02em; }
-    header h1 .en { font-size: 10pt; font-weight: 400; color: #6E6E73; margin-left: .4em; }
-    header .title { color: #1D1D1F; font-weight: 600; font-size: 12pt; }
-    header .line { font-size: 8.5pt; color: #6E6E73; margin-top: 3px; }
-    header .line .sep { margin: 0 .45em; color: #D2D2D7; }
+  <div class="print-bar wrap">
+    <a class="pill" href="{{ '/resume/' | relative_url }}">← 웹 버전</a>
+    <span class="hint">A4 3장 · 여백 0으로 인쇄하면 화면과 같게 나옵니다</span>
+    <button class="pill primary" type="button" onclick="window.print()">PDF로 저장</button>
+  </div>
 
-    section { margin-bottom: 8px; }
-    .label {
-      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-      font-size: 8pt; font-weight: 600; letter-spacing: 2.5px;
-      color: #1D1D1F; border-bottom: 1pt solid #1D1D1F;
-      padding-bottom: 4px; margin-bottom: 8px;
-      break-after: avoid-page;
-    }
+  <!-- ── sheet 1: header · about · skills · experience ── -->
+  <section class="sheet">
+    <header class="ph">
+      <div>
+        <h1>김상민 <span class="en">{{ sb.name }}</span></h1>
+        <p class="tagline">{{ sb.tagline }}</p>
+        <p class="aff">{{ sb.affiliation }} · {{ d.education.info[0].university }} {{ d.education.info[0].degree }}</p>
+      </div>
+      <div class="contact mono">
+        <span>{{ sb.email }}</span>
+        <span>github.com/{{ sb.github }}</span>
+        <span>sm-kim1.github.io</span>
+      </div>
+    </header>
 
-    .about-box {
-      background: #F5F5F7; border-left: 3px solid #1D1D1F;
-      padding: 6px 10px; margin-top: 6px;
-    }
-    ul { padding-left: 1.15em; }
-    li { margin-bottom: 0; }
-    li::marker { color: #1D1D1F; }
-
-    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
-    .skills .row { display: flex; gap: 10px; font-size: 9pt; }
-    .skills .k { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 8pt; font-weight: 600; color: #6E6E73; min-width: 72px; padding-top: 1px; }
-
-    .head-line { display: flex; justify-content: space-between; align-items: baseline; }
-    .head-line h3 { font-size: 11pt; font-weight: 600; }
-    .meta { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 8pt; color: #6E6E73; }
-    .note { font-size: 8.5pt; color: #6E6E73; font-style: italic; }
-    .role { margin: 5px 0 7px 10px; padding-left: 9px; border-left: 1.5pt solid #D2D2D7; }
-    .role h4 { font-size: 10pt; font-weight: 600; display: inline; }
-
-    .item { break-inside: avoid; margin-bottom: 7px; }
-    .item .roleline { color: #1D1D1F; font-size: 8.5pt; font-weight: 600; }
-    .item .tagline { font-size: 9pt; color: #3A3A3C; margin: 1px 0 2px; }
-    .stack {
-      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 7.5pt; color: #6E6E73;
-      background: #F5F5F7; border-radius: 3px; padding: 2px 7px; margin-top: 3px;
-    }
-    .gov { break-inside: avoid; margin-bottom: 5px; }
-    .gov p { font-size: 9pt; color: #3A3A3C; }
-    .pat { break-inside: avoid; margin-bottom: 6px; }
-    .pat h3 { font-size: 10pt; font-weight: 600; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>김상민 <span class="en">{{ sb.name }}</span></h1>
-    <div class="title">{{ sb.tagline }}</div>
-    <div class="line">{{ sb.affiliation }}<span class="sep">·</span>숭실대학교 Computer Science &amp; Engineering</div>
-    <div class="line mono">{{ sb.email }}<span class="sep">·</span>Portfolio: https://sm-kim1.github.io</div>
-  </header>
-
-  <section>
-    <div class="label">01 · ABOUT</div>
     {% assign cp = d['career-profile'] %}
     {% assign parts = cp.summary | split: "- " %}
-    <p style="font-size:10pt">{{ parts[0] | strip }}</p>
-    <div class="about-box"><ul>
-      {% for b in parts offset:1 %}<li style="font-size:9.5pt">{{ b | strip | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
-    </ul></div>
-  </section>
+    <div class="ps">
+      <span class="label">About</span>
+      <p class="lede">{{ parts[0] | strip }}</p>
+      <ul class="highlights">
+        {% for b in parts offset:1 %}<li>{{ b | strip | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+      </ul>
+    </div>
 
-  <section>
-    <div class="label">02 · SKILLS</div>
-    <div class="skills">
-      {% for g in d.skills.toolset %}
-      <div class="row"><span class="k">{{ g.name }}</span><span>{{ g.items | join: ' · ' }}</span></div>
+    <div class="ps">
+      <span class="label">Skills</span>
+      <div class="skills-grid">
+        {% for g in d.skills.toolset %}
+        <div class="sk"><span class="k">{{ g.name }}</span><span>{{ g.items | join: ' · ' }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ps">
+      <span class="label">Experience</span>
+      {% for xp in d.experiences.info %}
+      <div class="xp">
+        <div class="hl"><h3>{{ xp.company }}</h3><span class="when mono">{{ xp.time }}</span></div>
+        {% if xp.note %}<p class="note">{{ xp.note }}</p>{% endif %}
+        {% for r in xp.roles %}
+        <div class="role">
+          <div class="hl"><h4>{{ r.role }}</h4><span class="when mono">{{ r.time }}</span></div>
+          {{ r.details | markdownify }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    <div class="ps">
+      <span class="label">Projects</span>
+      {% for a in d.projects.assignments limit:1 %}
+      {% assign body = a.details | split: '- **Stack**:' %}
+      <div class="pj">
+        <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
+        <p class="role-line">{{ a.role }}</p>
+        {% if a.tagline %}<p class="tag">{{ a.tagline }}</p>{% endif %}
+        {{ body[0] | markdownify }}
+        {% if body[1] %}<div class="stack">{% assign st = body[1] | strip | split: ' / ' %}{% for s in st %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>{% endif %}
+      </div>
       {% endfor %}
     </div>
   </section>
 
-  <section>
-    <div class="label">03 · EXPERIENCE</div>
-    {% for xp in d.experiences.info %}
-    <div class="head-line"><h3>{{ xp.company }}</h3><span class="meta">{{ xp.time }}</span></div>
-    {% if xp.note %}<div class="note">{{ xp.note }}</div>{% endif %}
-    {% for r in xp.roles %}
-    <div class="role">
-      <h4>{{ r.role }}</h4> <span class="meta">· {{ r.time }}</span>
-      {{ r.details | markdownify }}
-    </div>
-    {% endfor %}
-    {% endfor %}
-  </section>
-
-  <section>
-    <div class="label">04 · PROJECTS</div>
-    {% for a in d.projects.assignments %}
-    <div class="item">
-      <div class="head-line"><h3>{{ a.title }}</h3><span class="meta">{{ a.period }}</span></div>
-      <div class="roleline">{{ a.role }}</div>
-      {% if a.tagline %}<div class="tagline">{{ a.tagline }}</div>{% endif %}
+  <!-- ── sheet 2: projects 2–5 ── -->
+  <section class="sheet">
+    <div class="ps">
+      <span class="label">Projects (계속)</span>
+      {% for a in d.projects.assignments offset:1 limit:4 %}
       {% assign body = a.details | split: '- **Stack**:' %}
-      {{ body[0] | markdownify }}
-      {% if body[1] %}<div class="stack">{{ body[1] | strip | markdownify | remove: '<p>' | remove: '</p>' }}</div>{% endif %}
+      <div class="pj">
+        <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
+        <p class="role-line">{{ a.role }}</p>
+        {% if a.tagline %}<p class="tag">{{ a.tagline }}</p>{% endif %}
+        {{ body[0] | markdownify }}
+        {% if body[1] %}<div class="stack">{% assign st = body[1] | strip | split: ' / ' %}{% for s in st %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>{% endif %}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </section>
 
-  <section>
-    <div class="label">05 · R&amp;D PROGRAMS</div>
-    {% for g in d.gov_projects.items %}
-    <div class="gov">
-      <div class="head-line"><h3 style="font-size:10pt">{{ g.title }}</h3><span class="meta">{{ g.period }}</span></div>
-      <div class="roleline" style="font-size:8pt">{{ g.role }}</div>
-      <p>{{ g.summary }}</p>
+  <!-- ── sheet 3: projects 6–7 · R&D · patents ── -->
+  <section class="sheet">
+    <div class="ps">
+      <span class="label">Projects (계속)</span>
+      {% for a in d.projects.assignments offset:5 %}
+      {% assign body = a.details | split: '- **Stack**:' %}
+      <div class="pj">
+        <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
+        <p class="role-line">{{ a.role }}</p>
+        {% if a.tagline %}<p class="tag">{{ a.tagline }}</p>{% endif %}
+        {{ body[0] | markdownify }}
+        {% if body[1] %}<div class="stack">{% assign st = body[1] | strip | split: ' / ' %}{% for s in st %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>{% endif %}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    <div class="ps">
+      <span class="label">R&amp;D programs</span>
+      {% for g in d.gov_projects.items %}
+      <div class="gov">
+        <div class="hl"><h3>{{ g.title }}</h3><span class="when mono">{{ g.period }}</span></div>
+        <p class="role-line">{{ g.role }}</p>
+        <p class="desc">{{ g.summary }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="ps">
+      <span class="label">Patents</span>
+      {% for p in d.publications.papers %}
+      <div class="pat">
+        <h3>{{ p.title }}</h3>
+        <p class="desc mono">{{ p.conference }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="disclaimer">※ {{ d.disclaimer }}</p>
   </section>
 
-  <section>
-    <div class="label">06 · PATENTS</div>
-    {% for p in d.publications.papers %}
-    <div class="pat">
-      <h3>{{ p.title }}</h3>
-      <div class="meta">{{ p.conference }}</div>
-    </div>
-    {% endfor %}
-  </section>
-</body>
-</html>
+</div>
