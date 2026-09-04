@@ -21,7 +21,7 @@ career-profile:
 
     - 정부/기관 R&D 과제 5건에서 자율주행 차량 플랫폼 구축, 특허 등록 1건 · 출원 2건
     - Generic Template 기반 인터페이스 설계로 디바이스별 중복 코드 **23% 감소**
-    - Yocto 최소화 이미지로 JetPack 대비 디스크 · 패키지 **91% 축소**
+    - Yocto 최소화 이미지로 JetPack 대비 디스크 **67%** · 패키지 **86%** · 메모리 **79%** 축소
     - 커널 드라이버(카메라 capture · CAN) 근본 원인 수정으로 현장 안정성 확보
     - 스크립트 · 문서화 작업을 통해 지속가능한 배포 형태 구축
 
@@ -87,7 +87,7 @@ projects:
       details: |
         - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 5.0 LTS) 빌드로 포팅
         - 단일 custom layer로 Orin NX · AGX Orin 두 machine 정의 — override 구문으로 보드별 분기, 레이어 수정 한 번으로 양쪽 반영
-        - JetPack 대비 디스크 사용량 · 패키지 수 **91% 감소**한 최소화 이미지 구성
+        - 같은 보드 실측 기준 JetPack 대비 디스크 **67%**(7.9→2.6GB) · 패키지 **86%**(1942→271개) · 유휴 메모리 **79%** 감소한 최소화 이미지 구성
         - shared sstate-cache · downloads 구조로 두 machine 간 빌드 산출물 재사용
         - Yocto 미경험 엔지니어용 온보딩 가이드 · BSP 구조 문서 작성
         - **Stack**: Build: Yocto scarthgap · BitBake / Base: L4T R35.6.4 · JetPack 5.1.6 · kernel 5.10 / Architecture: Arm64
