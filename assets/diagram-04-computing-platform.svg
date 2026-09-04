@@ -46,7 +46,7 @@
   <text x="230" y="336" fill="#FFFFFF" font-size="22" font-weight="600">EMBEDDED LINUX</text>
   <g font-size="22" font-weight="500" fill="#1A1A1A" text-anchor="middle">
     <text x="500" y="410">Ubuntu · L4T R35 (JetPack)</text>
-    <text x="1100" y="410">Yocto minimal image — <tspan font-weight="600">-91%</tspan> footprint</text>
+    <text x="1100" y="410">Yocto minimal image — <tspan font-weight="600">-67%</tspan> disk · <tspan font-weight="600">-86%</tspan> packages</text>
   </g>
   <line x1="800" y1="370" x2="800" y2="435" stroke="#E5E2D8" stroke-width="1.5"/>
 
