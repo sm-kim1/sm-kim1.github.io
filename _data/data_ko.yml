@@ -63,7 +63,7 @@ projects:
   title: 대표 프로젝트
   assignments:
     - title: Autonomous Computing Platform based on NVIDIA Jetson
-      period: 2023.09 — 2025.12
+      period: 2023.09 — 현재
       role: Project Lead · Embedded Platform Development
       case: /case/jetson-vi5/
       image: assets/diagram-04-computing-platform.svg
@@ -74,8 +74,8 @@ projects:
         - GMSL 카메라 드라이버 및 vi5 capture 경로 디버깅 — busy-loop · DMA leak 수정으로 반복 캡처 안정화
         - 플랫폼 시각 동기화 체계 구축 — ZED-F9R GNSS 모듈의 GPS 시각 기준 chrony 시스템 시간 동기화, PTP 지원 센서 대상 PTP 시각 동기화 적용
         - apt kernel 업데이트가 custom kernel · DTB를 덮어쓰는 문제의 근본 원인 분석 및 방지 처리
-        - CAN 통신 안정성 확보를 위해 mcp25xxfd driver 분석 및 kernel patch 적용
-        - Ethernet switch 병목 분석 및 driver-level tuning을 통해 packet loss · 통신 지연 안정화
+        - CAN 드라이버를 mcp25xxfd에서 mcp251xfd로 전환하고 MCP2518FD errata 대응 패치 6건 적용, CAN 통신 안정화
+        - Ethernet switch 드라이버 결함 3건(MIB 무한 대기 · EEE · DSA 헤더) 수정, 1G 포화 30분 테스트에서 packet loss 0 확인
         - AGX / NX target 별 boot image 및 peripheral 초기화 검증, 현장 배포용 self-contained field patch 도구 제작
         - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson (AGX Orin · Orin NX) / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
 
@@ -85,7 +85,7 @@ projects:
       case: /case/yocto/
       tagline: Ubuntu 기반 JetPack BSP를 Yocto 빌드 시스템으로 포팅하여 재현 가능한 최소화 이미지 구축.
       details: |
-        - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 4.0 LTS) 빌드로 포팅
+        - vendor Ubuntu · JetPack BSP를 meta-tegra 기반 Yocto (scarthgap · 5.0 LTS) 빌드로 포팅
         - 단일 custom layer로 Orin NX · AGX Orin 두 machine 정의 — override 구문으로 보드별 분기, 레이어 수정 한 번으로 양쪽 반영
         - JetPack 대비 디스크 사용량 · 패키지 수 **91% 감소**한 최소화 이미지 구성
         - shared sstate-cache · downloads 구조로 두 machine 간 빌드 산출물 재사용
@@ -113,11 +113,11 @@ projects:
       role: Infrastructure Development
       tagline: 외부 API로 보낼 수 없는 로깅 데이터를 분석하기 위한 자체 LLM 서빙 인프라 구축.
       details: |
-        - NVIDIA DGX 3노드를 QSFP 링 토폴로지로 직결하여 구성
-        - vLLM pipeline parallel (PP=3)로 397B급 int4 모델을 3노드에 분산 서빙, OpenAI 호환 API 제공
+        - NVIDIA DGX Spark 3노드를 QSFP 링 토폴로지로 직결하여 구성
+        - vLLM tensor parallel (TP=3)로 GLM-5.3-Flash(320B · 활성 18B) NVFP4 모델을 3노드에 분산 서빙, 1M 컨텍스트 · OpenAI 호환 API 제공
         - 관리자 대시보드 개발 — 모델 전환 · 다운로드 · 클러스터 시작/중지 · 노드 상태 모니터링
         - 운영 런북 · 셋업 체크리스트 작성으로 재현 가능한 운영 체계 구축
-        - **Stack**: Serving: vLLM / Infra: NVIDIA DGX ×3 · QSFP direct / Language: Python · Shell / Monitoring: DCGM · node-exporter
+        - **Stack**: Serving: vLLM / Infra: NVIDIA DGX Spark ×3 · QSFP direct / Language: Python · Shell / Monitoring: DCGM · node-exporter
 
     - title: 소형 무인 지상 차량(SUGV) 공통 SW 아키텍처 개발
       period: 2024.01 — 2024.04
