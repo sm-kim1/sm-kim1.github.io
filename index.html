@@ -22,7 +22,7 @@ permalink: /
   <div class="stats">
     <div class="stat"><div class="n">66<small>h</small></div><div class="d">VI5 커널 패치 후 5캠 스트리밍 무사고</div></div>
     <div class="stat"><div class="n">86<small>%</small></div><div class="d">Yocto 최소화 이미지, JetPack 대비 패키지 86% · 디스크 67% 축소</div></div>
-    <div class="stat"><div class="n">23<small>%</small></div><div class="d">Generic Template 설계로 디바이스별 중복 코드 감소</div></div>
+    <div class="stat"><div class="n">23<small>%</small></div><div class="d">Generic Template 설계로 코드 중복률 28% → 21% (상대 23% 감소)</div></div>
     <div class="stat"><div class="n">5<small>건</small></div><div class="d">정부 R&amp;D 과제 · PL 2건 · 특허 등록 1건</div></div>
   </div>
 </div>
@@ -69,7 +69,7 @@ permalink: /
         <p class="sum">운용 중 센서가 수시로 붙었다 떨어지는 플랫폼. 재시작 없이 hot-plug를 흡수하는 런타임 관리 구조를 설계했습니다.</p>
         <ul>
           <li><span>Dynamic Device Pool — 연결 · 해제 이벤트 기반 자동 등록 / 해제</span></li>
-          <li><span>Generic Template 서비스 인터페이스로 중복 코드 <strong>23% 감소</strong></span></li>
+          <li><span>Generic Template 서비스 인터페이스로 코드 중복률 <strong>28% → 21%</strong> (정적 분석, 상대 23% 감소)</span></li>
           <li><span>timeout 기반 recovery / reconnect</span></li>
         </ul>
         <span class="more">설계 결정과 트레이드오프 <span>→</span></span>
