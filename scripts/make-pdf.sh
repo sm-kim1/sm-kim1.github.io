@@ -6,8 +6,7 @@ cd "$(dirname "$0")/.."
 
 curl -sf -o /dev/null http://localhost:4000/print/ || { echo "jekyll serve 먼저 실행 필요 (bundle exec jekyll serve)"; exit 1; }
 
-# Windows 크롬은 WSL localhost 포워딩이 깨질 수 있어 eth0 IP로 직접 접근
-WSLIP="$(ip -4 addr show eth0 | grep -oP 'inet \K[\d.]+')"
+# WSL이 mirrored 네트워킹이라 Windows 크롬에서 localhost로 WSL 서버에 바로 닿는다
 CHROME="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 WINTMP="$(wslpath 'C:\Users\arche\AppData\Local\Temp')/portfolio_sangmin.pdf"
 
@@ -19,7 +18,7 @@ rm -f "$WINTMP"
   --user-data-dir='C:\Users\arche\AppData\Local\Temp\chrome-headless-profile' \
   --no-pdf-header-footer \
   --print-to-pdf="$(wslpath -w "$WINTMP")" \
-  "http://$WSLIP:4000/print/" 2>/dev/null || true
+  "http://localhost:4000/print/" 2>/dev/null || true
 
 # WSL에서 띄운 크롬은 부모 프로세스가 먼저 끝나고 파일은 몇 초 뒤에 써진다 — 최대 60초 대기
 for _ in $(seq 1 60); do [ -s "$WINTMP" ] && break; sleep 1; done

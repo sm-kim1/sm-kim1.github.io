@@ -76,6 +76,7 @@ projects:
         - apt kernel 업데이트가 custom kernel · DTB를 덮어쓰는 문제의 근본 원인 분석 및 방지 처리
         - CAN 드라이버를 mcp25xxfd에서 mcp251xfd로 전환하고 MCP2518FD errata 대응 패치 6건 적용, CAN 통신 안정화
         - Ethernet switch 드라이버 결함 3건(MIB 무한 대기 · EEE · DSA 헤더) 수정, 1G 포화 30분 테스트에서 packet loss 0 확인
+        - GMSL 카메라 probe · 플래시 쓰기로 부팅이 205초 지연되던 원인 규명, 카메라 초기화를 별도 서비스로 분리해 부팅 크리티컬 패스에서 제거
         - AGX / NX target 별 boot image 및 peripheral 초기화 검증, 현장 배포용 self-contained field patch 도구 제작
         - **Stack**: Environment: Ubuntu · ROS1 Noetic / Architecture: Arm64 / Platform: NVIDIA Jetson (AGX Orin · Orin NX) / Language: C / C++ · Shell · Device Tree / Protocol: CAN · Ethernet
 
@@ -90,6 +91,8 @@ projects:
         - 같은 보드 실측 기준 JetPack 대비 디스크 **67%**(7.9→2.6GB) · 패키지 **86%**(1942→271개) · 유휴 메모리 **79%** 감소한 최소화 이미지 구성
         - shared sstate-cache · downloads 구조로 두 machine 간 빌드 산출물 재사용
         - Yocto 미경험 엔지니어용 온보딩 가이드 · BSP 구조 문서 작성
+        - 부팅 시간 systemd 62→6.2초(전원→로그인 약 30→18.8초): networkd-wait-online 마스크 · 커널 로그 레벨 조정 · UEFI 대기 제거
+        - 커스텀 UEFI · PCIe 링크 대기 설정으로 NVMe 검출 19/19회 안정화, 3회 재부팅 후 벽돌 되는 잠복 결함(nvbootctrl verify 미실행) 근본 원인 규명
         - **Stack**: Build: Yocto scarthgap · BitBake / Base: L4T R35.6.4 · JetPack 5.1.6 · kernel 5.10 / Architecture: Arm64
 
     - title: 소형 무인 지상 차량(SUGV) Component Manager 개발
@@ -117,6 +120,8 @@ projects:
         - vLLM tensor parallel (TP=3)로 GLM-5.3-Flash(320B · 활성 18B) NVFP4 모델을 3노드에 분산 서빙, 1M 컨텍스트 · OpenAI 호환 API 제공
         - 관리자 대시보드 개발 — 모델 전환 · 다운로드 · 클러스터 시작/중지 · 노드 상태 모니터링
         - 운영 런북 · 셋업 체크리스트 작성으로 재현 가능한 운영 체계 구축
+        - 1M 컨텍스트 서빙 검증: needle 테스트 1,039,039토큰 전부 정답, KV 캐시 162만 토큰
+        - 파티션 GUI(3 / 2+1 / 1+1+1) · 사용자별 API 키와 사용량 집계 · 재부팅 자동복구(systemd)로 운영 자동화
         - **Stack**: Serving: vLLM / Infra: NVIDIA DGX Spark ×3 · QSFP direct / Language: Python · Shell / Monitoring: DCGM · node-exporter
 
     - title: 소형 무인 지상 차량(SUGV) 공통 SW 아키텍처 개발
