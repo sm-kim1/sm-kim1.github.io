@@ -21,3 +21,9 @@ CLAUDE.md
 skills-lock.json
 *프롬프트*.md
 docs/remember-profile.md
+
+# Job-specific variants (never public)
+_data/data_amr.yml
+print-amr.html
+docs/amr-application.md
+*_amr.pdf
