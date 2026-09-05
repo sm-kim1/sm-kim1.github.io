@@ -10,7 +10,7 @@ noindex: true
 
   <div class="print-bar wrap">
     <a class="pill" href="{{ '/resume/' | relative_url }}">← 웹 버전</a>
-    <span class="hint">A4 3장 · 여백 0으로 인쇄하면 화면과 같게 나옵니다</span>
+    <span class="hint">A4 4장 · 여백 0으로 인쇄하면 화면과 같게 나옵니다</span>
     <button class="pill primary" type="button" onclick="window.print()">PDF로 저장</button>
   </div>
 
@@ -62,9 +62,13 @@ noindex: true
         {% endfor %}
       </div>
       {% endfor %}
+  </section>
+
+  <!-- ── sheet 2: projects 1–3 ── -->
+  <section class="sheet">
     <div class="ps">
       <span class="label">Projects</span>
-      {% for a in d.projects.assignments limit:1 %}
+      {% for a in d.projects.assignments limit:3 %}
       {% assign body = a.details | split: '- **Stack**:' %}
       <div class="pj">
         <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
@@ -77,11 +81,11 @@ noindex: true
     </div>
   </section>
 
-  <!-- ── sheet 2: projects 2–5 ── -->
+  <!-- ── sheet 3: projects 4–7 ── -->
   <section class="sheet">
     <div class="ps">
       <span class="label">Projects (계속)</span>
-      {% for a in d.projects.assignments offset:1 limit:4 %}
+      {% for a in d.projects.assignments offset:3 %}
       {% assign body = a.details | split: '- **Stack**:' %}
       <div class="pj">
         <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
@@ -94,22 +98,8 @@ noindex: true
     </div>
   </section>
 
-  <!-- ── sheet 3: projects 6–7 · R&D · patents ── -->
+  <!-- ── sheet 4: R&D · patents ── -->
   <section class="sheet">
-    <div class="ps">
-      <span class="label">Projects (계속)</span>
-      {% for a in d.projects.assignments offset:5 %}
-      {% assign body = a.details | split: '- **Stack**:' %}
-      <div class="pj">
-        <div class="hl"><h3>{{ a.title }}</h3><span class="when mono">{{ a.period }}</span></div>
-        <p class="role-line">{{ a.role }}</p>
-        {% if a.tagline %}<p class="tag">{{ a.tagline }}</p>{% endif %}
-        {{ body[0] | markdownify }}
-        {% if body[1] %}<div class="stack">{% assign st = body[1] | strip | split: ' / ' %}{% for s in st %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>{% endif %}
-      </div>
-      {% endfor %}
-    </div>
-
     <div class="ps">
       <span class="label">R&amp;D programs</span>
       {% for g in d.gov_projects.items %}
