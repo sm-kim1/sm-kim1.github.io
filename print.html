@@ -9,18 +9,18 @@ noindex: true
 <div class="print-view">
 
   <div class="print-bar wrap">
-    <a class="pill" href="{{ '/resume/' | relative_url }}">← 웹 버전</a>
-    <span class="hint">A4 4장 · 여백 0으로 인쇄하면 화면과 같게 나옵니다</span>
+    <a class="pill" href="{{ '/resume/' | relative_url }}">&lt;- 웹 버전</a>
+    <span class="hint">A4 4장, 여백 0으로 인쇄하면 화면과 같게 나옵니다</span>
     <button class="pill primary" type="button" onclick="window.print()">PDF로 저장</button>
   </div>
 
-  <!-- ── sheet 1: header · about · skills · experience ── -->
+  <!-- -- sheet 1: header, about, skills, experience -- -->
   <section class="sheet">
     <header class="ph">
       <div>
         <h1>김상민 <span class="en">{{ sb.name }}</span></h1>
         <p class="tagline">{{ sb.tagline }}</p>
-        <p class="aff">{{ sb.affiliation }} · {{ d.education.info[0].university }} {{ d.education.info[0].degree }}</p>
+        <p class="aff">{{ sb.affiliation }}, {{ d.education.info[0].university }} {{ d.education.info[0].degree }}</p>
       </div>
       <div class="contact mono">
         <span>{{ sb.email }}</span>
@@ -43,7 +43,7 @@ noindex: true
       <span class="label">Skills</span>
       <div class="skills-grid">
         {% for g in d.skills.toolset %}
-        <div class="sk"><span class="k">{{ g.name }}</span><span>{{ g.items | join: ' · ' }}</span></div>
+        <div class="sk"><span class="k">{{ g.name }}</span><span>{{ g.items | join: ', ' }}</span></div>
         {% endfor %}
       </div>
     </div>
@@ -64,7 +64,7 @@ noindex: true
       {% endfor %}
   </section>
 
-  <!-- ── sheet 2: projects 1–3 ── -->
+  <!-- -- sheet 2: projects 1-3 -- -->
   <section class="sheet">
     <div class="ps">
       <span class="label">Projects</span>
@@ -81,7 +81,7 @@ noindex: true
     </div>
   </section>
 
-  <!-- ── sheet 3: projects 4–7 ── -->
+  <!-- -- sheet 3: projects 4-7 -- -->
   <section class="sheet">
     <div class="ps">
       <span class="label">Projects (계속)</span>
@@ -98,7 +98,7 @@ noindex: true
     </div>
   </section>
 
-  <!-- ── sheet 4: R&D · patents ── -->
+  <!-- -- sheet 4: R&D, patents -- -->
   <section class="sheet">
     <div class="ps">
       <span class="label">R&amp;D programs</span>
@@ -121,7 +121,7 @@ noindex: true
       {% endfor %}
     </div>
 
-    <p class="disclaimer">※ {{ d.disclaimer }}</p>
+    <p class="disclaimer">* {{ d.disclaimer }}</p>
   </section>
 
 </div>

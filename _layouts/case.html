@@ -2,11 +2,11 @@
 layout: default
 ---
 <div class="wrap case">
-  <p><a class="case-back" href="{{ '/#work' | relative_url }}">← Work</a></p>
+  <p><a class="case-back" href="{{ '/#work' | relative_url }}">&lt;- Work</a></p>
   <header class="case-header">
     <span class="label">Case study</span>
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.period }}{% if page.role %} · {{ page.role }}{% endif %}</p>
+    <p class="meta">{{ page.period }}{% if page.role %}, {{ page.role }}{% endif %}</p>
   </header>
   <main>
     {{ content }}

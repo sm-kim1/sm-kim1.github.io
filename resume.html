@@ -14,7 +14,7 @@ permalink: /resume/
       <p class="tagline">{{ sb.tagline }}</p>
       <p class="aff">{{ sb.affiliation }}</p>
       <div class="pills">
-        <a class="pill primary" href="{{ '/print/' | relative_url }}">인쇄용 PDF ↗</a>
+        <a class="pill primary" href="{{ '/print/' | relative_url }}">인쇄용 PDF -></a>
         <a class="pill" href="mailto:{{ sb.email }}">{{ sb.email }}</a>
         <a class="pill" href="https://github.com/{{ sb.github }}" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" href="https://www.linkedin.com/in/{{ sb.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
@@ -60,7 +60,7 @@ permalink: /resume/
     </div>
     {% endfor %}
     <div class="rows edu">
-      <div class="row-item"><span class="k label">Education</span><div>{{ d.education.info[0].university }} · {{ d.education.info[0].degree }}</div></div>
+      <div class="row-item"><span class="k label">Education</span><div>{{ d.education.info[0].university }}, {{ d.education.info[0].degree }}</div></div>
     </div>
   </section>
 
@@ -79,7 +79,7 @@ permalink: /resume/
           {% if body[1] %}
           <div class="meta">{% assign st = body[1] | strip | split: ' / ' %}{% for s in st %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>
           {% endif %}
-          {% if a.case %}<a class="more" href="{{ a.case | relative_url }}">케이스 스터디 <span>→</span></a>{% endif %}
+          {% if a.case %}<a class="more" href="{{ a.case | relative_url }}">케이스 스터디 <span>-></span></a>{% endif %}
         </div>
         {% if a.image %}<figure><img src="{{ a.image | prepend: '/' | relative_url }}" alt="{{ a.title }} 다이어그램"></figure>{% endif %}
       </article>

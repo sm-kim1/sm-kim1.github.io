@@ -25,7 +25,7 @@
   <g>
     <rect x="60" y="48" width="8" height="56" fill="#C97A5C"/>
     <text x="92" y="76" fill="#9A988F" font-size="20" font-family="IBM Plex Mono, monospace" letter-spacing="4" font-weight="600">DIAGRAM 02</text>
-    <text x="92" y="106" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Common SW Architecture — Standard-based Message Interface</text>
+    <text x="92" y="106" fill="#1A1A1A" font-size="34" font-weight="600" letter-spacing="-0.5">Common SW Architecture - Standard-based Message Interface</text>
   </g>
 
   <!-- standards band -->
@@ -67,7 +67,7 @@
     <circle cx="672" cy="460" r="6" fill="#4D7C7D"/><text x="692" y="467" fill="#1A1A1A" letter-spacing="1">ABSTRACTION LAYER</text>
     <circle cx="672" cy="554" r="6" fill="#C97A5C"/><text x="692" y="561" fill="#1A1A1A" letter-spacing="1">INTERFACE VALIDATION</text>
   </g>
-  <text x="810" y="660" fill="#77756C" font-size="16" text-anchor="middle" font-family="IBM Plex Mono, monospace" letter-spacing="2">ROS2 · pub / sub prototype</text>
+  <text x="810" y="660" fill="#77756C" font-size="16" text-anchor="middle" font-family="IBM Plex Mono, monospace" letter-spacing="2">ROS2, pub / sub prototype</text>
 
   <!-- arrows interface -> modules -->
   <path d="M 1025 350 C 1110 350, 1120 280, 1188 260" stroke="#2F5959" stroke-width="3" fill="none" marker-end="url(#ah2)"/>
@@ -92,7 +92,7 @@
     <circle cx="1255" cy="285" r="7" fill="#4D7C7D"/><text x="1275" y="293" fill="#1A1A1A">Module A</text>
     <circle cx="1255" cy="437" r="7" fill="#4D7C7D"/><text x="1275" y="445" fill="#1A1A1A">Module B</text>
     <circle cx="1255" cy="589" r="7" fill="#4D7C7D"/><text x="1275" y="597" fill="#1A1A1A">Module C</text>
-    <text x="1357" y="726" fill="#9A988F" font-size="21" text-anchor="middle">Module N…</text>
+    <text x="1357" y="726" fill="#9A988F" font-size="21" text-anchor="middle">Module N...</text>
   </g>
   <g font-size="16" fill="#77756C" font-family="IBM Plex Mono, monospace">
     <text x="1255" y="325">heterogeneous vendor</text>
@@ -101,5 +101,5 @@
   </g>
 
   <!-- bottom note -->
-  <text x="800" y="836" fill="#77756C" font-size="19" text-anchor="middle">이기종 모듈이 표준 기반 공통 메시지 하나로 상호 운용 — 모듈 교체 시 인터페이스 수정 불필요</text>
+  <text x="800" y="836" fill="#77756C" font-size="19" text-anchor="middle">이기종 모듈이 표준 기반 공통 메시지 하나로 상호 운용 - 모듈 교체 시 인터페이스 수정 불필요</text>
 </svg>

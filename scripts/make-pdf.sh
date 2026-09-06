@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# 포트폴리오 PDF 생성 — jekyll serve가 4000 포트에 떠 있어야 함
-# 사용: scripts/make-pdf.sh [경로] [출력파일]  → 기본 /print/ → portfolio_sangmin.pdf
+# 포트폴리오 PDF 생성 - jekyll serve가 4000 포트에 떠 있어야 함
+# 사용: scripts/make-pdf.sh [경로] [출력파일]  -> 기본 /print/ -> portfolio_sangmin.pdf
 set -e
 cd "$(dirname "$0")/.."
 PAGE="${1:-/print/}"
@@ -22,7 +22,7 @@ rm -f "$WINTMP"
   --print-to-pdf="$(wslpath -w "$WINTMP")" \
   "http://localhost:4000$PAGE" 2>/dev/null || true
 
-# WSL에서 띄운 크롬은 부모 프로세스가 먼저 끝나고 파일은 몇 초 뒤에 써진다 — 최대 60초 대기
+# WSL에서 띄운 크롬은 부모 프로세스가 먼저 끝나고 파일은 몇 초 뒤에 써진다 - 최대 60초 대기
 for _ in $(seq 1 60); do [ -s "$WINTMP" ] && break; sleep 1; done
 [ -s "$WINTMP" ] || { echo "PDF 생성 실패: 크롬이 파일을 만들지 않았음"; exit 1; }
 

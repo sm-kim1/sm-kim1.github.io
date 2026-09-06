@@ -1,4 +1,4 @@
-// ── tokens ──────────────────────────────────────────────
+// -- tokens ----------------------------------------------
 :root {
   --bg: #FFFFFF;
   --surface: #F5F5F7;
@@ -28,7 +28,7 @@ $mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 $space: clamp(72px, 10vw, 128px);
 $ease: cubic-bezier(.2, .8, .2, 1);
 
-// ── base ────────────────────────────────────────────────
+// -- base ------------------------------------------------
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -67,7 +67,7 @@ img { max-width: 100%; }
   white-space: nowrap;
 }
 
-// ── nav ─────────────────────────────────────────────────
+// -- nav -------------------------------------------------
 .nav {
   position: sticky;
   top: 0;
@@ -84,7 +84,7 @@ img { max-width: 100%; }
   li a:hover { color: var(--ink); }
 }
 
-// ── hero ────────────────────────────────────────────────
+// -- hero ------------------------------------------------
 .hero {
   padding: clamp(64px, 10vw, 112px) 0 clamp(40px, 6vw, 64px);
 
@@ -130,7 +130,7 @@ img { max-width: 100%; }
   &.primary:hover { background: var(--accent); filter: brightness(1.08); }
 }
 
-// ── stats ───────────────────────────────────────────────
+// -- stats -----------------------------------------------
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -145,7 +145,7 @@ img { max-width: 100%; }
   .d { margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.45; }
 }
 
-// ── sections ────────────────────────────────────────────
+// -- sections --------------------------------------------
 .block { padding-top: $space; }
 .sec-head {
   display: flex;
@@ -159,7 +159,7 @@ img { max-width: 100%; }
   a { font-size: 14px; color: var(--accent); font-weight: 500; white-space: nowrap; }
 }
 
-// ── work cards ──────────────────────────────────────────
+// -- work cards ------------------------------------------
 .cards { display: flex; flex-direction: column; gap: 24px; }
 .card {
   display: grid;
@@ -202,7 +202,7 @@ img { max-width: 100%; }
   figure img { width: 100%; display: block; cursor: zoom-in; }
 }
 
-// ── how i work ──────────────────────────────────────────
+// -- how i work ------------------------------------------
 .how {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -211,11 +211,11 @@ img { max-width: 100%; }
   h4 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
   ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: var(--muted); }
   li { padding-left: 14px; position: relative; }
-  li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+  li::before { content: '-'; position: absolute; left: 0; color: var(--accent); }
   li small { display: block; font-size: 13px; opacity: .75; }
 }
 
-// ── rows (other work, resume) ───────────────────────────
+// -- rows (other work, resume) ---------------------------
 .rows { display: flex; flex-direction: column; }
 .row-item {
   display: grid;
@@ -233,7 +233,7 @@ img { max-width: 100%; }
 }
 .skills { display: flex; flex-wrap: wrap; gap: 8px; }
 
-// ── footer ──────────────────────────────────────────────
+// -- footer ----------------------------------------------
 .site-footer {
   margin-top: $space;
   padding: 28px 24px 48px;
@@ -244,7 +244,7 @@ img { max-width: 100%; }
   p + p { margin-top: 8px; }
 }
 
-// ── case pages ──────────────────────────────────────────
+// -- case pages ------------------------------------------
 .case {
   padding-top: clamp(40px, 6vw, 64px);
 
@@ -304,7 +304,7 @@ img { max-width: 100%; }
   main img { display: block; border: 1px solid var(--line); border-radius: 14px; background: #fff; cursor: zoom-in; margin: 14px 0; }
 }
 
-// ── lightbox ────────────────────────────────────────────
+// -- lightbox --------------------------------------------
 .lightbox {
   position: fixed;
   inset: 0;
@@ -319,7 +319,7 @@ img { max-width: 100%; }
   img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 10px; }
 }
 
-// ── preferences ─────────────────────────────────────────
+// -- preferences -----------------------------------------
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .card, .pill, .card .more span, .nav li a { transition: none; }
@@ -329,7 +329,7 @@ img { max-width: 100%; }
   .nav { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
-// ── responsive ──────────────────────────────────────────
+// -- responsive ------------------------------------------
 @media (max-width: 760px) {
   .nav ul { gap: 18px; font-size: 13px; }
   .nav .print-link { display: none; }
@@ -342,14 +342,14 @@ img { max-width: 100%; }
   .row-item { grid-template-columns: 1fr; gap: 4px; }
 }
 
-// ── print ───────────────────────────────────────────────
+// -- print -----------------------------------------------
 @media print {
   .nav, .lightbox { display: none; }
   body { background: #fff; color: #000; }
   .card { break-inside: avoid; box-shadow: none; }
 }
 
-// ── resume page ─────────────────────────────────────────
+// -- resume page -----------------------------------------
 .resume {
   padding-top: clamp(48px, 7vw, 80px);
 
@@ -391,7 +391,7 @@ img { max-width: 100%; }
   .role h4 { font-size: 17px; font-weight: 600; }
   .role ul { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 5px; font-size: 15px; color: var(--muted); }
   .role li { padding-left: 14px; position: relative; }
-  .role li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+  .role li::before { content: '-'; position: absolute; left: 0; color: var(--accent); }
   .edu { margin-top: 32px; }
 
   .card.static { cursor: default; }
@@ -417,7 +417,7 @@ img { max-width: 100%; }
 .resume .card:not(.single) { grid-template-columns: 1.4fr 1fr; }
 .resume .card figure { align-self: start; position: sticky; top: 72px; }
 
-// ── print view (/print/) ────────────────────────────────
+// -- print view (/print/) --------------------------------
 .print-view {
   background: var(--surface);
   padding: 32px 16px 64px;

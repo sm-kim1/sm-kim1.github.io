@@ -15,7 +15,7 @@ Jekyll 테마 [sharu725/online-cv](https://github.com/sharu725/online-cv)를 기
 
 | 구분 | 대상 |
 |---|---|
-| 삭제 | `index.html`(기존), `styles.css` — git 히스토리에 남으므로 복구 가능 |
+| 삭제 | `index.html`(기존), `styles.css` - git 히스토리에 남으므로 복구 가능 |
 | 유지 | `assets/profile.jpeg`, `assets/diagram-*.svg`(4개), `assets/project-*.{png,jpg,avif}`(7개) |
 | 추가 | online-cv의 `_config.yml`, `_data/`, `_includes/`, `_layouts/`, `_sass/`, `assets/plugins/`(약 30MB: bootstrap, jquery, fontawesome), `assets/js/`, `assets/css/`, `Gemfile`, `docker-compose.yml`, `print.html` |
 
@@ -25,19 +25,19 @@ online-cv는 Jekyll 플러그인과 remote_theme을 쓰지 않으므로 GitHub P
 주의: 테마의 `CNAME` 파일은 가져오지 않는다(커스텀 도메인 없음). `_config.yml`의
 Google Analytics ID는 비운다.
 
-## 기존 내용 → 데이터 파일 대응
+## 기존 내용 -> 데이터 파일 대응
 
 | 기존 섹션 | data YAML 키 | 비고 |
 |---|---|---|
-| Hero (이름·직무·연락처·사진) | `sidebar` | avatar는 `assets/profile.jpeg` |
+| Hero (이름/직무/연락처/사진) | `sidebar` | avatar는 `assets/profile.jpeg` |
 | About 문단 | `career-profile.summary` | |
-| Core Ability 6개 분류 | `skills.toolset` | 테마 수정 필요 — 아래 참조 |
+| Core Ability 6개 분류 | `skills.toolset` | 테마 수정 필요 - 아래 참조 |
 | Career 2건 | `experiences.info` | `details`는 markdownify 되므로 불릿 유지됨 |
-| Projects 10건 | `projects.assignments` | 테마 수정 필요 — 아래 참조 |
+| Projects 10건 | `projects.assignments` | 테마 수정 필요 - 아래 참조 |
 | Patents 3건 | `publications.papers` | 섹션 제목만 "특허 / Patents"로 변경 |
 | 학력 (숭실대) | `education.info` | |
 
-## 테마 수정 1 — skills.html (~5줄)
+## 테마 수정 1 - skills.html (~5줄)
 
 테마 기본은 `level: 98%` 진행 막대인데, 기존 내용은 카테고리별 기술 목록이라
 숙련도 숫자를 지어내야 한다. 숫자를 만들지 않고 `level`이 없으면 태그 목록으로
@@ -47,7 +47,7 @@ Google Analytics ID는 비운다.
 {% if skill.level %}
   (기존 level-bar 그대로)
 {% else %}
-  <p class="skill-tags">{{ skill.items | join: " · " }}</p>
+  <p class="skill-tags">{{ skill.items | join: ", " }}</p>
 {% endif %}
 ```
 
@@ -58,7 +58,7 @@ skills:
       items: [C, C++, Python, Shell]
 ```
 
-## 테마 수정 2 — projects.html (~15줄)
+## 테마 수정 2 - projects.html (~15줄)
 
 테마 기본은 프로젝트당 `title` + `tagline` 한 줄이라 다이어그램 SVG 4개,
 사진 7개, 항목별 불릿이 전부 버려진다. 아래 필드를 지원하도록 확장한다.
@@ -66,17 +66,17 @@ skills:
 ```yaml
 assignments:
   - title: SUGV Component Manager
-    period: 2024.02 — 2025.12
+    period: 2024.02 - 2025.12
     role: 선행 개발 / 주 담당
     image: assets/diagram-01-component-manager.svg
-    tagline: ROS2 기반 SUGV 플랫폼의 런타임 센서·디바이스 동적 연결/해제 SW 개발
+    tagline: ROS2 기반 SUGV 플랫폼의 런타임 센서/디바이스 동적 연결/해제 SW 개발
     details: |
       - 수행 내용 1
       - 수행 내용 2
 ```
 
 `details`는 `experiences.html`과 동일하게 `| markdownify`로 렌더한다.
-`period`, `role`, `image`, `details`는 모두 선택 필드 — 없으면 출력하지 않는다
+`period`, `role`, `image`, `details`는 모두 선택 필드 - 없으면 출력하지 않는다
 (테마 원본 데이터와도 호환 유지).
 
 ## 한/영 토글
@@ -93,12 +93,12 @@ en/index.html         front matter: data_file: data_en, lang: en
 
 - `_includes/`, `_layouts/`, `print.html`의 `site.data.data` 참조(14곳)를
   `site.data[page.data_file]`로 일괄 치환한다(sed 한 번).
-- 언어 전환은 사이드바에 링크 하나: `/` ↔ `/en/`.
+- 언어 전환은 사이드바에 링크 하나: `/` <-> `/en/`.
 - `default.html`의 `<html lang=...>`은 `page.lang`을 따르게 한다(기본 en).
 - print 페이지는 한국어 버전만 유지한다(`print.html`에 `data_file: data_ko`).
 
 버튼(JS 즉시 전환) 대신 URL 분리를 고른 이유: 파일 하나에 두 언어를 섞지 않고,
-영문 페이지가 독립 URL이라 링크 공유·검색 노출에 유리하다.
+영문 페이지가 독립 URL이라 링크 공유/검색 노출에 유리하다.
 대신 전환 시 페이지가 새로 로드된다.
 
 ## 영문 내용
@@ -109,7 +109,7 @@ en/index.html         front matter: data_file: data_en, lang: en
 ## 검증
 
 로컬에 Ruby 없음, docker 있음. 테마 포함 `docker-compose.yml`로
-`docker compose up` → `localhost:4000` 확인.
+`docker compose up` -> `localhost:4000` 확인.
 
 성공 기준:
 1. `docker compose up` 이 에러 없이 빌드되고 `/` 한국어, `/en/` 영문이 렌더된다.
