@@ -23,5 +23,4 @@ exclude:
   - README.md
   - HANDOFF.md
   - CLAUDE.md
-  - skills-lock.json
   - "*.pdf"
