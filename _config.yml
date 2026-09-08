@@ -21,3 +21,7 @@ exclude:
   - scripts/
   - vendor/
   - README.md
+  - HANDOFF.md
+  - CLAUDE.md
+  - skills-lock.json
+  - "*.pdf"

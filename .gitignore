@@ -7,17 +7,17 @@ vendor/
 .bundle/
 HANDOFF.md
 portfolio_sangmin.pdf
-docs/TODO.md
 CLAUDE.md
+
+# Local docs: docs/ 최상위 md는 전부 로컬 전용 (공개 문서는 docs/superpowers/ 만)
+docs/*.md
 
 # Local-only: skill installs, working prompts
 .agents/
 .claude/
 skills-lock.json
-docs/remember-profile.md
 
 # Job-specific variants (never public)
 _data/data_amr.yml
 print-amr.html
-docs/amr-application.md
 *_amr.pdf

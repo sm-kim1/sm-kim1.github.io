@@ -4,7 +4,7 @@
 
 ## 구조
 
-- 랜딩: `index.html` (정적, `layout: default`). 케이스: `case-*.md` (`layout: case`). 경력기술서: `print.html` + `_data/data_ko.yml`
+- 랜딩: `index.html` (정적, `layout: default`). 케이스: `case-*.md` (`layout: case`). 경력기술서: `resume.html`(`/resume/`, 웹) + `print.html`(`/print/`, A4 인쇄용). 데이터는 `_data/data_ko.yml`
 - 레이아웃: `_layouts/default.html` (네비, 푸터, lightbox 공용) -> `_layouts/case.html`
 - 스타일: `_sass/portfolio.scss` 단일 파일. 색, 폰트는 `:root` 토큰
 - 다이어그램: `assets/diagram-*.svg` - 공통 스타일(제목 블록, 점 패턴 배경, 그림자 카드, 상태 알약), viewBox 1600x900
