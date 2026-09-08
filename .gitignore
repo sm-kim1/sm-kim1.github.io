@@ -1,11 +1,6 @@
 # Cache
 _site/
 .sass-cache/
-.jekyll-metadata
-.jekyll-cache
-
-# Brainstorm sessions
-.superpowers/
 
 # Ruby deps
 vendor/
@@ -19,7 +14,6 @@ CLAUDE.md
 .agents/
 .claude/
 skills-lock.json
-*프롬프트*.md
 docs/remember-profile.md
 
 # Job-specific variants (never public)
