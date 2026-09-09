@@ -28,21 +28,44 @@
   {% include footer.html %}
 
   <script>
-    document.addEventListener('click', function (e) {
-      var img = e.target.closest('.card figure img, .case main img');
-      if (!img) return;
-      e.preventDefault();
-      var box = document.createElement('div');
-      box.className = 'lightbox';
-      var big = document.createElement('img');
-      big.src = img.src;
-      big.alt = img.alt;
-      box.appendChild(big);
-      box.addEventListener('click', function () { box.remove(); });
-      document.addEventListener('keydown', function esc(ev) {
-        if (ev.key === 'Escape') { box.remove(); document.removeEventListener('keydown', esc); }
+    document.querySelectorAll('.card figure img, .case main img').forEach(function (img) {
+      var trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'image-zoom';
+      trigger.setAttribute('aria-label', (img.alt || '이미지') + ' 확대');
+      trigger.setAttribute('aria-haspopup', 'dialog');
+      img.before(trigger);
+      trigger.appendChild(img);
+      trigger.addEventListener('click', function () {
+        var box = document.createElement('dialog');
+        box.className = 'lightbox';
+        box.setAttribute('aria-label', (img.alt || '이미지') + ' 확대 보기');
+        var big = document.createElement('img');
+        big.src = img.src;
+        big.alt = img.alt;
+        var close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'lightbox-close';
+        close.textContent = '닫기';
+        close.autofocus = true;
+        box.append(big, close);
+        close.addEventListener('click', function () { box.close(); });
+        box.addEventListener('keydown', function (e) {
+          if (e.key === 'Tab') {
+            e.preventDefault();
+            close.focus();
+          }
+        });
+        box.addEventListener('click', function (e) {
+          if (e.target === box) box.close();
+        });
+        box.addEventListener('close', function () {
+          box.remove();
+          trigger.focus({ preventScroll: true });
+        }, { once: true });
+        document.body.appendChild(box);
+        box.showModal();
       });
-      document.body.appendChild(box);
     });
   </script>
 </body>

@@ -32,7 +32,7 @@ permalink: /
     <div><span class="label">Work</span><h2>대표 작업 세 건</h2></div>
   </div>
   <div class="cards">
-    <a class="card" href="{{ '/case/jetson-vi5/' | relative_url }}">
+    <article class="card linked">
       <div class="txt">
         <span class="num mono">CS-01, 2023.09 - 현재</span>
         <h3>Jetson 기반 자율주행 컴퓨팅 플랫폼</h3>
@@ -43,12 +43,12 @@ permalink: /
           <li><span>플래시 없이 배포하는 field patch 도구로 현장 표준화</span></li>
           <li><span>Ethernet 스위치 결함 3건 수정(1G 포화 30분 손실 0), 카메라 부팅 지연 205초 제거</span></li>
         </ul>
-        <span class="more">VI5 커널 디버깅 전체 기록 <span>-></span></span>
+        <a class="more" href="{{ '/case/jetson-vi5/' | relative_url }}">VI5 커널 디버깅 전체 기록 <span>-></span></a>
       </div>
       <figure><img src="{{ '/assets/diagram-04-computing-platform.svg' | relative_url }}" alt="컴퓨팅 플랫폼 구성 다이어그램"></figure>
-    </a>
+    </article>
 
-    <a class="card single" href="{{ '/case/yocto/' | relative_url }}">
+    <article class="card linked single">
       <div class="txt">
         <span class="num mono">CS-02, 2025.03 - 현재</span>
         <h3>Jetson BSP의 Yocto 포팅, 최소화 이미지</h3>
@@ -60,11 +60,11 @@ permalink: /
           <li><span>부팅 <strong>62 -> 6.2초</strong>(systemd), NVMe 검출 19/19 - 3회 재부팅 벽돌 잠복 결함 원인 규명</span></li>
         </ul>
         <div class="meta"><span class="chip">Yocto scarthgap</span><span class="chip">L4T R35.6.4</span><span class="chip">kernel 5.10</span><span class="chip">Arm64</span></div>
-        <span class="more">이식 전략과 설계 결정 <span>-></span></span>
+        <a class="more" href="{{ '/case/yocto/' | relative_url }}">이식 전략과 설계 결정 <span>-></span></a>
       </div>
-    </a>
+    </article>
 
-    <a class="card" href="{{ '/case/component-manager/' | relative_url }}">
+    <article class="card linked">
       <div class="txt">
         <span class="num mono">CS-03, 2024.02 - 2025.12</span>
         <h3>SUGV Component Manager - 런타임 hot-plug</h3>
@@ -74,10 +74,10 @@ permalink: /
           <li><span>Generic Template 서비스 인터페이스로 코드 중복률 <strong>28% -> 21%</strong> (정적 분석, 상대 23% 감소)</span></li>
           <li><span>timeout 기반 recovery / reconnect</span></li>
         </ul>
-        <span class="more">설계 결정과 트레이드오프 <span>-></span></span>
+        <a class="more" href="{{ '/case/component-manager/' | relative_url }}">설계 결정과 트레이드오프 <span>-></span></a>
       </div>
       <figure><img src="{{ '/assets/diagram-01-component-manager.svg' | relative_url }}" alt="Component Manager 구조 다이어그램"></figure>
-    </a>
+    </article>
   </div>
 </section>
 

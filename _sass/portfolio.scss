@@ -6,6 +6,8 @@
   --muted: #6E6E73;
   --line: #E5E5EA;
   --accent: #0071E3;
+  --card-link: #006BD6;
+  --on-accent: #FFFFFF;
   --nav: rgba(255, 255, 255, .72);
   --shadow-hover: 0 2px 4px rgba(0, 0, 0, .05), 0 24px 48px rgba(0, 0, 0, .10);
 }
@@ -18,6 +20,8 @@
     --muted: #A1A1A6;
     --line: #2C2C2E;
     --accent: #2997FF;
+    --card-link: #2997FF;
+    --on-accent: #000000;
     --nav: rgba(0, 0, 0, .72);
     --shadow-hover: 0 2px 4px rgba(0, 0, 0, .5), 0 24px 48px rgba(0, 0, 0, .6);
   }
@@ -126,8 +130,8 @@ img { max-width: 100%; }
 
   &:hover { background: var(--surface); }
   &:active { transform: scale(.97); }
-  &.primary { background: var(--accent); color: #fff; border-color: transparent; }
-  &.primary:hover { background: var(--accent); filter: brightness(1.08); }
+  &.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
+  &.primary:hover { background: var(--accent); filter: brightness(.94); }
 }
 
 // -- stats -----------------------------------------------
@@ -162,6 +166,7 @@ img { max-width: 100%; }
 // -- work cards ------------------------------------------
 .cards { display: flex; flex-direction: column; gap: 24px; }
 .card {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -189,7 +194,7 @@ img { max-width: 100%; }
     padding-top: 22px;
     font-size: 14.5px;
     font-weight: 500;
-    color: var(--accent);
+    color: var(--card-link);
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -200,6 +205,9 @@ img { max-width: 100%; }
 
   figure { background: var(--bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); align-self: center; }
   figure img { width: 100%; display: block; cursor: zoom-in; }
+  &.linked .more::after { content: ''; position: absolute; inset: 0; border-radius: 22px; }
+  &.linked .more:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 4px; }
+  &.linked figure { position: relative; z-index: 1; }
 }
 
 // -- how i work ------------------------------------------
@@ -212,7 +220,7 @@ img { max-width: 100%; }
   ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: var(--muted); }
   li { padding-left: 14px; position: relative; }
   li::before { content: '-'; position: absolute; left: 0; color: var(--accent); }
-  li small { display: block; font-size: 13px; opacity: .75; }
+  li small { display: block; font-size: 13px; }
 }
 
 // -- rows (other work, resume) ---------------------------
@@ -305,18 +313,49 @@ img { max-width: 100%; }
 }
 
 // -- lightbox --------------------------------------------
+.image-zoom {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+  font: inherit;
+}
+.image-zoom:focus-visible { outline-offset: -3px; }
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .82);
-  display: flex;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  background: transparent;
   align-items: center;
   justify-content: center;
-  padding: 4vmin;
+  padding: 64px 4vmin 4vmin;
   cursor: zoom-out;
-  z-index: 10;
 
+  &[open] { display: flex; }
+  &::backdrop { background: rgba(0, 0, 0, .82); }
   img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 10px; }
+}
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  min-width: 64px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #1D1D1F;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
 }
 
 // -- preferences -----------------------------------------
@@ -327,6 +366,7 @@ img { max-width: 100%; }
 }
 @media (prefers-reduced-transparency: reduce) {
   .nav { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .lightbox::backdrop { background: #000; }
 }
 
 // -- responsive ------------------------------------------
@@ -402,7 +442,6 @@ img { max-width: 100%; }
   .card .txt > ul li { display: list-item; list-style: none; padding-left: 16px; position: relative; }
   .card .txt > ul li::before { position: absolute; left: 0; top: 9px; margin-top: 0; }
   .card .more { margin-top: 0; padding-top: 22px; }
-  .card .more:hover span { transform: translateX(3px); }
 
   .row-item .when { margin-left: 10px; }
   .row-item .desc { margin-top: 4px; font-size: 14px; color: var(--muted); }
@@ -414,7 +453,9 @@ img { max-width: 100%; }
   .resume .highlights { grid-template-columns: 1fr; }
 }
 
-.resume .card:not(.single) { grid-template-columns: 1.4fr 1fr; }
+@media (min-width: 761px) {
+  .resume .card:not(.single) { grid-template-columns: 1.4fr 1fr; }
+}
 .resume .card figure { align-self: start; position: sticky; top: 72px; }
 
 // -- print view (/print/) --------------------------------
