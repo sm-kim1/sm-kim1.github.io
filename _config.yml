@@ -23,4 +23,5 @@ exclude:
   - README.md
   - HANDOFF.md
   - CLAUDE.md
+  - AGENTS.md
   - "*.pdf"

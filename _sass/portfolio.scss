@@ -516,7 +516,9 @@ img { max-width: 100%; }
 @media print {
   @page { size: A4; margin: 0; }
   .site-footer, .print-view .print-bar { display: none; }
-  .print-view { background: none; padding: 0; }
+  // The narrow-screen overflow rule also matches A4. Avoid a print scrollbar
+  // extending the four sheets onto an extra blank page in Windows Chromium.
+  .print-view { background: none; padding: 0; overflow: visible; }
   .print-view .sheet { width: 210mm; min-height: 0; height: 297mm; margin: 0; box-shadow: none; overflow: hidden; break-after: page; }
   .print-view .sheet:last-child { break-after: auto; }
 }
