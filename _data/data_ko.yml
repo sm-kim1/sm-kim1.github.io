@@ -39,8 +39,8 @@ experiences:
   title: 경력
   info:
     - company: ACEWORKS Korea
-      time: 2021.07 - 현재
-      note: 2023.11 인수합병에 따라 ACELAB에서 사명 변경
+      time: 2023.11 - 현재
+      note: SDV본부 플랫폼개발팀, 현재 아키텍처 파트장. 2023.11.01 합병에 따라 ACELAB에서 고용승계.
       roles:
         - role: Senior Research Engineer
           time: 2023.11 - 현재
@@ -50,6 +50,10 @@ experiences:
             - ROS2 자율주행 플랫폼 아키텍처 설계 및 공통 개발 환경 구축
             - 플랫폼용 ROS2 Middleware 및 Device Integration 구조 개발
             - 자율주행 차량 플랫폼 통합 및 현장 deployment 수행
+    - company: ACELAB
+      time: 2021.07 - 2023.10
+      note: 플랫폼팀
+      roles:
         - role: Research Engineer
           time: 2021.07 - 2023.10
           details: |
@@ -168,11 +172,11 @@ gov_projects:
     - title: 자율주행 Lv.4 / 4+ 기반 긴급차량 통행지원 서비스 기술 개발
       period: 2023.04 - 2027.12
       role: Project Lead, Vehicle Platform Integration
-      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 사내 PL로 기관 간 협업, 시스템 통합 주도, Lv.4/4+ 서비스 차량 플랫폼 구축 및 CAN 제어 SW 개발.
+      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 사내 PL로 기관 간 협업, 시스템 통합 주도, Lv.4/4+ 서비스 차량 플랫폼 구축 및 CAN 제어 SW 개발. 과제 종료 예정은 2027.12.
     - title: 자율주행 Lv.4 / 4+ 기반 도시환경관리 서비스 기술 개발
       period: 2023.04 - 2027.12
       role: Vehicle Platform Integration
-      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 서비스 차량 컴퓨팅 플랫폼 구축, 차량 개조, 현장 deployment 및 유지보수.
+      summary: 국토부 자율주행기술개발혁신사업 공공서비스 과제. 서비스 차량 컴퓨팅 플랫폼 구축, 차량 개조, 현장 deployment 및 유지보수. 과제 종료 예정은 2027.12.
     - title: E-Mobility 기반 Pro-VPP 실증용 AME 운용 인프라 구축
       period: 2023.06 - 2023.12
       role: Vehicle Platform Integration, Middleware Development
