@@ -256,6 +256,12 @@ img { max-width: 100%; }
   strong { font-weight: 600; }
   .when { font-size: 13px; color: var(--muted); margin-left: 8px; }
 }
+.career-history {
+  min-width: 0;
+
+  .career-entry + .career-entry { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .when { display: block; margin: 4px 0 0; }
+}
 .skills { display: flex; flex-wrap: wrap; gap: 8px; }
 
 // -- footer ----------------------------------------------
