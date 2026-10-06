@@ -4,6 +4,8 @@ title: 런타임에 꽂히고 빠지는 디바이스 - Component Manager 설계
 period: 2024.02 - 2025.12
 role: 소형 무인 지상 차량(SUGV) Component Manager 개발
 permalink: /case/component-manager/
+lang: ko
+translation_key: case-component-manager
 ---
 
 ## 요약

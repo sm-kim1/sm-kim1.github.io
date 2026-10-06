@@ -11,6 +11,7 @@ CLAUDE.md
 
 # Local docs: docs/ 최상위 md는 전부 로컬 전용 (공개 문서는 docs/superpowers/ 만)
 docs/*.md
+docs/i18n-qa/
 
 # Local-only: Claude Code settings, worktrees
 .claude/

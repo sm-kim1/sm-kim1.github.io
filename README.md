@@ -4,10 +4,14 @@
 
 ## 구조
 
-- 랜딩: `index.html` (정적, `layout: default`). 케이스: `case-*.md` (`layout: case`). 경력기술서: `resume.html`(`/resume/`, 웹) + `print.html`(`/print/`, A4 인쇄용). 데이터는 `_data/data_ko.yml`
+- 한국어: `index.html`(`/`), `case-*.md`(`/case/…/`), `resume.html`(`/resume/`), `print.html`(`/print/`). 경력 데이터는 `_data/data_ko.yml`
+- 영어: `en/index.html`(`/en/`), `en/case-*.md`(`/en/case/…/`), `en/resume.html`(`/en/resume/`), `print-en.html`(`/print/en/`). 경력 데이터는 `_data/data_en.yml`
+- 언어 전환: 같은 `translation_key`와 서로 다른 `lang: ko/en`을 가진 페이지를 상단 KOR/ENG 토글로 연결한다. 두 페이지의 섹션 ID를 같게 유지하면 전환 시 섹션도 유지한다. 메뉴·버튼 문구는 `_data/ui.yml`
+- 경력과 인쇄 본문: `_includes/resume-content.html`, `_includes/print-content.html`을 두 언어에서 공유한다. 기술 스택은 `_data/data_ko.yml`의 공통 영문 표기를 사용한다
 - 레이아웃: `_layouts/default.html` (네비, 푸터, lightbox 공용) -> `_layouts/case.html`
 - 스타일: `_sass/portfolio.scss` 단일 파일. 색, 폰트는 `:root` 토큰
 - 다이어그램: `assets/diagram-*.svg` - 공통 스타일(제목 블록, 점 패턴 배경, 그림자 카드, 상태 알약), viewBox 1600x900
+- 한국어 설명이 있는 다이어그램의 영문 사본은 `assets/en/`에 둔다. 날짜·성과 변경 시 양쪽 랜딩, 경력 데이터, 케이스와 다이어그램을 함께 확인한다
 
 ## Windows 최초 설치
 
@@ -38,7 +42,7 @@ bundle exec jekyll serve --host 127.0.0.1 --port 4000 --force_polling
 
 4000 포트가 사용 중이면 기존 프로세스를 종료하지 말고 `--port 4001` 등으로 변경한다. Windows 프로젝트에서 실행한 Ruby 서버인지 확인한다. `_config.yml`을 바꾸면 서버를 재시작한다.
 
-GitHub Pages와 같은 `github-pages` 232 / Jekyll 3.10.0을 사용한다. 배포 전에는 `/`, `/resume/`, `/print/`, 세 케이스 경로와 이미지, 데스크톱·모바일 화면을 확인한다.
+GitHub Pages와 같은 `github-pages` 232 / Jekyll 3.10.0을 사용한다. 배포 전에는 양쪽 언어의 홈, 경력, 인쇄, 세 케이스 경로와 이미지, 데스크톱·모바일 화면, 언어 전환을 확인한다.
 
 ## 배포
 
@@ -46,11 +50,12 @@ GitHub Pages와 같은 `github-pages` 232 / Jekyll 3.10.0을 사용한다. 배�
 
 ## 인쇄
 
-`/print/`는 A4 4페이지 경력기술서다. Jekyll 서버를 실행한 상태에서 Windows Chrome 또는 Edge로 PDF를 만든다.
+`/print/`와 `/print/en/`는 각각 한국어·영어 A4 4페이지 경력기술서다. Jekyll 서버를 실행한 상태에서 Windows Chrome 또는 Edge로 PDF를 만든다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/make-pdf.ps1
 powershell -ExecutionPolicy Bypass -File scripts/make-pdf.ps1 /print/ portfolio_sangmin.pdf
+powershell -ExecutionPolicy Bypass -File scripts/make-pdf.ps1 /print/en/ portfolio_sangmin-en.pdf
 # 다른 미리보기 포트를 쓸 때
 powershell -ExecutionPolicy Bypass -File scripts/make-pdf.ps1 -BaseUrl http://127.0.0.1:4001
 ```

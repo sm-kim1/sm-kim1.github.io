@@ -1,4 +1,4 @@
 <footer class="site-footer wrap">
-  <p>* {{ site.data.data_ko.disclaimer }}</p>
+  <p>* {% if page.lang == 'en' %}{{ site.data.data_en.disclaimer }}{% else %}{{ site.data.data_ko.disclaimer }}{% endif %}</p>
   <p class="mono">(c) {{ 'now' | date: "%Y" }} Sangmin Kim</p>
 </footer>

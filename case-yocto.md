@@ -4,6 +4,8 @@ title: JetPack BSP를 Yocto로 - 왜 옮겼고 어떻게 설계했나
 period: 2025.03 - 현재
 role: Jetson BSP의 Yocto 포팅 및 최소화 이미지 빌드
 permalink: /case/yocto/
+lang: ko
+translation_key: case-yocto
 ---
 
 ## 요약

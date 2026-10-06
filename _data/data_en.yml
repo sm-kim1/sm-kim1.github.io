@@ -1,0 +1,208 @@
+sidebar:
+  name: Sangmin Kim
+  tagline: Embedded Platform Engineer, 5+ years
+  affiliation: ACEWORKS Korea | Platform Development Team, SDV Division | Senior Research Engineer / Architecture Lead
+  email: sm.kim1748@gmail.com
+  github: sm-kim1
+  linkedin: sangmin-kim-a3257a160
+
+career-profile:
+  title: About
+  summary: |
+    Embedded Platform Engineer with over five years of experience building autonomous vehicle platforms.
+    Work spans BSP customization, kernel drivers, Device Tree and Yocto images for custom NVIDIA Jetson boards,
+    through ROS1/2 middleware and device integration.
+
+    - Delivered vehicle platforms for **5 government/institutional R&D programs**; 1 granted patent and 2 applications
+    - Reduced code duplication from **28% to 21%** with generic interfaces (static analysis; 23% relative reduction)
+    - Reduced disk use by **67%**, package count by **86%** and idle memory by **79%** with minimal Yocto images
+    - Resolved camera capture and CAN driver root causes to improve field reliability
+    - Built repeatable deployment workflows with scripts, validation steps and documentation
+
+disclaimer: >
+  This portfolio summarizes publicly shareable project scope and contributions.
+  Confidential company and customer designs and non-public information are excluded.
+
+education:
+  title: Education
+  info:
+    - degree: B.Eng. in Computer Science and Engineering
+      university: Soongsil University
+      time: 2011.03 - 2020.08
+
+experiences:
+  title: Experience
+  info:
+    - company: ACEWORKS Korea
+      time: 2023.11 - Present
+      note: Platform Development Team, SDV Division; currently Architecture Lead. Employment transferred from ACELAB following the merger on 2023.11.01.
+      roles:
+        - role: Senior Research Engineer
+          time: 2023.11 - Present
+          details: |
+            - Develop Embedded Linux platforms based on NVIDIA and Qualcomm SoCs
+            - Build Yocto image pipelines and development environments
+            - Design ROS2 autonomous platform architecture and shared development environments
+            - Develop ROS2 middleware and device integration frameworks
+            - Integrate autonomous vehicle platforms and deploy them in the field
+    - company: ACELAB
+      time: 2021.07 - 2023.10
+      note: Platform Team
+      roles:
+        - role: Research Engineer
+          time: 2021.07 - 2023.10
+          details: |
+            - Developed ROS1/2 templates and runtime environments
+            - Built vehicle control interfaces connecting ROS nodes to CAN control software
+            - Established development, build and deployment workflows for Arm64 targets
+            - Installed and validated vehicle control ECUs
+            - Converted vehicles and integrated autonomous driving platforms
+
+projects:
+  title: Projects
+  assignments:
+    - title: NVIDIA Jetson Autonomous Computing Platform
+      case: /en/case/jetson-vi5/
+      image: assets/diagram-04-computing-platform.svg
+      period: 2023.09 - Present
+      role: Project Lead, Embedded Platform Development
+      tagline: Distributed computing modules and kernel drivers for custom Jetson platforms.
+      details: |
+        - Customized BSPs and stabilized boot and runtime behavior on custom Jetson Orin boards
+        - Resolved Device Tree and peripheral compatibility issues during JetPack migrations
+        - Debugged GMSL camera drivers and the VI5 capture path; fixed busy loops and DMA leaks
+        - Synchronized system time to ZED-F9R GNSS time via chrony and enabled PTP for supported sensors
+        - Identified and prevented apt kernel updates from overwriting custom kernels and DTBs
+        - Migrated mcp25xxfd to mcp251xfd and applied six MCP2518FD errata patches for CAN stability
+        - Fixed three Ethernet switch driver defects (MIB wait, EEE, DSA header); verified zero ping packet loss during a 30-minute saturated 1 Gbps test
+        - Removed a **205-second camera delay** from the boot critical path by moving probe/flash initialization into a separate service
+        - Validated boot images and peripheral initialization on AGX/NX targets; built a self-contained field patch tool
+        - **Stack**: Ubuntu, ROS1 Noetic / Arm64 / Jetson AGX Orin, Orin NX / C, C++, Shell, Device Tree / CAN, Ethernet
+
+    - title: Jetson BSP Port to Yocto and Minimal Images
+      case: /en/case/yocto/
+      period: 2025.03 - Present
+      role: Embedded Platform Development
+      tagline: Reproducible minimal images ported from Ubuntu-based JetPack BSPs.
+      details: |
+        - Ported vendor Ubuntu/JetPack BSPs to meta-tegra on Yocto scarthgap (5.0 LTS)
+        - Maintained Orin NX and AGX Orin in one custom layer using machine-specific overrides
+        - Reduced disk use **67% (7.9 to 2.6 GB)**, packages **86% (1,942 to 271)** and idle memory **79%** versus JetPack on the same board
+        - Shared sstate-cache and downloads across machines to reuse build artifacts
+        - Wrote BSP documentation and onboarding guides for engineers new to Yocto
+        - Cut systemd startup **62 to 6.2 s** and power-on-to-login about **30 to 18.8 s** by tuning network waits, kernel logging and UEFI waits
+        - Stabilized NVMe detection (**19/19 boots**) with UEFI/PCIe wait changes; traced failure after three reboots to a missing nvbootctrl verify step
+        - **Stack**: Yocto scarthgap, BitBake / L4T R35.6.4, JetPack 5.1.6, Linux 5.10 / Arm64
+
+    - title: SUGV ROS2 Component Manager
+      case: /en/case/component-manager/
+      image: assets/diagram-01-component-manager.svg
+      period: 2024.02 - 2025.12
+      role: Middleware Development
+      tagline: Runtime connection and disconnection of sensors and devices on small unmanned ground vehicles.
+      details: |
+        - Built a runtime component manager supporting sensor and device hot-plug events
+        - Designed a Dynamic Device Pool to manage connected and disconnected devices at runtime
+        - Implemented automatic registration and removal triggered by device connection events
+        - Abstracted device lifecycles to standardize initialization and shutdown across device types
+        - Used generic service templates to reduce code duplication **28% to 21%** (static analysis; 23% relative)
+        - Replaced periodic polling with a first-connection cache to eliminate repeated steady-state calls
+        - Implemented timeout-based recovery and reconnection for fault handling
+        - **Stack**: Ubuntu, ROS2 Humble / x86_64, Arm64 / C++ / CAN, Ethernet
+
+    - title: Internal LLM Serving Cluster
+      period: 2026.05 - Present
+      role: Infrastructure Development
+      tagline: In-house LLM infrastructure for logs that cannot be sent to external APIs.
+      details: |
+        - Connected three NVIDIA DGX Spark nodes in a direct QSFP ring topology
+        - Served GLM-5.3-Flash (320B, 18B active) NVFP4 across three nodes with vLLM tensor parallelism (TP=3), a 1M context window and an OpenAI-compatible API
+        - Built an admin dashboard for model switching/downloads, cluster start/stop and node health
+        - Wrote operating runbooks and setup checklists for reproducible operations
+        - Validated 1M-context serving: all needle-test answers correct at 1,039,039 tokens; 1.62M-token KV cache
+        - Automated partitioning (3 / 2+1 / 1+1+1), per-user API keys and usage tracking, and reboot recovery via systemd
+        - **Stack**: vLLM / NVIDIA DGX Spark x3, QSFP / Python, Shell / DCGM, node-exporter
+
+    - title: SUGV Common Software Architecture
+      image: assets/en/diagram-02-common-architecture.svg
+      period: 2024.01 - 2024.04
+      role: Architecture Research, Middleware Development
+      tagline: Technical research and prototypes for shared SUGV architecture and message definitions.
+      details: |
+        - Analyzed STANAG and JAUS command/message structures to design common interfaces
+        - Defined platform-independent messages for interoperability across heterogeneous modules
+        - Prototyped common messages and verified publish/subscribe communication in ROS2
+        - Developed an abstraction layer to standardize data interfaces
+        - Validated communication and module integration against common message specifications
+        - **Stack**: Ubuntu, ROS2 Humble / x86_64, Arm64 / C++ / CAN, Ethernet
+
+    - title: ROS2 Multi-domain Templates
+      image: assets/en/diagram-03-multi-domain.svg
+      period: 2023.11 - 2024.05
+      role: Platform Development
+      tagline: Reusable ROS2 development environments with independent domain scopes.
+      details: |
+        - Migrated existing ROS1 systems to ROS2
+        - Developed a multi-domain system to separate functional domains
+        - Created templates separating domain scopes and execution environments
+        - Standardized ROS development environments to simplify vehicle module integration
+        - **Stack**: Ubuntu, ROS2 Humble / x86_64, Arm64 / C++ / CAN, Ethernet
+
+    - title: Autonomous Vehicle Data Logger
+      image: assets/en/diagram-10-data-collection.svg
+      period: 2022.07 - 2022.12
+      role: Middleware Development
+      tagline: Data collection software supporting autonomous driving development and validation.
+      details: |
+        - Built a logging pipeline for autonomous driving development and validation
+        - Designed data collection flows between the vehicle platform and computing environment
+        - Implemented snapshot-based storage to capture event-specific data windows
+        - Added logging with user-configurable recording durations
+        - Managed storage and network resources for reliable in-vehicle data collection
+        - **Stack**: Ubuntu, ROS1 Melodic / x86_64, Arm64 / C, C++ / CAN, Ethernet
+
+gov_projects:
+  title: R&D Programs
+  items:
+    - title: Level 4/4+ Emergency Vehicle Passage Support
+      period: 2023.04 - 2027.12
+      role: Project Lead, Vehicle Platform Integration
+      summary: >
+        MOLIT autonomous driving R&D program. Led the company's cross-organization coordination
+        and system integration; built service vehicle platforms and CAN control software.
+        The program is scheduled to end in December 2027.
+    - title: Level 4/4+ Urban Environment Management
+      period: 2023.04 - 2027.12
+      role: Vehicle Platform Integration
+      summary: >
+        MOLIT autonomous driving R&D program. Built computing platforms, converted service
+        vehicles, and handled field deployment and maintenance.
+        The program is scheduled to end in December 2027.
+    - title: E-Mobility Pro-VPP Demonstration Infrastructure
+      period: 2023.06 - 2023.12
+      role: Vehicle Platform Integration, Middleware Development
+      summary: >
+        KERI V2G demonstration. Developed control-message conversion software and integrated
+        the vehicle platform for AME operations and validation.
+    - title: Mobile Shuttle Simulator Synchronization
+      period: 2022.07 - 2022.12
+      role: Project Lead
+      summary: >
+        Built a physical shuttle platform for ADAS validation under the AI Industry Cluster Agency;
+        developed CAN control software and operated the runtime validation environment.
+    - title: Demand-Responsive Automated Valet Parking
+      period: 2022.04 - 2025.12
+      role: Vehicle Platform Integration
+      summary: >
+        MOTIE program for ISO 23374 automated valet parking. Built the vehicle computing platform,
+        developed position-data conversion software and validated system integration.
+
+publications:
+  title: Patents
+  papers:
+    - title: Ethernet-Based Vehicle Network Control Apparatus and Method for Seamless Connectivity
+      conference: 'Korean patent 10-2978464 (granted 2026.06.10); application 10-2023-0184273'
+    - title: Simulation System and Method for Autonomous Driving System Validation
+      conference: 'Korean patent application 10-2024-0169568 (filed 2024)'
+    - title: Digital Mirror Adjustment Apparatus Using Driver Posture Monitoring
+      conference: 'Korean patent application 10-2025-0170094 (filed 2025)'

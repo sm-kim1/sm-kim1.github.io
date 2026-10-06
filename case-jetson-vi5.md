@@ -4,6 +4,8 @@ title: 다중 카메라 7시간 뒤 죽는 보드 - VI5 캡처 경로 커널 디
 period: 2026
 role: Autonomous Computing Platform based on NVIDIA Jetson
 permalink: /case/jetson-vi5/
+lang: ko
+translation_key: case-jetson-vi5
 ---
 
 ## 요약

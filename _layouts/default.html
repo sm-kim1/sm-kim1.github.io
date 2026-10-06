@@ -1,25 +1,39 @@
+{%- assign lang = page.lang | default: 'ko' -%}
+{%- assign ui = site.data.ui[lang] -%}
+{%- assign translations = site.pages | where: 'translation_key', page.translation_key -%}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ page.lang | default: 'ko' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - Sangmin Kim{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="description" content="{{ page.description | default: ui.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if page.translation_key %}{% for translation in translations %}  <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.url | absolute_url }}">
+{% endfor %}{% endif %}
 {% if page.noindex %}  <meta name="robots" content="noindex">
 {% endif %}  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" aria-label="{{ ui.navigation }}">
     <div class="wrap">
-      <a class="brand" href="{{ '/' | relative_url }}">Sangmin Kim</a>
+      <a class="brand" href="{{ ui.home_url | relative_url }}">Sangmin Kim</a>
       <ul>
-        <li><a href="{{ '/#work' | relative_url }}">Work</a></li>
-        <li><a href="{{ '/#how' | relative_url }}">How I work</a></li>
-        <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
-        <li class="print-link"><a href="{{ '/print/' | relative_url }}">인쇄용 -></a></li>
+        <li><a href="{{ ui.home_url | append: '#work' | relative_url }}">Work</a></li>
+        <li><a href="{{ ui.home_url | append: '#how' | relative_url }}">How I work</a></li>
+        <li><a href="{{ ui.resume_url | relative_url }}"{% if page.translation_key == 'resume' %} aria-current="page"{% endif %}>Resume</a></li>
+        <li class="print-link"><a href="{{ ui.print_url | relative_url }}">{{ ui.print | escape }}</a></li>
       </ul>
+      {% if page.translation_key %}
+      <div class="language-switch" role="group" aria-label="{{ ui.language }}">
+        {% assign korean = translations | where: 'lang', 'ko' | first %}
+        {% assign english = translations | where: 'lang', 'en' | first %}
+        {% if korean %}<a href="{{ korean.url | relative_url }}" lang="ko" hreflang="ko" aria-label="한국어"{% if lang == 'ko' %} aria-current="page"{% endif %}>KOR</a>{% endif %}
+        {% if english %}<a href="{{ english.url | relative_url }}" lang="en" hreflang="en" aria-label="English"{% if lang == 'en' %} aria-current="page"{% endif %}>ENG</a>{% endif %}
+      </div>
+      {% endif %}
     </div>
   </nav>
 
@@ -28,25 +42,38 @@
   {% include footer.html %}
 
   <script>
+    var imageLabels = {
+      image: {{ ui.image | jsonify }},
+      zoom: {{ ui.zoom | jsonify }},
+      view: {{ ui.zoom_view | jsonify }},
+      close: {{ ui.close | jsonify }}
+    };
+    function syncLanguageLinks() {
+      document.querySelectorAll('.language-switch a').forEach(function (link) {
+        link.hash = window.location.hash;
+      });
+    }
+    syncLanguageLinks();
+    window.addEventListener('hashchange', syncLanguageLinks);
     document.querySelectorAll('.card figure img, .case main img').forEach(function (img) {
       var trigger = document.createElement('button');
       trigger.type = 'button';
       trigger.className = 'image-zoom';
-      trigger.setAttribute('aria-label', (img.alt || '이미지') + ' 확대');
+      trigger.setAttribute('aria-label', imageLabels.zoom + ': ' + (img.alt || imageLabels.image));
       trigger.setAttribute('aria-haspopup', 'dialog');
       img.before(trigger);
       trigger.appendChild(img);
       trigger.addEventListener('click', function () {
         var box = document.createElement('dialog');
         box.className = 'lightbox';
-        box.setAttribute('aria-label', (img.alt || '이미지') + ' 확대 보기');
+        box.setAttribute('aria-label', imageLabels.view + ': ' + (img.alt || imageLabels.image));
         var big = document.createElement('img');
         big.src = img.src;
         big.alt = img.alt;
         var close = document.createElement('button');
         close.type = 'button';
         close.className = 'lightbox-close';
-        close.textContent = '닫기';
+        close.textContent = imageLabels.close;
         close.autofocus = true;
         box.append(big, close);
         close.addEventListener('click', function () { box.close(); });

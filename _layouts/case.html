@@ -1,8 +1,10 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: 'ko' %}
+{% assign ui = site.data.ui[lang] %}
 <div class="wrap case">
-  <p><a class="case-back" href="{{ '/#work' | relative_url }}">&lt;- Work</a></p>
+  <p><a class="case-back" href="{{ ui.home_url | append: '#work' | relative_url }}">&lt;- Work</a></p>
   <header class="case-header">
     <span class="label">Case study</span>
     <h1>{{ page.title }}</h1>

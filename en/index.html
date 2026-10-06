@@ -1,0 +1,136 @@
+---
+layout: default
+permalink: /en/
+lang: en
+translation_key: home
+---
+<header class="hero wrap" id="top">
+  <div class="row">
+    <div>
+      <span class="label">Embedded Platform Engineer, 5+ yrs</span>
+      <h1>Autonomous platforms, from the Jetson kernel to ROS2.</h1>
+      <p class="lede">I work on BSPs, kernel drivers, Device Tree and Yocto images for custom Jetson boards, through to ROS2 middleware and device integration. I trace problems to their source and fix them.</p>
+      <div class="pills">
+        <a class="pill primary" href="mailto:sm.kim1748@gmail.com">Get in touch</a>
+        <a class="pill" href="https://github.com/sm-kim1" target="_blank" rel="noopener">GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/sangmin-kim-a3257a160" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <img class="photo" src="{{ '/assets/profile-photo.jpg' | relative_url }}" alt="Sangmin Kim">
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">66<small>h</small></div><div class="d">Five cameras streaming without failure after the VI5 kernel patches</div></div>
+    <div class="stat"><div class="n">86<small>%</small></div><div class="d">Fewer packages with minimal Yocto images; 67% less disk use than JetPack</div></div>
+    <div class="stat"><div class="n">23<small>%</small></div><div class="d">Relative reduction in code duplication, from 28% to 21%, with generic templates</div></div>
+    <div class="stat"><div class="n">5<small>&nbsp;programs</small></div><div class="d">Government R&amp;D programs; project lead on two, one granted patent</div></div>
+  </div>
+</div>
+
+<section class="block wrap" id="work">
+  <div class="sec-head">
+    <div><span class="label">Work</span><h2>Three selected projects</h2></div>
+  </div>
+  <div class="cards">
+    <article class="card linked">
+      <div class="txt">
+        <span class="num mono">CS-01, 2023.09 - Present</span>
+        <h3>Jetson autonomous computing platform</h3>
+        <p class="sum">From boot to runtime on custom Orin boards. I traced a camera failure after seven hours of streaming to the vendor kernel's VI5 capture path.</p>
+        <ul>
+          <li><span>Patched two kernel defects, a busy loop and a DMA leak; verified <strong>66 hours without failure</strong></span></li>
+          <li><span>Traced and prevented apt updates overwriting the custom kernel and DTB</span></li>
+          <li><span>Standardized field deployment with a patch tool that needs no reflash</span></li>
+          <li><span>Fixed three Ethernet switch defects (zero loss under 1 Gbps saturation for 30 minutes) and removed a 205-second camera boot delay</span></li>
+        </ul>
+        <a class="more" href="{{ '/en/case/jetson-vi5/' | relative_url }}">Inside the VI5 kernel fix <span>-></span></a>
+      </div>
+      <figure><img src="{{ '/assets/diagram-04-computing-platform.svg' | relative_url }}" alt="Computing platform architecture diagram"></figure>
+    </article>
+
+    <article class="card linked single">
+      <div class="txt">
+        <span class="num mono">CS-02, 2025.03 - Present</span>
+        <h3>Jetson BSP port to Yocto</h3>
+        <p class="sum">I moved a large, inconsistent Ubuntu-based JetPack BSP to Yocto with meta-tegra. The recipes define a reproducible image for the whole team.</p>
+        <ul>
+          <li><span>One custom layer for Orin NX and AGX Orin, with machine-specific overrides</span></li>
+          <li><span><strong>67%</strong> less disk use, <strong>86%</strong> fewer packages and <strong>79%</strong> less idle memory than JetPack, measured on the same board</span></li>
+          <li><span>BSP documentation and onboarding guides for engineers new to Yocto</span></li>
+          <li><span>Systemd startup <strong>62 to 6.2 seconds</strong>; NVMe detected in 19/19 boots; traced a latent failure after three reboots</span></li>
+        </ul>
+        <div class="meta"><span class="chip">Yocto scarthgap</span><span class="chip">L4T R35.6.4</span><span class="chip">kernel 5.10</span><span class="chip">Arm64</span></div>
+        <a class="more" href="{{ '/en/case/yocto/' | relative_url }}">Porting strategy and design decisions <span>-></span></a>
+      </div>
+    </article>
+
+    <article class="card linked">
+      <div class="txt">
+        <span class="num mono">CS-03, 2024.02 - 2025.12</span>
+        <h3>SUGV Component Manager</h3>
+        <p class="sum">Sensors connect and disconnect while the platform is running. I designed runtime management that handles hot-plug events without restarting the system.</p>
+        <ul>
+          <li><span>Dynamic Device Pool with automatic registration and removal on connection events</span></li>
+          <li><span>Generic service templates reduced code duplication from <strong>28% to 21%</strong> (static analysis; 23% relative reduction)</span></li>
+          <li><span>Timeout-based recovery and reconnection</span></li>
+        </ul>
+        <a class="more" href="{{ '/en/case/component-manager/' | relative_url }}">Design decisions and tradeoffs <span>-></span></a>
+      </div>
+      <figure><img src="{{ '/assets/diagram-01-component-manager.svg' | relative_url }}" alt="Component Manager architecture diagram"></figure>
+    </article>
+  </div>
+</section>
+
+<section class="block wrap" id="how">
+  <div class="sec-head"><div><span class="label">How I work</span><h2>My approach</h2></div></div>
+  <div class="how">
+    <div>
+      <h4>Trace the root cause</h4>
+      <ul>
+        <li>Investigate at the kernel and driver level</li>
+        <li>Account for NVIDIA update policy changes<small>Prevent JetPack OTA from overwriting custom kernels and DTBs</small></li>
+        <li>Follow the cause through to a fix</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Leave a clear record</h4>
+      <ul>
+        <li>Write Yocto onboarding guides and BSP documentation</li>
+        <li>Document investigations so the team can follow the reasoning</li>
+        <li>Keep a change history that others can pick up</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Use AI, verify the results</h4>
+      <ul>
+        <li>Use AI for log analysis, repeated research and document drafts</li>
+        <li>Verify kernel-level conclusions against logs and source code</li>
+        <li>Base documentation and patches on checked results</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="other">
+  <div class="sec-head"><div><span class="label">Other work</span><h2>Beyond the core platform</h2></div></div>
+  <div class="rows">
+    <div class="row-item"><span class="k mono">2026.05 - Present</span><div><strong>Internal LLM serving cluster</strong> - Three DGX Spark nodes in a direct QSFP ring; GLM-5.3-Flash (320B) with vLLM tensor parallelism and a 1M context window (all needle-test answers correct at 1,039,039 tokens); an OpenAI-compatible API for log analysis</div></div>
+    <div class="row-item"><span class="k mono">2023.11 - 2024.05</span><div><strong>ROS2 Multi-domain Templates</strong> - Reusable templates with separate execution environments per domain, and ROS1-to-ROS2 migration</div></div>
+    <div class="row-item"><span class="k mono">2024.01 - 2024.04</span><div><strong>SUGV common software architecture</strong> - Shared message interface design and prototypes based on STANAG and JAUS</div></div>
+    <div class="row-item"><span class="k mono">2022.07 - 2022.12</span><div><strong>Autonomous vehicle data logger</strong> - Snapshot-based logging to capture data around specific events</div></div>
+  </div>
+</section>
+
+<section class="block wrap" id="resume">
+  <div class="sec-head"><div><span class="label">Resume</span><h2>At a glance</h2></div><a href="{{ '/en/resume/' | relative_url }}">View the full resume -></a></div>
+  <div class="rows">
+    <div class="row-item"><span class="k label">Career</span><div><strong>ACEWORKS Korea</strong>, Senior Research Engineer<span class="when mono">2023.11 - Present / Platform Development Team, SDV Division</span><p class="desc">Currently Architecture Lead. Employment transferred from ACELAB following the merger on 2023.11.01.</p></div></div>
+    <div class="row-item"><span class="k label">Career</span><div><strong>ACELAB</strong>, Research Engineer<span class="when mono">2021.07 - 2023.10 / Platform Team</span></div></div>
+    <div class="row-item"><span class="k label">Education</span><div>Soongsil University, Computer Science &amp; Engineering</div></div>
+    <div class="row-item"><span class="k label">R&amp;D</span><div><strong>Five government programs</strong>, including Level 4/4+ emergency vehicle support, urban environment management, KERI V2G and automated valet parking (ISO 23374); project lead on two</div></div>
+    <div class="row-item"><span class="k label">Patents</span><div>Ethernet-based vehicle network control (granted patent 10-2978464), plus <strong>two applications</strong></div></div>
+    <div class="row-item"><span class="k label">Skills</span><div class="skills"><span class="chip">Linux Kernel Driver</span><span class="chip">Device Tree</span><span class="chip">Yocto, BitBake</span><span class="chip">JetPack, L4T</span><span class="chip">ROS1 / 2</span><span class="chip">C / C++</span><span class="chip">CAN, Ethernet, PTP</span></div></div>
+  </div>
+</section>

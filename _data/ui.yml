@@ -1,0 +1,49 @@
+ko:
+  home_url: /
+  resume_url: /resume/
+  print_url: /print/
+  navigation: 주요 메뉴
+  language: 언어 선택
+  print: 인쇄용 ->
+  print_pdf: 인쇄용 PDF ->
+  web_version: <- 웹 버전
+  name: 김상민
+  about: 소개
+  skills: 기술 스택
+  experience: 경력
+  projects: 프로젝트
+  rnd: 과제 수행 이력
+  patents: 특허
+  granted: 등록
+  filed: 출원
+  case_study: 케이스 스터디
+  diagram: 다이어그램
+  image: 이미지
+  zoom: 확대
+  zoom_view: 확대 보기
+  close: 닫기
+en:
+  home_url: /en/
+  resume_url: /en/resume/
+  print_url: /print/en/
+  navigation: Main navigation
+  language: Choose language
+  print: Print ->
+  print_pdf: Print / Save PDF ->
+  web_version: <- Web version
+  name: Sangmin Kim
+  about: Profile
+  skills: Technical skills
+  experience: Career
+  projects: Selected projects
+  rnd: Research programs
+  patents: Patents
+  granted: Granted
+  filed: Filed
+  case_study: Case study
+  diagram: diagram
+  image: Image
+  zoom: Enlarge
+  zoom_view: Enlarged view
+  close: Close
+  description: Sangmin Kim, Embedded Platform Engineer. Custom Jetson BSPs, Linux kernel drivers, Yocto images and ROS2 middleware for autonomous vehicle platforms.
